@@ -1,0 +1,19 @@
+---
+layout: layouts/base.njk
+---
+<article class="post">
+  <div class="container post-container">
+    <header class="post-header">
+      <p class="eyebrow">Guide — {{ page.date | readableDate }}</p>
+      <h1 class="post-title">{{ title }}</h1>
+      {% if description %}<p class="post-lede">{{ description }}</p>{% endif %}
+      <p class="disclosure-note">This guide contains affiliate links. If you buy through them, we may earn a small commission at no extra cost to you. <a href="/affiliate-disclosure/">How we work</a>.</p>
+    </header>
+    <div class="post-body">
+      {{ content | safe }}
+    </div>
+    <footer class="post-footer">
+      <a class="text-link" href="/#guides">All guides</a>
+    </footer>
+  </div>
+</article>
