@@ -2,7 +2,16 @@
 title: "AmiAmi Pre-Owned Grades Explained: What A, B+, B and C Actually Mean"
 description: "What AmiAmi's pre-owned ITEM and BOX grades really mean in practice — from years of buying nearly every grade — plus the one genuine trap in the system."
 date: 2026-07-27
+image: /assets/img/hero-amiami-grades.png
+imageAlt: "Minimal illustration of collectible figure boxes on a shelf, one highlighted"
+category: "Buying from Japan"
 ---
+<div class="quick-answer">
+<span class="qa-label">Quick answer</span>
+<p><strong>AmiAmi grades run conservative — in the buyer's favor.</strong> A+ and A are new figures in practice. B+ looks new and is the best value-to-risk ratio on the site. B arrives near-mint roughly nine times out of ten. C has a real flaw, honestly described in the listing.</p>
+<p>The one genuine trap: <strong>BOX grades are vague.</strong> Ignore them if you display your figures; avoid anything below BOX:B+ if you collect mint-in-box.</p>
+</div>
+
 You've found the figure. It's been sold out for two years, aftermarket prices are silly, and there it is on AmiAmi's pre-owned section for 40% under market — labeled *"Pre-owned ITEM:B / BOX:B."*
 
 And now you're doing what every collector does the first time: hovering over the buy button, wondering what horrors "B" might be hiding. Scratches? Sun damage? A mysterious smell?
@@ -45,7 +54,7 @@ These are graded independently, and they matter to completely different people. 
 | **C** | Real flaws, described in listing | The described flaw, often milder than it sounds | Steep | Bargain hunters who read listings |
 | **J** | Junk / as-is | Broken or incomplete | Massive | Parts, repaints, customs |
 
-*Discount ranges are my observations from years of browsing, not official policy — pre-owned prices track the aftermarket, so a sold-out grail can cost more than its original MSRP at any grade.*
+<div class="callout"><span class="callout-label">Heads up</span><p>Discount ranges are my observations from years of browsing, not official policy — pre-owned prices track the aftermarket, so a sold-out grail can cost more than its original MSRP at any grade.</p></div>
 
 ## The Grades, From Best to Worst
 

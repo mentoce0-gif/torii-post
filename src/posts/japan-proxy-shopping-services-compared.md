@@ -2,7 +2,20 @@
 title: "ZenMarket vs Buyee vs FROM JAPAN: Japan's Top 5 Proxy Shopping Services, Compared Honestly (2026)"
 description: "An independent, hands-on comparison of Japan's five biggest proxy shopping services — real fees, the hidden costs nobody mentions, and which one fits how you actually shop."
 date: 2026-07-27
+image: /assets/img/hero-proxy-services.png
+imageAlt: "Minimal illustration of a torii gate and parcels traveling overseas"
+category: "Buying from Japan"
 ---
+<div class="quick-answer">
+<span class="qa-label">Quick answer</span>
+<p><strong>Buying multiple items, or bidding on Yahoo! Auctions?</strong> Use <a href="https://zenmarket.jp/en/">ZenMarket</a> — flat ¥300 per item with free consolidation. It wins for the way most people actually shop.</p>
+<ul>
+<li><strong>Single cheap items (under ¥5,000):</strong> Buyee's 6% fee is lower.</li>
+<li><strong>Big-ticket items (over ~¥14,000), or many items from one store:</strong> FROM JAPAN's ¥800 same-store cap wins.</li>
+<li><strong>Rare finds and proxy-blocking stores:</strong> Japan Rabbit's human concierge.</li>
+</ul>
+</div>
+
 So you finally found it. That out-of-print figure, that limited-edition vinyl, that perfect secondhand Seiko on Mercari Japan — and then you hit the wall every overseas buyer eventually hits: *"This seller does not ship internationally."*
 
 I've been buying from Japanese sites for years, and I can tell you the wall is real, but it's also completely climbable. Japanese online marketplaces — Mercari, Yahoo! Auctions, Rakuten, Surugaya, AmiAmi's pre-owned section — are treasure troves that most sellers simply never bother opening up to international buyers. Not because they don't want your money, but because international shipping paperwork is a hassle and most individual sellers won't touch it.
@@ -15,13 +28,13 @@ I've used all five of the services below. Here's the honest breakdown, including
 
 | Service | Service Fee | Consolidation | Best Marketplace Access | Payment Options | Best For |
 |---|---|---|---|---|---|
-| **ZenMarket** | ¥300 flat per item | **Free** | Yahoo! Auctions, Rakuten, Mercari + 1,000s of shops | PayPal, cards, crypto, bank transfer | Most buyers, especially multi-item hauls |
-| **Buyee** | 6% of item price | ¥500 per package | **Official Mercari partner** | Cards, PayPal, Apple Pay | Cheap single items under ¥5,000 |
-| **FROM JAPAN** | ¥300/item, capped at ¥800 per store order | Free (automatic) | Wide, strong for bulk store orders | Cards, PayPal, bank transfer | Big-ticket items over ¥14,000 |
-| **Neokyo** | ¥350 per item (incl. domestic shipping) | Free (+¥500 packing under 2kg) | Solid coverage, simple interface | Cards, PayPal | Predictable flat-fee budgeting |
-| **Japan Rabbit** (formerly White Rabbit Express) | Quote-based, concierge pricing | Included in quote | **Anywhere — even stores that block proxies** | Cards | Rare finds, negotiations, hard-to-buy items |
+| **[ZenMarket](https://zenmarket.jp/en/)** | ¥300 flat per item | **Free** | Yahoo! Auctions, Rakuten, Mercari + 1,000s of shops | PayPal, cards, crypto, bank transfer | Most buyers, especially multi-item hauls |
+| **[Buyee](https://buyee.jp/?lang=en)** | 6% of item price | ¥500 per package | **Official Mercari partner** | Cards, PayPal, Apple Pay | Cheap single items under ¥5,000 |
+| **[FROM JAPAN](https://www.fromjapan.co.jp/en/)** | ¥300/item, capped at ¥800 per store order | Free (automatic) | Wide, strong for bulk store orders | Cards, PayPal, bank transfer | Big-ticket items over ¥14,000 |
+| **[Neokyo](https://neokyo.com/en)** | ¥350 per item (incl. domestic shipping) | Free (+¥500 packing under 2kg) | Solid coverage, simple interface | Cards, PayPal | Predictable flat-fee budgeting |
+| **[Japan Rabbit](https://japanrabbit.com/)** (formerly White Rabbit Express) | Quote-based, concierge pricing | Included in quote | **Anywhere — even stores that block proxies** | Cards | Rare finds, negotiations, hard-to-buy items |
 
-*Fees verified as of July 2026. Always double-check current rates before a large order — proxy services adjust pricing more often than you'd think.*
+<div class="callout"><span class="callout-label">Heads up</span><p>Fees verified as of July 2026. Always double-check current rates before a large order — proxy services adjust pricing more often than you'd think.</p></div>
 
 ## How Proxy Shopping Actually Works (60-Second Version)
 
@@ -125,7 +138,7 @@ The lesson: don't pick a service based on one comparison table (including mine).
 
 **🥇 1st place: ZenMarket.** The free consolidation + flat fee combination wins for the way most people actually shop — multiple items, mixed marketplaces, shipped together. It's the service I recommend to friends without caveats.
 
-→ **[Visit ZenMarket](https://zenmarket.jp/en/)**
+<p class="cta-row"><a class="cta-button" href="https://zenmarket.jp/en/" rel="sponsored noopener" target="_blank">Visit ZenMarket →</a><span class="cta-sub">Flat ¥300/item · free consolidation · PayPal, cards &amp; crypto accepted</span></p>
 
 **🥈 2nd place: FROM JAPAN.** The ¥800 same-store cap and the absence of percentage fees make it the quiet champion for expensive items and bulk store orders. Slightly clunkier experience, meaningful savings at the high end.
 

@@ -4,16 +4,72 @@ layout: layouts/base.njk
 <article class="post">
   <div class="container post-container">
     <header class="post-header">
-      <p class="eyebrow">Guide — {{ page.date | readableDate }}</p>
+      <p class="eyebrow">{{ category or "Guide" }} — {{ page.date | readableDate }}</p>
       <h1 class="post-title">{{ title }}</h1>
       {% if description %}<p class="post-lede">{{ description }}</p>{% endif %}
+      <div class="post-meta">
+        <span>Updated {{ page.date | readableDate }}</span>
+        <span>·</span>
+        <span>{{ content | readingTime }} min read</span>
+        <span>·</span>
+        <span>Written from Japan</span>
+      </div>
+      {% if image %}<img class="post-hero" src="{{ image }}" alt="{{ imageAlt or title }}" width="1200" height="630" />{% endif %}
       <p class="disclosure-note">This guide contains affiliate links. If you buy through them, we may earn a small commission at no extra cost to you. <a href="/affiliate-disclosure/">How we work</a>.</p>
     </header>
+
+    {% set headings = content | toc %}
+    {% if headings.length > 2 %}
+    <nav class="toc" aria-label="Table of contents">
+      <p class="toc-label">In this guide</p>
+      <ol>
+        {% for h in headings %}
+        <li><a href="#{{ h.id }}">{{ h.text }}</a></li>
+        {% endfor %}
+      </ol>
+    </nav>
+    {% endif %}
+
     <div class="post-body">
       {{ content | safe }}
     </div>
-    <footer class="post-footer">
-      <a class="text-link" href="/#guides">All guides</a>
-    </footer>
+
+    <div class="author-box">
+      <div class="author-mark" aria-hidden="true"></div>
+      <div>
+        <h4>Torii Post</h4>
+        <p>Written by long-term residents of Japan who buy from these shops and services with their own money. No sponsored rankings, no vendor copy — see <a href="/about/">how we work</a>.</p>
+      </div>
+    </div>
+
+    {% set related = collections.posts | reverse %}
+    <div class="related">
+      <p class="related-label">Keep reading</p>
+      {% for post in related %}
+        {% if post.url != page.url %}
+        <div class="guide-row">
+          <span class="guide-date">{{ post.date | readableDate }}</span>
+          <a href="{{ post.url }}">
+            <h3>{{ post.data.title }}</h3>
+            <p>{{ post.data.description }}</p>
+          </a>
+        </div>
+        {% endif %}
+      {% endfor %}
+    </div>
   </div>
 </article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ title | dump | safe }},
+  "description": {{ description | dump | safe }},
+  "datePublished": "{{ page.date | isoDate }}",
+  "dateModified": "{{ page.date | isoDate }}",
+  {% if image %}"image": "{{ site.url }}{{ image }}",{% endif %}
+  "author": { "@type": "Organization", "name": "{{ site.name }}", "url": "{{ site.url }}/about/" },
+  "publisher": { "@type": "Organization", "name": "{{ site.name }}", "url": "{{ site.url }}" }
+}
+</script>
