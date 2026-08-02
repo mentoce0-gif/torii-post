@@ -3,6 +3,9 @@ const markdownItAnchor = require("markdown-it-anchor");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
+  // Browsers and crawlers request /favicon.ico at the root regardless of the
+  // <link> tags, so it has to sit there and not under /assets.
+  eleventyConfig.addPassthroughCopy({ "src/favicon.ico": "favicon.ico" });
 
   const md = markdownIt({ html: true, linkify: false }).use(markdownItAnchor, {
     slugify: (s) =>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Torii Post mark. Myojin torii: kasagi and shimagi stack into one lintel,
+       the nuki crosses the pillars lower down. Everything sits inside r=46 of
+       centre so a circular crop (social avatars) never clips it. -->
+  <rect width="100" height="100" fill="#2F4F4F"/>
+  <g fill="#FAFAF9">
+    <rect x="10" y="24" width="80" height="8"/>
+    <rect x="16" y="32" width="68" height="7"/>
+    <rect x="24" y="39" width="10" height="43"/>
+    <rect x="66" y="39" width="10" height="43"/>
+    <rect x="24" y="52" width="52" height="6"/>
+  </g>
+</svg>
