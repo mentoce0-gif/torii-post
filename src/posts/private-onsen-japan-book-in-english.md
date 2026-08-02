@@ -135,6 +135,8 @@ For comparison, organized "private onsen tours" sold to tourists routinely charg
 
 **Tattoos:** in a kashikiri bath, your tattoos are nobody's business — that's the entire point. No cover stickers, no policy anxiety. This is the single cleanest solution to Japan's tattoo-onsen friction, full stop. (In shared areas of the same facilities — hallways, lounges — normal rules may still apply, but bathing is the part that matters.)
 
+It isn't the only solution, though. A growing number of onsen and bathhouses admit tattooed guests outright — an entire town in Hyogo does it as policy — so you can skip the locked door if you'd rather bathe openly. We mapped the places that say yes in writing, and graded how well documented each one is, in [our guide to bathing with tattoos in Japan](/guides/onsen-with-tattoos-japan/).
+
 **The rules still apply, just privately.** Shower thoroughly at the washing station *before* entering the tub — the tub is for soaking, not washing. No soap in the bath water, no towels in the water, and if the facility asks you not to drain the tub, don't. Kashikiri baths run on tight turnarounds and staff genuinely appreciate guests who leave the room rinsed and roughly on time.
 
 **Swimsuits:** not needed and usually not allowed even in private baths — the water stays cleaner without fabric. You're behind a locked door; enjoy the freedom.
