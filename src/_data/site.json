@@ -4,5 +4,10 @@
   "description": "Independent guides to Japan's shops, marketplaces, and quiet corners — written from inside the country.",
   "url": "https://toriipost.com",
   "author": "Torii Post",
-  "year": 2026
+  "year": 2026,
+  "analytics": {
+    "googleSiteVerification": "",
+    "cloudflareToken": "",
+    "ga4MeasurementId": ""
+  }
 }
