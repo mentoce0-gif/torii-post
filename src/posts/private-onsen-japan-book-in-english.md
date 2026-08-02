@@ -62,9 +62,9 @@ Why it makes this list: the official website has a genuinely usable English sect
 
 **Book it if:** you want the classic open-air-bath-in-the-forest experience within a day trip of Tokyo.
 
-## 2. Hyotan Onsen — Beppu's Michelin Three-Star Bargain
+## 2. Hyotan Onsen — Beppu's Green Guide Three-Star Bargain
 
-Beppu produces more hot spring water than anywhere else in Japan, and [Hyotan Onsen](https://www.hyotan-onsen.com/english/) is its most decorated bathhouse — the only onsen in town holding three Michelin stars, awarded for exactly the kind of unpretentious quality this list loves.
+Beppu produces more hot spring water than anywhere else in Japan, and [Hyotan Onsen](https://www.hyotan-onsen.com/english/) is its most decorated bathhouse — the only onsen in the entire country to hold three stars in the Michelin Green Guide, Michelin's rating for places worth traveling to, and it has held them seven editions running. (Worth stating plainly, since the word "Michelin" invites the assumption: this is the travel guide's sightseeing rating, not the restaurant one.)
 
 The family baths (*kazoku-buro* — remember, couples count as family here) are the deal of this entire guide: **from ¥2,300 per room** plus modest per-person admission, with 14 rooms across indoor and open-air styles. The water is Beppu's famous chloride spring, and the waterfall-massage baths in the public section are worth the admission on their own if you get curious afterward.
 

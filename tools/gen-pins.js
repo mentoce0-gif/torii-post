@@ -54,7 +54,7 @@ const pins = {
   // Proxy article pins
   "pin-proxy-01.png": pinSvg({
     kicker: "Buying from Japan",
-    titleLines: ["How to Buy", "From Any", "Japanese Store"],
+    titleLines: ["How to Buy From", "Almost Any", "Japanese Store"],
     sub: "5 proxy services compared, honestly",
     art: `
       <rect x="90" y="960" width="240" height="200" fill="none" stroke="${INK}" stroke-width="5"/>
@@ -65,11 +65,11 @@ const pins = {
       <line x1="545" y1="920" x2="545" y2="1030" stroke="${ACCENT}" stroke-width="3"/>
       <rect x="760" y="990" width="150" height="170" fill="${SAND}"/>
       <path d="M 150 880 C 350 800, 650 800, 850 880" fill="none" stroke="${ACCENT}" stroke-width="4" stroke-dasharray="3 16" stroke-linecap="round"/>
-      ${torii(795, 588, 1.0, INK, 0.9)}
+      ${torii(820, 168, 0.9, INK, 0.9)}
     `,
   }),
   "pin-proxy-02.png": pinSvg({
-    kicker: "Save 30-50% on shipping",
+    kicker: "Where your money goes",
     titleLines: ["The Hidden Fees", "of Japan Proxy", "Shopping"],
     sub: "4 costs nobody tells you about",
     art: `
@@ -84,7 +84,7 @@ const pins = {
   "pin-amiami-01.png": pinSvg({
     kicker: "Anime figure collecting",
     titleLines: ["AmiAmi", "Pre-Owned Grades,", "Decoded"],
-    sub: "What A, B+ and C actually mean",
+    sub: "What A, B+, B and C actually mean",
     art: `
       <line x1="120" y1="1160" x2="880" y2="1160" stroke="${INK}" stroke-width="6"/>
       <rect x="160" y="930" width="130" height="230" fill="none" stroke="${INK}" stroke-width="5"/>
@@ -96,9 +96,9 @@ const pins = {
     `,
   }),
   "pin-amiami-02.png": pinSvg({
-    kicker: "Is B grade safe?",
-    titleLines: ["Buy Sold-Out", "Figures for", "40% Less"],
-    sub: "The pre-owned system, explained",
+    kicker: "AmiAmi pre-owned",
+    titleLines: ["Is AmiAmi", "B Grade", "Safe?"],
+    sub: "Sold-out figures, often 30–50% less",
     art: `
       <circle cx="500" cy="1030" r="150" fill="none" stroke="${ACCENT}" stroke-width="4"/>
       <text x="500" y="1080" font-family="${FONT}" font-size="150" font-weight="bold" fill="${ACCENT}" text-anchor="middle">B</text>
@@ -109,7 +109,7 @@ const pins = {
   // Private onsen article pins
   "pin-onsen-01.png": pinSvg({
     kicker: "Private onsen in Japan",
-    titleLines: ["Rent an Entire", "Onsen to", "Yourself"],
+    titleLines: ["Rent an Entire", "Onsen Bath", "to Yourself"],
     sub: "6 places that book in English",
     art: `
       <path d="M 300 1000 h 400 M 320 1000 c 0 130 70 190 180 190 s 180 -60 180 -190" fill="none" stroke="${INK}" stroke-width="9" stroke-linecap="round"/>
@@ -125,7 +125,7 @@ const pins = {
     `,
   }),
   "pin-onsen-02.png": pinSvg({
-    kicker: "Tattoo-friendly by default",
+    kicker: "Traveling with tattoos",
     titleLines: ["Tattoos and", "Onsen: The", "Clean Solution"],
     sub: "Private baths, zero cover stickers",
     art: `
@@ -142,7 +142,7 @@ const pins = {
   "pin-onsen-03.png": pinSvg({
     kicker: "Couples travel Japan",
     titleLines: ["Bathe Together", "at a Japanese", "Onsen"],
-    sub: "The kashikiri loophole, explained",
+    sub: "How kashikiri baths work",
     art: `
       <circle cx="790" cy="920" r="60" fill="none" stroke="${SAND}" stroke-width="6"/>
       <path d="M 200 1020 h 460 M 220 1020 c 0 120 80 170 210 170 s 210 -50 210 -170" fill="none" stroke="${INK}" stroke-width="9" stroke-linecap="round"/>
@@ -154,8 +154,8 @@ const pins = {
     `,
   }),
   "pin-onsen-04.png": pinSvg({
-    kicker: "85 min from Tokyo",
-    titleLines: ["A Private", "Forest Onsen", "for ¥6,000"],
+    kicker: "About 85 min from Tokyo",
+    titleLines: ["A Private", "Forest Onsen", "from ¥6,000"],
     sub: "Hakone Yuryo, booked in English",
     art: `
       <rect x="120" y="960" width="180" height="130" rx="16" fill="none" stroke="${INK}" stroke-width="7"/>
@@ -173,9 +173,9 @@ const pins = {
     `,
   }),
   "pin-onsen-05.png": pinSvg({
-    kicker: "Beppu, Kyushu",
-    titleLines: ["The ¥2,300", "Michelin-Star", "Onsen Hack"],
-    sub: "14 private baths, 3 stars",
+    kicker: "Japan's only 3-star onsen",
+    titleLines: ["The ¥2,300", "Three-Star", "Onsen Hack"],
+    sub: "Michelin Green Guide, Beppu",
     art: `
       <path d="M 280 890 c -40 0 -70 30 -70 65 0 28 18 45 18 45 -40 22 -68 60 -68 105 0 66 54 105 120 105 s 120 -39 120 -105 c 0 -45 -28 -83 -68 -105 0 0 18 -17 18 -45 0 -35 -30 -65 -70 -65 z" fill="${SOFT}" stroke="${INK}" stroke-width="7"/>
       <g fill="${ACCENT}">
@@ -218,7 +218,7 @@ const pins = {
   "pin-onsen-08.png": pinSvg({
     kicker: "2.5 hours from Kyoto",
     titleLines: ["The Onsen Town", "You Can Book", "in English"],
-    sub: "Kinosaki, Japan's easiest ryokan stay",
+    sub: "Ryokan and private baths, booked online",
     art: `
       <path d="M 120 1100 q 200 40 380 0 t 380 0" fill="none" stroke="${ACCENT}" stroke-width="7" stroke-linecap="round"/>
       <path d="M 120 1150 q 200 40 380 0 t 380 0" fill="none" stroke="${ACCENT}" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
@@ -233,7 +233,7 @@ const pins = {
   }),
   "pin-onsen-09.png": pinSvg({
     kicker: "Japan travel hack",
-    titleLines: ["Book Any", "“Phone Only”", "Onsen Bath"],
+    titleLines: ["Book a", "“Phone-Only”", "Onsen Bath"],
     sub: "The front-desk trick, explained",
     art: `
       <g transform="rotate(-38 280 1030)" fill="${SOFT}" stroke="${INK}" stroke-width="6">
@@ -265,8 +265,13 @@ const pins = {
         <text x="500" y="1015" text-anchor="middle" font-weight="bold">&#165;9,000</text>
         <text x="770" y="905" text-anchor="middle" font-weight="bold">&#165;50,000+</text>
       </g>
-      <g stroke="${ACCENT}" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.8">
-        <path d="M 205 1050 c -12 -24 12 -36 0 -60" transform="translate(0,-30)"/>
+      <g font-family="${FONT}" font-size="26" fill="#54544f" text-anchor="middle">
+        <text x="230" y="1232">Day-use bath</text>
+        <text x="500" y="1232">Private open-air</text>
+        <text x="770" y="1232">Room with bath</text>
+        <text x="230" y="1268">Beppu</text>
+        <text x="500" y="1268">Hakone</text>
+        <text x="770" y="1268">Ryokan, per night</text>
       </g>
     `,
   }),
