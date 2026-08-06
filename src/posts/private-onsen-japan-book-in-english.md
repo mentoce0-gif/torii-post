@@ -43,7 +43,7 @@ One important non-difference: the water is the same. A kashikiri bath at a good 
 
 | Place | Where | Type | Private bath cost | How to book in English |
 |---|---|---|---|---|
-| **Hakone Yuryo** | Hakone (85 min from Tokyo) | Day-use complex, 19 private open-air baths | From ~¥6,000 / hour + admission | Official English site; phone (English-speaking staff) |
+| **Hakone Yuryo** | Hakone (85 min from Tokyo) | Day-use complex, 19 private open-air baths | From ¥10,400 per room / 120 min (weekday) | Official English site; phone, or online from Aug 17, 2026 |
 | **Hyotan Onsen** | Beppu, Kyushu | Day-use bathhouse, 14 family baths | From ¥2,300 / room + admission | English website; phone up to 1 week ahead |
 | **Dogo Onsen Asuka-no-Yu** | Matsuyama, Shikoku | Historic public bathhouse annex, 2 special private bathrooms | ~¥2,040 / group + ¥1,690 / person | Tickets on Klook & KKday; phone 2h+ ahead |
 | **Solaniwa Onsen** | Osaka (city center) | Onsen theme park, private baths incl. tent-sauna suite | Admission ¥2,640 + private bath from ¥15,400 / 90 min | Tickets on Klook & Rakuten Travel Experiences |
@@ -56,9 +56,11 @@ Prices are current as of mid-2026 and move around; treat them as solid estimates
 
 If you're based in Tokyo and want a private onsen without an overnight stay, [Hakone Yuryo](https://www.hakoneyuryo.jp/english/) is the clean, obvious answer. It sits three minutes by free shuttle from Hakone-Yumoto station, and its *Hanare Yuya Kaden* wing holds **19 private open-air baths — one of the largest collections anywhere near Tokyo.**
 
-Each private room gets you an outdoor stone or wooden tub under the trees, a changing area, and a locked door. Sessions run about an hour from roughly ¥6,000 per room (on top of regular admission), which between two people undercuts most "onsen experience" tours by half.
+Each private room gets you an outdoor stone or wooden tub under the trees, a changing area, and a locked door. **Sessions start at 120 minutes — there's no shorter slot — from ¥10,400 per room on a weekday** (¥11,400 weekends and holidays) for the two-person rooms, with four-person rooms running ¥12,400–15,400. The main bathhouse is separate: add it for ¥1,000 per adult on weekdays, ¥1,300 on weekends, or skip it entirely and just use your private room.
 
-Why it makes this list: the official website has a genuinely usable English section, and the front desk handles English phone bookings without drama. Weekends sell out — reserve a few days ahead, or aim for a weekday morning when walk-in availability is realistic.
+Why it makes this list: the official website has a genuinely usable English section, and the front desk handles English phone bookings without drama — and **from August 17, 2026 you can book online** instead of calling. Reservations open a month ahead. Weekends sell out, so reserve early or aim for a weekday morning.
+
+One more reason it belongs at the top of this list: **Hakone Yuryo lifted its tattoo restrictions entirely on April 1, 2025**, and says so on its own English site. Private rooms were always the tattoo workaround; here the main baths are open too.
 
 **Book it if:** you want the classic open-air-bath-in-the-forest experience within a day trip of Tokyo.
 
@@ -113,7 +115,7 @@ Kusatsu regularly tops Japanese rankings of best onsen towns, and its ryokan sce
 Here's the decision tree I give friends planning their first trip, compressed:
 
 1. **Pin down your route first, bath second.** Private onsen are everywhere; don't reroute a whole itinerary around one. Tokyo-based? Hakone. Kansai? Osaka or Kinosaki. Kyushu? Beppu. Shikoku? Matsuyama.
-2. **Decide your tier: day-use or overnight.** Day-use = book a time slot, ¥4,000–9,000 for two, done. Overnight ryokan = book the *stay* on an English platform, then sort the bath as an add-on.
+2. **Decide your tier: day-use or overnight.** Day-use = book a time slot, ¥4,000–12,000 for two, done. Overnight ryokan = book the *stay* on an English platform, then sort the bath as an add-on.
 3. **Check the English-checkout options before anything else.** Search the facility name on Klook and KKday. If a ticket exists there, that's your path — instant confirmation, English support, and refund policies you can actually read.
 4. **No English checkout? Check the official site.** Hakone Yuryo and Hyotan both maintain real English pages with enough detail to choose your bath and time before anyone picks up a phone.
 5. **Phone-only? Deploy the front desk.** Facility name, date, time, headcount, written on paper or your phone screen. Hand it to your hotel concierge with "sumimasen, could you call and reserve this?" Success rate in my experience: effectively 100%.
@@ -126,7 +128,7 @@ That's the entire skill. The first booking feels like work; the second takes thr
 Private onsen pricing confuses people because it stacks. Here's the arithmetic for two people:
 
 - **Budget:** Hyotan Onsen family bath — roughly ¥2,300 for the room plus admission for two. Total: **around ¥4,000–4,500** for a private Michelin-starred soak.
-- **Midrange:** Hakone Yuryo private open-air bath — about ¥6,000 for the room plus two admissions. Total: **around ¥9,000** for the full forest-bath postcard.
+- **Midrange:** Hakone Yuryo private open-air bath — ¥10,400 for the room (2 people, 120 minutes, weekday). Add the main baths and it's ¥1,000 more per person. Total: **¥10,400–12,400** for the full forest-bath postcard.
 - **Splurge:** a Kinosaki or Kusatsu ryokan room with private rotenburo — **¥50,000–90,000 per night for two**, but that includes kaiseki dinner, breakfast, and unlimited 2am baths.
 
 For comparison, organized "private onsen tours" sold to tourists routinely charge ¥15,000–25,000 per person for what is essentially the midrange option plus a bus. Book direct and pocket the difference.
