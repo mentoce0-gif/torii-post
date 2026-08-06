@@ -128,7 +128,7 @@ Where you go matters more than what you're covered in.
 
 **Easy:** Kinosaki, by design. Beppu and much of Oita, by temperament. Tokyo's sento scene, increasingly. Osaka's larger bathing complexes, which serve a mixed international crowd and have mostly built defined paths for tattooed guests rather than blanket rules.
 
-**Harder:** famous resort ryokan, especially high-end ones in Hakone, Kusatsu and Gero, where the guest base is domestic, older and conservative. Hotel spas attached to business hotels, which tend to copy whatever the chain's manual says. Public pools, gyms and some beaches — which are frequently *stricter* than hot springs, a fact that catches people out.
+**Harder:** famous resort ryokan, especially high-end ones in Hakone, Kusatsu and Gero, where the guest base is domestic, older and conservative. Note the word *ryokan* there — Hakone's **day-use** baths are a different story, and a more welcoming one: Hakone Yuryo dropped its tattoo rules outright in April 2025, and Tenzan admits tattooed guests under an unusual one-per-group limit. We've costed all of them out in our [Hakone day trip guide](/guides/hakone-onsen-day-trip-from-tokyo/). Hotel spas attached to business hotels, which tend to copy whatever the chain's manual says. Public pools, gyms and some beaches — which are frequently *stricter* than hot springs, a fact that catches people out.
 
 **Always available anywhere:** a private bath. This is the reason Route 3 exists.
 

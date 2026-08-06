@@ -62,6 +62,8 @@ Why it makes this list: the official website has a genuinely usable English sect
 
 One more reason it belongs at the top of this list: **Hakone Yuryo lifted its tattoo restrictions entirely on April 1, 2025**, and says so on its own English site. Private rooms were always the tattoo workaround; here the main baths are open too.
 
+If you're building a whole day around this rather than just the bath, we've worked out the transport, the cheaper alternatives nearby and whether the Free Pass is worth buying in our [Hakone day trip guide](/guides/hakone-onsen-day-trip-from-tokyo/).
+
 **Book it if:** you want the classic open-air-bath-in-the-forest experience within a day trip of Tokyo.
 
 ## 2. Hyotan Onsen — Beppu's Green Guide Three-Star Bargain
