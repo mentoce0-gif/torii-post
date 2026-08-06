@@ -33,3 +33,8 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          # Pages regularly takes longer than the 10-minute default to report
+          # back, and the action then cancels a deployment that was going to
+          # succeed. Every failure on 2026-08-06 was this, not a broken build.
+          timeout: 1800000
