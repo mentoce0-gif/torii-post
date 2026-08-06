@@ -27,6 +27,13 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    # One deployment at a time. Without this, several pushes in an evening
+    # queue up together and an older run can finish last, quietly replacing
+    # the live site with an older build. Intermediate queued runs are dropped;
+    # in-progress ones are left alone to finish.
+    concurrency:
+      group: pages
+      cancel-in-progress: false
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
