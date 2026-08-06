@@ -76,13 +76,13 @@ The friction: reservations for the nicer bath series are phone-only, up to one w
 
 Dogo Onsen in Matsuyama is arguably Japan's oldest hot spring — the bathhouse that helped inspire *Spirited Away* — and its modern annex, [Asuka-no-Yu](https://dogo.jp/en/), solved the "historic atmosphere but zero privacy" problem elegantly. The second floor holds **two special private bathrooms** modeled on the bathing chamber once reserved for the imperial family, bookable by the session with tea and sweets served after your soak.
 
-Cost lands around ¥2,040 per group plus ¥1,690 per person — remarkably reasonable for what amounts to a private audience with 1,300 years of bathing history. Reservations open by phone at least two hours ahead, but here's the English-friendly part: **[Klook](https://www.klook.com/en-US/activity/67998-dogo-onsen-annex-asuka-noyu-spring-matsuyama/) and KKday both sell Asuka-no-Yu tickets with English checkout**, which removes the language barrier for the standard packages entirely.
+Cost lands around ¥2,040 per group plus ¥1,690 per person — remarkably reasonable for what amounts to a private audience with 1,300 years of bathing history. Reservations open by phone at least two hours ahead, but here's the English-friendly part: **<a href="https://www.klook.com/en-US/activity/67998-dogo-onsen-annex-asuka-noyu-spring-matsuyama/?aid=129411" rel="sponsored noopener" target="_blank">Klook</a> and KKday both sell Asuka-no-Yu tickets with English checkout**, which removes the language barrier for the standard packages entirely.
 
 **Book it if:** you want your private bath with a side of legitimate history, or you're routing through Shikoku.
 
 ## 4. Solaniwa Onsen — Osaka's No-Planning-Required Option
 
-[Solaniwa Onsen](https://solaniwa.com/en-us/) is an unapologetic onsen *theme park* — a sprawling Azuchi-Momoyama-styled complex near Osaka Bay where you wander between baths in a rented yukata. Purists sniff at it. Practically, it's the easiest private onsen logistics in this guide: it's in central Osaka, open until late, and **admission tickets sit on [Klook](https://www.klook.com/en-US/activity/21381-solaniwa-onsen-admission-ticket-osaka/) and Rakuten Travel Experiences with full English checkout.**
+[Solaniwa Onsen](https://solaniwa.com/en-us/) is an unapologetic onsen *theme park* — a sprawling Azuchi-Momoyama-styled complex near Osaka Bay where you wander between baths in a rented yukata. Purists sniff at it. Practically, it's the easiest private onsen logistics in this guide: it's in central Osaka, open until late, and **admission tickets sit on <a href="https://www.klook.com/en-US/activity/21381-solaniwa-onsen-admission-ticket-osaka/?aid=129411" rel="sponsored noopener" target="_blank">Klook</a> and Rakuten Travel Experiences with full English checkout.**
 
 Base admission runs ¥2,640. The private options go from standard rental baths up to a private open-air suite with its own tent sauna at ¥15,400 per 90 minutes — the splurge choice for a group that wants the full spa evening without leaving the city.
 
@@ -171,6 +171,6 @@ Central Tokyo is the weak spot — real hot-spring kashikiri inside the city is 
 
 ## The Bottom Line
 
-The private onsen was never the secret — the booking process was. Now you have the map: **Hakone Yuryo** for the Tokyo day trip, **Hyotan** for the Kyushu bargain, **Asuka-no-Yu** and **Solaniwa** when you want English checkout on [Klook](https://www.klook.com/en-US/activity/21381-solaniwa-onsen-admission-ticket-osaka/) and zero phone calls, **Kinosaki** for the full English-bookable ryokan town, and the keyword trick plus a front desk for everywhere else in Japan.
+The private onsen was never the secret — the booking process was. Now you have the map: **Hakone Yuryo** for the Tokyo day trip, **Hyotan** for the Kyushu bargain, **Asuka-no-Yu** and **Solaniwa** when you want English checkout on <a href="https://www.klook.com/en-US/activity/21381-solaniwa-onsen-admission-ticket-osaka/?aid=129411" rel="sponsored noopener" target="_blank">Klook</a> and zero phone calls, **Kinosaki** for the full English-bookable ryokan town, and the keyword trick plus a front desk for everywhere else in Japan.
 
 Start with one day-use session early in your trip. Worst case, you've spent ¥4,000 learning that you love hot water with a locked door — and every onsen decision after that gets easier.
