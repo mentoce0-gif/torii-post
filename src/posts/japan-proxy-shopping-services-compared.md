@@ -34,7 +34,7 @@ I've used all five of the services below. Here's the honest breakdown, including
 | **[Neokyo](https://neokyo.com/en)** | ¥350 per item (incl. domestic shipping) | Free (+¥500 packing under 2kg) | Solid coverage, simple interface | Cards, PayPal | Predictable flat-fee budgeting |
 | **[Japan Rabbit](https://japanrabbit.com/)** (formerly White Rabbit Express) | Quote-based, concierge pricing | Included in quote | **Anywhere — even stores that block proxies** | Cards | Rare finds, negotiations, hard-to-buy items |
 
-<div class="callout"><span class="callout-label">Heads up</span><p>Fees verified as of July 2026. Always double-check current rates before a large order — proxy services adjust pricing more often than you'd think.</p></div>
+<div class="callout"><span class="callout-label">Last verified: July 2026</span><p>Every fee in this table was checked against each service's own published pricing page. Always double-check current rates before a large order — proxy services adjust pricing more often than you'd think, and we date this table so you can see how stale it is.</p></div>
 
 ## How Proxy Shopping Actually Works (60-Second Version)
 
@@ -133,6 +133,8 @@ Numbers make this concrete. Say you're buying a typical collector's haul: a ¥8,
 On fees alone the three are within ¥100 of each other — practically a tie. The real gap appears in the *next* order, and the one after that: Buyee's percentage model pulls ahead if your items get cheaper, ZenMarket and FROM JAPAN pull ahead as they get pricier. Swap the ¥8,000 figure for a ¥25,000 grail and Buyee's bill jumps by ¥1,000+ while the flat-fee services don't move at all.
 
 The lesson: don't pick a service based on one comparison table (including mine). Picture your *typical* cart, run the math once, and the right answer usually becomes obvious.
+
+<div class="callout"><span class="callout-label">Do it with your own cart</span><p>We built a <a href="/tools/proxy-fee-calculator/">Japan proxy fee calculator</a> that runs exactly this comparison on your items — enter what you're actually buying and which shops it's coming from, and it shows what each service would charge in fees and domestic shipping. It runs in your browser; nothing is stored or sent anywhere.</p></div>
 
 ## Final Verdict: My Top 3
 

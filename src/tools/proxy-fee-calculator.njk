@@ -1,0 +1,400 @@
+---
+layout: layouts/base.njk
+title: "Japan Proxy Fee Calculator"
+description: "Enter your actual cart and see what ZenMarket, Buyee, FROM JAPAN and Neokyo would each charge in fees and domestic shipping. No sign-up, nothing stored."
+permalink: /tools/proxy-fee-calculator/
+image: /assets/img/og-default.png
+date: 2026-08-10
+---
+{# Styles live in the page rather than style.css: they are used by this one
+   URL, and every article would otherwise download them for nothing. #}
+<style>
+  .calc-wrap { padding: 140px 0 96px; }
+  .calc-head { max-width: 720px; margin-bottom: 44px; }
+  .calc-head h1 {
+    font-family: "Source Serif 4", Georgia, serif;
+    font-size: clamp(32px, 5vw, 46px);
+    line-height: 1.2;
+    margin: 0 0 18px;
+    letter-spacing: -0.01em;
+  }
+  .calc-head p { color: var(--muted); margin: 0 0 12px; }
+
+  .calc-grid { display: grid; gap: 28px; align-items: start; }
+  @media (min-width: 900px) { .calc-grid { grid-template-columns: 1fr 1fr; gap: 40px; } }
+
+  .calc-panel {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px;
+  }
+  .calc-panel h2 {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 20px;
+  }
+
+  .item-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: end;
+  }
+  .item-row label {
+    display: block;
+    font-size: 11px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 5px;
+  }
+  .item-row:not(:first-of-type) label { display: none; }
+  /* Two side-by-side fields leave ~110px each on a phone, which is too narrow
+     for a shop name. Stack them and let the remove button span both. */
+  @media (max-width: 560px) {
+    .item-row {
+      grid-template-columns: 1fr auto;
+      row-gap: 8px;
+      padding-bottom: 14px;
+      margin-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+    .item-row > div { grid-column: 1; }
+    .item-row .btn-remove { grid-row: 1 / span 2; align-self: center; height: 48px; }
+    .item-row label { display: block !important; }
+  }
+  .calc-wrap input[type="text"],
+  .calc-wrap input[type="number"] {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--bg);
+    color: var(--text);
+    font: inherit;
+    font-size: 15px;
+  }
+  .calc-wrap input:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+    background: var(--paper);
+  }
+  .btn-remove {
+    border: 1px solid var(--line);
+    background: var(--paper);
+    color: var(--muted);
+    border-radius: 8px;
+    width: 42px;
+    height: 43px;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+    transition: color .2s, border-color .2s;
+  }
+  .btn-remove:hover { color: var(--text); border-color: var(--muted); }
+  .btn-add {
+    margin-top: 6px;
+    border: 1px dashed var(--line);
+    background: transparent;
+    color: var(--accent);
+    border-radius: 8px;
+    padding: 11px 18px;
+    cursor: pointer;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    width: 100%;
+    transition: background .2s, border-color .2s;
+  }
+  .btn-add:hover { background: var(--accent-soft); border-color: var(--accent); }
+
+  .calc-opt {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding-top: 18px;
+    margin-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  .calc-opt > div { flex: 1; }
+  .calc-opt strong { font-size: 14px; font-weight: 600; display: block; }
+  .calc-opt span { font-size: 12.5px; color: var(--muted); line-height: 1.55; }
+  .calc-opt input[type="number"] { width: 108px; flex: none; }
+  .calc-opt input[type="checkbox"] { width: 17px; height: 17px; accent-color: var(--accent); flex: none; }
+
+  .result { border-bottom: 1px solid var(--line); padding: 16px 0; }
+  .result:last-of-type { border-bottom: 0; }
+  .result-top { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; }
+  .result-name { font-weight: 600; font-size: 16px; }
+  .result-total { font-variant-numeric: tabular-nums; font-weight: 700; font-size: 17px; white-space: nowrap; }
+  .result-break { font-size: 12.5px; color: var(--muted); margin-top: 5px; font-variant-numeric: tabular-nums; }
+  .result.best .result-name::after {
+    content: "Cheapest";
+    display: inline-block;
+    margin-left: 9px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 20px;
+    vertical-align: 2px;
+  }
+  .result.quote .result-total { color: var(--muted); font-weight: 500; font-size: 14px; }
+
+  .calc-why {
+    margin: 18px 0 0;
+    padding: 14px 16px;
+    background: var(--bg);
+    border-left: 2px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    font-size: 13px;
+    line-height: 1.65;
+    color: var(--muted);
+  }
+  .calc-why strong { color: var(--text); }
+  .calc-note {
+    background: var(--accent-soft);
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-top: 26px;
+    font-size: 13.5px;
+    line-height: 1.7;
+  }
+  .calc-note strong { display: block; margin-bottom: 6px; }
+  .calc-note ul { margin: 8px 0 0; padding-left: 20px; }
+  .calc-note li { margin-bottom: 5px; }
+  .calc-verified { font-size: 12px; color: var(--muted); margin-top: 22px; }
+  .calc-back { margin-top: 40px; font-size: 15px; }
+  .calc-back a { color: var(--accent); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+</style>
+
+<div class="calc-wrap"><div class="container">
+
+  <div class="calc-head">
+    <h1>Japan Proxy Fee Calculator</h1>
+    <p>Every proxy service looks cheapest in its own comparison table. Put your <em>actual</em> cart in below and the arithmetic decides instead.</p>
+    <p>Nothing is sent anywhere — this runs entirely in your browser.</p>
+  </div>
+
+  <div class="calc-grid">
+
+    <div class="calc-panel">
+      <h2>Your cart</h2>
+      <div id="items"></div>
+      <button type="button" class="btn-add" id="addItem">+ Add another item</button>
+
+      <div class="calc-opt">
+        <div>
+          <strong><label for="domestic">Domestic shipping per seller</label></strong>
+          <span>Each seller ships to the proxy's warehouse separately. Usually ¥500–1,000.</span>
+        </div>
+        <input type="number" id="domestic" value="650" min="0" step="50" inputmode="numeric">
+      </div>
+
+      <div class="calc-opt">
+        <div>
+          <strong><label for="packing">Small parcel (under 2 kg)</label></strong>
+          <span>Neokyo adds a ¥500 packing fee below 2 kg. Others don't.</span>
+        </div>
+        <input type="checkbox" id="packing">
+      </div>
+    </div>
+
+    <div class="calc-panel">
+      <h2>What each service would charge</h2>
+      <div id="results"></div>
+      <p class="calc-verified">Cheapest is not automatically best. Fees are the one thing arithmetic can settle; marketplace coverage, payment options, packing quality and how fast a service moves during a sale rush are not in these numbers. The <a href="/guides/japan-proxy-shopping-services-compared/" style="color:var(--accent);text-decoration:underline;text-underline-offset:2px">full guide</a> covers what each one trades away.</p>
+      <p class="calc-verified">Fee structures verified July 2026. Services change pricing more often than you'd expect — check current rates before a large order.</p>
+    </div>
+
+  </div>
+
+  <div class="calc-note">
+    <strong>What this does not include, and why</strong>
+    International shipping is deliberately left out. It is charged by weight or box volume — whichever is greater — so it depends on what you bought, not on which service you used, and no calculator can guess it honestly from a price alone. Two other costs are worth knowing about but can't be modelled either:
+    <ul>
+      <li><strong>Currency conversion.</strong> Some services apply their own exchange rate with a 2–4% spread built in. On a ¥50,000 order that is up to ¥2,000, invisibly.</li>
+      <li><strong>Packing quality.</strong> A roomier box quietly raises the international rate and can erase every yen you saved on fees.</li>
+    </ul>
+  </div>
+
+  <p class="calc-back">This calculator is the companion to our full breakdown: <a href="/guides/japan-proxy-shopping-services-compared/">Japan proxy shopping services compared</a> — what each one is actually good at, and the four hidden costs that decide your real total.</p>
+
+</div></div>
+
+<script>
+(function () {
+  var itemsEl = document.getElementById('items');
+  var resultsEl = document.getElementById('results');
+  var domesticEl = document.getElementById('domestic');
+  var packingEl = document.getElementById('packing');
+  var seq = 0;
+
+  // Seeded with the worked example from the guide so the page is useful the
+  // moment it loads: a figure, a manga lot and a CD from three sellers.
+  var SEED = [
+    { price: 8000, store: 'AmiAmi' },
+    { price: 3500, store: 'Mercari seller' },
+    { price: 2000, store: 'Yahoo! Auctions seller' }
+  ];
+
+  function yen(n) {
+    return '¥' + Math.round(n).toLocaleString('en-US');
+  }
+
+  function addRow(price, store) {
+    var id = ++seq;
+    var row = document.createElement('div');
+    row.className = 'item-row';
+    row.innerHTML =
+      '<div><label for="p' + id + '">Item price (¥)</label>' +
+      '<input type="number" id="p' + id + '" class="i-price" min="0" step="100" inputmode="numeric" value="' + (price || '') + '"></div>' +
+      '<div><label for="s' + id + '">Seller / shop</label>' +
+      '<input type="text" id="s' + id + '" class="i-store" placeholder="e.g. AmiAmi" value="' + (store || '') + '"></div>' +
+      '<button type="button" class="btn-remove" aria-label="Remove this item">×</button>';
+    itemsEl.appendChild(row);
+  }
+
+  function readCart() {
+    var rows = itemsEl.querySelectorAll('.item-row');
+    var items = [];
+    rows.forEach(function (row, i) {
+      var price = parseFloat(row.querySelector('.i-price').value);
+      if (!isFinite(price) || price <= 0) return;
+      var store = row.querySelector('.i-store').value.trim().toLowerCase();
+      // An unnamed seller is treated as its own shop — that is the safe
+      // assumption, since it costs a separate domestic shipment.
+      items.push({ price: price, store: store || ('__row' + i) });
+    });
+    return items;
+  }
+
+  // A ranking with no reasoning behind it is just an advert with a badge on it.
+  // Say which structural feature won, so the reader can check it against
+  // their own cart rather than trusting the number.
+  function explain(winner, stores, goods, n) {
+    var why = {
+      'Neokyo': 'Neokyo wins here because its ¥350 per item already covers domestic shipping to the warehouse, and you are paying ' + stores + ' separate domestic shipment' + (stores > 1 ? 's' : '') + ' everywhere else. Lower the domestic figure and this lead narrows.',
+      'ZenMarket': 'The flat ¥300 wins here because your items are expensive enough that a percentage fee costs more than a fixed one.',
+      'Buyee': 'The 6% fee wins here because your items are cheap — below roughly ¥5,000 each, a percentage costs less than a ¥300 flat fee. It flips the moment your cart gets pricier.',
+      'FROM JAPAN': 'FROM JAPAN wins here because its ¥800 per-shop cap kicks in: you are buying ' + n + ' items from only ' + stores + ' shop' + (stores > 1 ? 's' : '') + ', so the per-item fee stops climbing.'
+    };
+    if (!why[winner]) return '';
+    return '<p class="calc-why"><strong>Why:</strong> ' + why[winner] + '</p>';
+  }
+
+  function calculate() {
+    var items = readCart();
+    var domestic = Math.max(0, parseFloat(domesticEl.value) || 0);
+    var smallParcel = packingEl.checked;
+
+    if (!items.length) {
+      resultsEl.innerHTML = '<p style="color:var(--muted);font-size:14px;margin:0">Enter at least one item price to see the comparison.</p>';
+      return;
+    }
+
+    var n = items.length;
+    var goods = items.reduce(function (s, it) { return s + it.price; }, 0);
+
+    // Items from the same seller travel in one domestic shipment.
+    var byStore = {};
+    items.forEach(function (it) {
+      byStore[it.store] = (byStore[it.store] || 0) + 1;
+    });
+    var storeCount = Object.keys(byStore).length;
+    var domesticTotal = storeCount * domestic;
+
+    // FROM JAPAN caps its per-item fee at ¥800 per store order.
+    var fjFee = Object.keys(byStore).reduce(function (s, k) {
+      return s + Math.min(300 * byStore[k], 800);
+    }, 0);
+
+    var services = [
+      {
+        name: 'ZenMarket',
+        fee: 300 * n,
+        shipping: domesticTotal,
+        extra: 0,
+        note: '¥300 flat × ' + n + ' item' + (n > 1 ? 's' : '') + ', free consolidation'
+      },
+      {
+        name: 'Buyee',
+        fee: goods * 0.06,
+        shipping: domesticTotal,
+        extra: n > 1 ? 500 : 0,
+        note: '6% of ' + yen(goods) + (n > 1 ? ', + ¥500 consolidation' : '')
+      },
+      {
+        name: 'FROM JAPAN',
+        fee: fjFee,
+        shipping: domesticTotal,
+        extra: 0,
+        note: '¥300/item, capped at ¥800 per shop — ' + storeCount + ' shop' + (storeCount > 1 ? 's' : '')
+      },
+      {
+        name: 'Neokyo',
+        fee: 350 * n,
+        shipping: 0,
+        extra: smallParcel ? 500 : 0,
+        note: '¥350 × ' + n + ', domestic shipping included' + (smallParcel ? ', + ¥500 packing' : '')
+      }
+    ];
+
+    services.forEach(function (s) {
+      s.addOn = s.fee + s.shipping + s.extra;
+      s.total = goods + s.addOn;
+    });
+    services.sort(function (a, b) { return a.addOn - b.addOn; });
+    var best = services[0].addOn;
+
+    var html = services.map(function (s) {
+      var diff = s.addOn - best;
+      return '<div class="result' + (diff === 0 ? ' best' : '') + '">' +
+        '<div class="result-top"><span class="result-name">' + s.name + '</span>' +
+        '<span class="result-total">' + yen(s.total) + '</span></div>' +
+        '<div class="result-break">' + yen(s.addOn) + ' on top of goods' +
+        (diff > 0 ? ' · ' + yen(diff) + ' more than cheapest' : '') +
+        ' — ' + s.note + '</div></div>';
+    }).join('');
+
+    html += '<div class="result quote"><div class="result-top">' +
+      '<span class="result-name">Japan Rabbit</span>' +
+      '<span class="result-total">Quote only</span></div>' +
+      '<div class="result-break">Concierge pricing, quoted per request — for shops that block proxies outright</div></div>';
+
+    html += '<div class="result"><div class="result-top">' +
+      '<span class="result-name" style="color:var(--muted);font-weight:500">Goods subtotal</span>' +
+      '<span class="result-total" style="font-weight:500">' + yen(goods) + '</span></div>' +
+      '<div class="result-break">' + n + ' item' + (n > 1 ? 's' : '') + ' from ' + storeCount + ' seller' + (storeCount > 1 ? 's' : '') + ' · international shipping not included</div></div>';
+
+    resultsEl.innerHTML = html + explain(services[0].name, storeCount, goods, n);
+  }
+
+  itemsEl.addEventListener('input', calculate);
+  itemsEl.addEventListener('click', function (e) {
+    if (!e.target.classList.contains('btn-remove')) return;
+    if (itemsEl.querySelectorAll('.item-row').length <= 1) return;
+    e.target.closest('.item-row').remove();
+    calculate();
+  });
+  document.getElementById('addItem').addEventListener('click', function () {
+    addRow();
+    itemsEl.querySelector('.item-row:last-child .i-price').focus();
+    calculate();
+  });
+  domesticEl.addEventListener('input', calculate);
+  packingEl.addEventListener('change', calculate);
+
+  SEED.forEach(function (it) { addRow(it.price, it.store); });
+  calculate();
+})();
+</script>

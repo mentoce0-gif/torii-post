@@ -50,7 +50,7 @@ One important non-difference: the water is the same. A kashikiri bath at a good 
 | **Kinosaki Onsen ryokan** | Hyogo (2.5h from Kyoto) | Ryokan stays with kashikiri baths | Often free–¥3,000 with a stay | Visit Kinosaki official English booking site |
 | **Kusatsu Onsen ryokan** | Gunma (from Tokyo) | Ryokan stays with kashikiri baths | Varies; some free per stay | Booking.com / Rakuten Travel with the keyword trick below |
 
-Prices are current as of mid-2026 and move around; treat them as solid estimates, not gospel.
+<div class="callout"><span class="callout-label">Last verified: July 2026</span><p>Every price here was checked against the facility's own published information, and Hakone Yuryo was re-checked in August 2026 after we found an error in our original figure. Prices move; treat these as solid estimates, not gospel.</p></div>
 
 ## 1. Hakone Yuryo — The Tokyo Day-Trip Answer
 
