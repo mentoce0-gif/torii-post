@@ -136,6 +136,24 @@ The lesson: don't pick a service based on one comparison table (including mine).
 
 <div class="callout"><span class="callout-label">Do it with your own cart</span><p>We built a <a href="/tools/proxy-fee-calculator/">Japan proxy fee calculator</a> that runs exactly this comparison on your items — enter what you're actually buying and which shops it's coming from, and it shows what each service would charge in fees and domestic shipping. It runs in your browser; nothing is stored or sent anywhere.</p></div>
 
+## Three Questions That Pick Your Service
+
+If you skipped to the end, this is the short version. Answer these in order and stop at your first yes.
+
+**1. Are several of your items coming from the same shop?**
+→ **FROM JAPAN.** Its per-item fee stops at ¥800 per store order, so a four-item haul from one shop costs ¥800 instead of ¥1,200. Same-shop items also travel to the warehouse in a single domestic shipment, which is usually the bigger saving of the two. Nobody else caps.
+
+**2. Is most of your cart under about ¥5,000 per item?**
+→ **Buyee.** Below roughly ¥5,000 an item, a percentage fee costs less than a ¥300 flat one, and Buyee's Mercari integration is the best in the business. The maths flips as your items get pricier: by ¥25,000 the 6% fee is over ¥1,000 more expensive than the flat-fee services on that single item.
+
+**3. Have you been burned by a domestic shipping charge you didn't expect?**
+→ **Neokyo.** Its ¥350 per item already includes the trip to the warehouse. Since a domestic shipment runs ¥500–1,000 and you pay one per seller, a cart from three different sellers can cost ¥2,000 more elsewhere before anything leaves Japan. The trade is a rougher search experience and slower processing during sale rushes.
+
+**None of the above?**
+→ **ZenMarket.** For the ordinary case — a few items, a few shops, mid-range prices — the flat ¥300 and free consolidation land it in front, and the interface is the one you'll fight with least.
+
+**And if the shop refuses proxies outright** — some do — none of the above will help. That's [Japan Rabbit](https://japanrabbit.com/)'s entire reason to exist, at concierge prices.
+
 ## Final Verdict: My Top 3
 
 **🥇 1st place: ZenMarket.** The free consolidation + flat fee combination wins for the way most people actually shop — multiple items, mixed marketplaces, shipped together. It's the service I recommend to friends without caveats.
