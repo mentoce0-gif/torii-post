@@ -75,6 +75,8 @@ ZenMarket's fee now depends on where the item came from:
 | Amazon, Rakuten, most other shops | ¥500 |
 | **Mercari and JDirectItems Auction** | **¥800** |
 
+**A naming trap worth knowing before you go looking.** ZenMarket's auction section is labelled **"JDirectItems Auction"** — and the phrase "Yahoo! Auctions" appears nowhere on the site. Buyee uses the same label on its fee page, grouping "JDirectItems Auction / Mercari / Rakuma" together. So if you arrived here searching for how to buy from Yahoo! Auctions, this is the category you want, but **we could not confirm from either company's own pages that the two names describe identical inventory.** Check the listing you actually want before assuming, rather than after paying.
+
 The ¥800 tier is the one that hurts, because auctions and Mercari are exactly what most collectors are here for. Three auction wins cost ¥2,400 in fees before anything ships. There is also a **funds deposit fee starting at 1%**, which their own summary lists as always payable — so ZenMarket is not the pure flat-fee service the internet still describes.
 
 Where it remains genuinely strong is everything that isn't the headline number. **Consolidation is free.** Storage is free for **60 days** — double Buyee's — which matters more than it sounds when you're holding items waiting on a pre-order. Shipping insurance for parcels under ¥5,000,000 is included rather than sold as an add-on. And buying several units of the *same* item costs one fee, not one per unit.
@@ -147,7 +149,7 @@ Pricing is quote-based and unapologetically premium. You're paying for human tim
 
 ## A Real-World Example: The Same Cart, Three Different Bills
 
-Numbers make this concrete. Say you're buying a typical collector's haul: a ¥8,000 figure from AmiAmi, a ¥3,500 manga lot from Mercari, and a ¥2,000 CD from Yahoo! Auctions — three items, three different sellers.
+Numbers make this concrete. Say you're buying a typical collector's haul: a ¥8,000 figure from AmiAmi, a ¥3,500 manga lot from Mercari, and a ¥2,000 CD from an auction listing — three items, three different sellers.
 
 - **ZenMarket:** ¥2,100 in service fees — the AmiAmi item is an ordinary shop at ¥500, but the Mercari lot and the auction CD are ¥800 each. Free consolidation, plus ~1% on the deposit.
 - **Buyee:** ¥1,500 in purchase fees — three separate orders at ¥500 each, because the items come from three different sellers — and a roomier box that can nudge up the international rate.
@@ -239,7 +241,13 @@ Pre-orders: yes, all the major services handle them, though your storage clock a
 Typical timeline: 2–5 days for the item to reach the warehouse, then 4–10 days international express shipping. Budget two to three weeks door-to-door for a normal order, longer if you're consolidating multiple purchases.
 
 **Can I use a proxy to buy from Amazon Japan?**
-Usually you don't need to — Amazon Japan ships many items internationally itself, and its English interface is decent. Proxies earn their keep on the marketplaces that *don't* ship overseas: Mercari, Yahoo! Auctions, Rakuten sellers, Surugaya, and small specialty shops. Check Amazon's own international shipping first and save the proxy fee when you can.
+Usually you don't need to — Amazon Japan ships many items internationally itself, and its English interface is decent. Proxies earn their keep on the marketplaces that *don't* ship overseas: auctions, Mercari, Rakuten sellers, Surugaya, and small specialty shops. Check Amazon's own international shipping first and save the proxy fee when you can.
+
+**I want to buy from Yahoo! Auctions. Which service does that?**
+
+Here is a thing that will confuse you for twenty minutes if nobody warns you: **the proxy services don't use that name.** ZenMarket's auction menu lists "JDirectItems Auction" and "Selected Auctions"; the words "Yahoo! Auctions" appear nowhere on the site. Buyee's fee page uses the same "JDirectItems Auction" label, alongside Mercari and Rakuma.
+
+Both companies clearly mean *the* Japanese auction marketplace, and JDirectItems is the category to use. But we could not confirm from either company's own documentation that the naming maps one-to-one, so search for your specific item inside the proxy rather than assuming a listing you found elsewhere will be there. On fees this matters: auction purchases sit in ZenMarket's most expensive ¥800 tier.
 
 **What happens if my item arrives at the warehouse damaged or wrong?**
 This is where service quality really shows. All five services will photograph items on request (sometimes for a small fee) — use that option for anything secondhand or fragile. If a marketplace seller misrepresented an item, the proxy can usually open a dispute on your behalf, but windows are short: check your warehouse photos within a few days, not weeks. For genuinely valuable purchases, this dispute support is a strong argument for concierge-style services.
