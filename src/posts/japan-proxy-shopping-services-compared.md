@@ -12,7 +12,7 @@ category: "Buying from Japan"
 <ul>
 <li><strong>Auctions or Mercari:</strong> <a href="https://buyee.jp/?lang=en">Buyee</a>, at ¥500 per order however many items are in it. ZenMarket charges ¥800 <em>per item</em> on these two platforms.</li>
 <li><strong>Amazon, Rakuten and ordinary shops:</strong> <a href="https://zenmarket.jp/en/">ZenMarket</a> at ¥500 per item — ¥300 at its Recommended Stores — with free consolidation and 60 days of storage.</li>
-<li><strong>Auction items spread across many sellers:</strong> FROM JAPAN, at a flat ¥500 an item that ignores both price and seller count.</li>
+<li><strong>Auction items spread across many sellers:</strong> FROM JAPAN, at ¥500 per order regardless of what the item cost.</li>
 <li><strong>Rare finds and proxy-blocking stores:</strong> Japan Rabbit's human concierge.</li>
 </ul>
 </div>
@@ -31,11 +31,11 @@ I've used all five of the services below. Here's the honest breakdown, including
 |---|---|---|---|---|---|
 | **[ZenMarket](https://zenmarket.jp/en/)** | **¥300–800 per item**, by platform (+1% deposit fee) | **Free** | Auctions, Rakuten, Mercari + 1,000s of shops | PayPal, cards, crypto, bank transfer | Ordinary shops; long waits (60-day storage) |
 | **[Buyee](https://buyee.jp/?lang=en)** | **¥500 flat per order** (any number of items) | **Free** | **Official Mercari partner** | Cards, PayPal, Apple Pay | Several items from one shop; Mercari |
-| **[FROM JAPAN](https://www.fromjapan.co.jp/en/)** | **¥500 per item** (protection plan) | Free (automatic) | Wide, strong for bulk store orders | Cards, PayPal, bank transfer | Auction carts spread across sellers |
+| **[FROM JAPAN](https://www.fromjapan.co.jp/en/)** | **¥500 per order** (same item ×N counts once) | Free (automatic) | Wide, strong for bulk store orders | Cards, PayPal, bank transfer | Auction carts spread across sellers |
 | **[Neokyo](https://neokyo.com/en)** | ¥350 per item (incl. domestic shipping) | Free (+¥500 packing under 2kg) | Solid coverage, simple interface | Cards, PayPal | Predictable flat-fee budgeting |
 | **[Japan Rabbit](https://japanrabbit.com/)** (formerly White Rabbit Express) | Quote-based, concierge pricing | Included in quote | **Anywhere — even stores that block proxies** | Cards | Rare finds, negotiations, hard-to-buy items |
 
-<div class="callout"><span class="callout-label">All fees re-verified August 2026</span><p>We re-checked every service against its own published pricing in August, and corrected three of our own figures. Buyee was listed at a 6% commission — it charges a flat ¥500 per order, and consolidates for free. ZenMarket was listed at a flat ¥300 — it charges ¥300, ¥500 or ¥800 by platform, having raised its Mercari and auction rates during 2026. FROM JAPAN was listed at ¥300 with an ¥800 per-store cap — we can no longer find support for either number, and its own guide gives ¥500 per item. Those corrections are why this guide no longer ranks these services.</p></div>
+<div class="callout"><span class="callout-label">All fees re-verified August 2026</span><p>We re-checked every service against its own published pricing in August, and corrected three of our own figures. Buyee was listed at a 6% commission — it charges a flat ¥500 per order, and consolidates for free. ZenMarket was listed at a flat ¥300 — it charges ¥300, ¥500 or ¥800 by platform, having raised its Mercari and auction rates during 2026. FROM JAPAN was listed at ¥300 with an ¥800 per-store cap — its own support pages give ¥500 per order and no cap at all. Those corrections are why this guide no longer ranks these services.</p></div>
 
 ## How Proxy Shopping Actually Works (60-Second Version)
 
@@ -105,9 +105,15 @@ We could not confirm Buyee's package consolidation fee. Their FAQ says the servi
 
 ## FROM JAPAN — Flat per Item, Whatever the Item Costs
 
-FROM JAPAN has been around since the early days of proxy shopping. We previously described its fee as ¥300 per item with an ¥800 per-store cap. **Re-checking in August 2026, we can't find support for either figure.** Their own buying guide gives one number: a **Product Protection Plan at ¥500 per item**, described as applying to every purchase rather than as an upsell. If a per-store ceiling still exists, it isn't published anywhere we can reach.
+FROM JAPAN has been around since the early days of proxy shopping. We previously described its fee as ¥300 per item with an ¥800 per-store cap. **Re-checking against their own support pages in August 2026, neither figure is supported.** What they publish is a single line: **¥500 per order**, with multiple units of the same item charged once rather than per unit. No per-store ceiling appears anywhere.
 
-What survives the correction is the shape of the pricing. The fee doesn't scale with what you paid, so a ¥50,000 watch and a ¥500 keychain cost the same ¥500 to buy — and buying several units of the *same* item in one transaction is charged once, not per unit. Against ZenMarket's ¥800 on auctions and Mercari, that flat ¥500 is the cheaper answer for auction-heavy carts spread across sellers, which is precisely where Buyee's per-order pricing falls apart.
+The fee doesn't scale with what you paid, so a ¥50,000 watch and a ¥500 keychain cost the same to buy. Against ZenMarket's ¥800 on auctions and Mercari, that ¥500 is the cheaper answer for auction-heavy carts, which is precisely where Buyee's per-order pricing falls apart.
+
+Their billing runs in two stages, and it catches first-timers. **Charge 1 is the item price alone.** Charge 2 arrives only after the goods reach the warehouse and get weighed, and bundles the international shipping, the ¥500 fee, any domestic shipping, and customs where it applies. You genuinely cannot know your total at the point of ordering — which is honest of them, since the shipping is measured rather than estimated, but it means budgeting on the first number is a mistake.
+
+One trap they document themselves, and it is the same one Buyee has: **a listing marked "free shipping" can still generate a domestic shipping charge.** Japanese sellers offering free delivery often mean untracked mail, and FROM JAPAN requires a trackable method, so the difference lands on your bill.
+
+Worth knowing before you click: **once they have bought the item, cancellation is essentially off the table.** Their support page says purchases cannot in principle be cancelled after the buying process completes, regardless of what the seller does.
 
 Their "Buy for me" concierge option is also worth knowing about. For listings that are confusing, bundle-only, or require seller communication, their staff will handle the back-and-forth in Japanese. It's slower, but it opens doors the automated services can't.
 
@@ -182,7 +188,7 @@ If you skipped the reviews, this is the short version. Answer these in order and
 
 This guide used to end with a numbered podium, ZenMarket in first place. We've removed it, and it's worth explaining why rather than quietly editing it out.
 
-We re-checked every fee in August 2026 and found three of our own figures were wrong. Buyee was listed at 6% of item price; it actually charges ¥500 per order. ZenMarket was listed at a flat ¥300; it actually charges ¥300, ¥500 or ¥800 depending on the platform. FROM JAPAN's ¥800 per-store cap turned out to be unsupported too. Every correction pointed the same direction: **a single ranking was hiding the fact that these services win and lose on completely different carts.**
+We re-checked every fee in August 2026 and found three of our own figures were wrong. Buyee was listed at 6% of item price; it actually charges ¥500 per order. ZenMarket was listed at a flat ¥300; it actually charges ¥300, ¥500 or ¥800 depending on the platform. FROM JAPAN's ¥300 fee and ¥800 per-store cap turned out to be unsupported too — it charges ¥500 per order. Every correction pointed the same direction: **a single ranking was hiding the fact that these services win and lose on completely different carts.**
 
 The same three items cost ¥1,500 at FROM JAPAN and ¥2,100 at ZenMarket when bought from auctions — then ¥500 at Buyee when bought from one shop instead. No ordering of those services survives contact with both carts. A podium would just be us picking one reader and ignoring the rest.
 
