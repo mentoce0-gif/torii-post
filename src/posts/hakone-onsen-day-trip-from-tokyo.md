@@ -96,7 +96,7 @@ Be clear on how it's priced, because the internet is full of stale figures, incl
 
 **There is no hourly rate and no shorter slot — 120 minutes is the minimum booking.** Extensions run in 30-minute blocks from ¥2,600. The main bathhouse is a separate charge on top if you want both: ¥1,000 per adult on weekdays, ¥1,300 at weekends. You can also skip the main baths entirely and just use your room.
 
-Reservations open a month ahead by phone, and **from 17 August 2026 you can book online** rather than calling. If you're reading this after that date, that's your easiest path. For the wider question of reserving private baths across Japan in English, we've covered that in [our private onsen guide](/guides/private-onsen-japan-book-in-english/).
+Reservations open a month ahead by phone, and **from 17 August 2026 you can book online** rather than calling. If you're reading this after that date, that's your easiest path. For the wider question of reserving private baths across Japan in English, we've covered that in [our private onsen guide](/guides/private-onsen-japan-book-in-english/). And if you would rather stay the night than day-trip it, Hakone has 114 ryokan bookable in English — we go through [what to check before paying for a room with its own bath](/guides/ryokan-private-onsen-bath-what-to-check/).
 
 **Go if:** you want the polished version, or you have tattoos and want a proper communal soak without negotiating.
 

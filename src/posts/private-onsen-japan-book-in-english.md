@@ -39,6 +39,8 @@ One thing worth checking rather than assuming: whether the private bath actually
 
 **Route 3: A room with its own open-air bath.** The no-compromise option: your own rotenburo on your own balcony, no time limits. Expect ¥40,000–100,000+ per night for two with meals. If it's a honeymoon or a once-in-a-lifetime splurge, this is the one — and it's also by far the easiest to book in English, because room inventory lives on international booking sites.
 
+One warning before you pay that premium: **the bath in the room is not always hot spring water.** At Kinosaki it is officially never hot spring water, by town regulation. We set out what to check, and the two questions to send the property, in [what to check before paying for a room with a private onsen bath](/guides/ryokan-private-onsen-bath-what-to-check/).
+
 ## Six Places That Take English Bookings: The Comparison
 
 | Place | Where | Type | Private bath cost | How to book in English |
