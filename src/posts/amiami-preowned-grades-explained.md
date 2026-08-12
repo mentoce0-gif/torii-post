@@ -8,7 +8,7 @@ category: "Buying from Japan"
 ---
 <div class="quick-answer">
 <span class="qa-label">Quick answer</span>
-<p><strong>AmiAmi grades run conservative — in the buyer's favor.</strong> S, A and A− are new figures in practice. B+ looks new and is the best value-to-risk ratio on the site. B arrives near-mint roughly nine times out of ten. C has a real flaw, honestly described in the listing. There is no A+ grade, whatever other guides tell you.</p>
+<p><strong>AmiAmi grades run conservative — in the buyer's favor.</strong> The scale is <strong>A, A−, B+, B, C, J</strong> — there is no A+ and no S, whatever other guides tell you. A and A− are unopened figures. B+ is opened but undamaged, and the best value-to-risk ratio on the site. B officially has visible wear and usually arrives better than that. C has a real flaw, or is missing a minor part.</p>
 <p>The one genuine trap: <strong>BOX grades are vague.</strong> Ignore them if you display your figures; avoid anything below BOX:B+ if you collect mint-in-box.</p>
 </div>
 
@@ -47,25 +47,18 @@ These are graded independently, and they matter to completely different people. 
 
 | Grade | Official meaning | What typically arrives | Typical discount vs new | Best for |
 |---|---|---|---|---|
-| **S** | New — unused and unopened | A new figure | Smallest | Grail hunters who want zero risk |
-| **A** | Like new — sealed, unopened or apparently unopened | A new figure | Small | Sold-out items you want factory-fresh |
-| **A−** | Like new — not sealed by the maker, but appears unopened | Indistinguishable from new | Modest | Safest secondhand buy on the site |
-| **B+** | Practically like new | Looks new; flaws require deliberate searching | Solid | **Best value-to-risk ratio** |
-| **B** | Minor wear possible | Near-mint ~90% of the time; rare small cosmetic flaws | 30–50% | Display collectors |
-| **C** | Real flaws, described in listing | The described flaw, often milder than it sounds | Steep | Bargain hunters who read listings |
-| **J** | Junk / as-is | Broken or incomplete | Massive | Parts, repaints, customs |
+| **A** | Seal intact; unopened, or looks unopened | A new figure | Small | Sold-out items you want factory-fresh |
+| **A−** | No seal applied by design, but looks unopened | Indistinguishable from new | Modest | Safest secondhand buy on the site |
+| **B+** | Opened; no damage found; all contents present | Looks new | Solid | **Best value-to-risk ratio** |
+| **B** | Opened; some dirt or damage visible; all contents present | Usually better than that sounds | 30–50% | Display collectors |
+| **C** | Opened; damage is noticeable, *or* a minor accessory is missing | The flaw, often milder than expected | Steep | Bargain hunters who read listings |
+| **J** | Item or a major accessory missing, heavy damage, or doesn't work | Broken or incomplete | Massive | Parts, repaints, customs |
 
-<div class="callout"><span class="callout-label">Grades re-verified August 2026</span><p>We had the top of this scale wrong. Earlier versions of this guide described an "A+" grade and defined A as "opened, like new." AmiAmi's published condition definitions have no A+ at all: the scale runs S (new, unused and unopened), A (sealed, unopened or apparently unopened), then A− (not sealed but apparently unopened). The correction is throughout. Discount ranges remain our own observations rather than official policy — pre-owned prices track the aftermarket, so a sold-out grail can cost more than its original MSRP at any grade.</p></div>
+<div class="callout"><span class="callout-label">Grades re-verified against AmiAmi's own page, August 2026</span><p>This scale has been wrong here twice, so here is exactly what changed. We originally described an <strong>A+</strong> grade and defined A as "opened, like new" — there is no A+, and A means the seal is intact. We then corrected it to start at <strong>S</strong>, taken from a secondary source; there is no S either. AmiAmi's published scale runs <strong>A, A−, B+, B, C, J</strong> for the item and <strong>A, B, C, N</strong> for the box, and the definitions in the table above are now translated directly from it. Discount ranges remain our own observation rather than official policy.</p></div>
 
 ## The Grades, From Best to Worst
 
 Here's the official meaning of each grade — and, more usefully, what my orders and the collective experience of the collector community say actually arrives.
-
-### S — New
-
-AmiAmi's top pre-owned grade: guaranteed unused and unopened. Functionally a new figure that happens to have passed through someone else's hands, usually of something now sold out — which is the entire appeal.
-
-**What actually arrives:** a new figure. The only caveat is that "unopened" says nothing about the box condition — check the BOX grade if shelf presentation matters to you.
 
 ### A — Like New, Sealed
 
@@ -79,31 +72,33 @@ Not sealed by the maker, but shows every sign of never having been opened. This 
 
 **What actually arrives:** indistinguishable from new in nearly every case. The discount over new is usually modest, and for sold-out items this is the safest possible secondhand buy.
 
-### B+ — Practically Like New
+### B+ — Opened, But Undamaged
 
-The grade AmiAmi uses when an item is essentially flawless but they can't quite justify an A — maybe it was clearly displayed for a while, maybe the accessories bag was unsealed.
+The official definition is precise and better than most people assume: **opened, no damage found, and every included part present.** It is not "an A with reservations" — it is the top of the opened grades, and AmiAmi is asserting the item is undamaged rather than hedging.
 
 **What actually arrives:** community consensus, which matches my experience exactly, is that B+ looks like new. If you can find any defect at all, it will take deliberate searching under strong light. B+ items are, for my money, the single best value-to-risk ratio on the site.
 
 ### B — Minor Wear (The Sweet Spot, With an Asterisk)
 
-Here's the grade that scares everyone, and shouldn't. Officially it means visible minor wear or damage is possible: small paint transfers, light dust, tiny marks.
+Here's the grade that scares everyone. Read the official wording carefully, because it is stronger than English guides usually render it: **opened, some dirt or damage is *visible*, all contents present.** Not "may have" — AmiAmi is saying there is something there. What separates B from C is that on a B, everything is still in the box.
 
 **What actually arrives:** the overwhelming majority of B items arrive looking new or near-new. Long-running community threads on this are almost comical — thread after thread of "I nervously ordered a B/B and it was flawless." One collector who documented dozens of B purchases reported finding genuine (still small) flaws on roughly two out of thirty figures. That matches my own hit rate almost exactly: most Bs are indistinguishable from new; occasionally one has a faint paint transfer or a tiny scuff you'd need to hunt for.
 
-The asterisk: B is also the widest grade, and *sometimes* — rarely — a B item has a flaw that's real, like a visible-at-arm's-length paint rub. If a specific defect were significant, AmiAmi would typically note it in the listing or bump the item to C. No note usually means nothing worth noting.
+The asterisk cuts both ways, and it is worth being honest about it. **The official definition and our experience disagree**, and we are not going to pretend otherwise: AmiAmi's page says damage is visible, while most B items we and the community have received look near-new. Our reading is that this is the conservative grading working as intended — the definition describes the worst a B may be, not the average. But it is their definition, not ours, and a B that arrives with a visible scuff is AmiAmi delivering exactly what it promised.
 
 **Buy B if:** you display your figures and you like saving 30–50%. Skip B if you're the kind of collector who inspects paint edges with a loupe and loses sleep over a dust particle.
 
-### C — Real Flaws, Honestly Disclosed
+### C — Real Flaws, Usually Disclosed
 
-C is where "pre-owned" starts meaning what Westerners expect it to mean. Expect a genuine flaw: discoloration, a paint chip, a loose joint, a missing minor accessory. The crucial difference from B: **for C-grade items, AmiAmi describes the specific damage on the product page.** Read that note — it tells you exactly what you're accepting, and the discounts are steep.
+C is where "pre-owned" starts meaning what Westerners expect it to mean. The official definition covers two different situations: **damage that is noticeable, *or* a non-essential accessory missing.** Those are not the same purchase, and the listing is where you find out which one you're looking at.
+
+In practice AmiAmi usually describes the specific problem on C listings, which is the difference that makes them buyable — but note that this is a habit we have observed rather than a policy stated on their condition page. **Read the listing. If it says nothing, ask before you buy rather than assuming.**
 
 **What actually arrives:** the flaw described, and usually not more. Collectors regularly report the described damage being *less* noticeable in person than the warning suggested — "slight discoloration on the knees" that you can't see from two feet away. C items are genuine bargains for display collectors who don't mind the specific documented flaw.
 
 ### J — Junk
 
-Significant damage, missing parts, broken pieces — sold explicitly as-is, mostly for parts harvesters, repainters, and customizers. You will know what you're getting into; the listing says so plainly. Not for normal collecting, excellent for kitbashing raw material.
+The item or a major accessory is missing, the damage is heavy, or it doesn't work — that last one matters for anything with moving or electronic parts. Sold explicitly as-is, mostly for parts harvesters, repainters, and customizers. You will know what you're getting into; the listing says so plainly. Not for normal collecting, excellent for kitbashing raw material.
 
 ## The One Genuine Trap: BOX Grades
 
@@ -111,13 +106,25 @@ Now for the quirk that actually catches people. Item grading is conservative and
 
 Two reasons. First, unlike C-grade *items*, AmiAmi generally doesn't write damage descriptions for C-grade *boxes* — a C box might be lightly creased, or torn, or crushed, or missing its window film; you won't know which until it arrives. Second, box condition genuinely matters less to the grading process, so the line between box grades is blurrier.
 
-**There is also a BOX:N, and it means there is no box at all.** It's easy to skim past when you're reading the item grade, and no amount of ITEM:A makes up for it if the packaging was the point.
+**There is also a BOX:N, and it means there is no box at all.** It's easy to skim past when you're reading the item grade, and no amount of ITEM:A makes up for it if the packaging was the point. One nuance worth knowing before you assume the worst: AmiAmi's definition of N explicitly **includes items that never shipped with a box in the first place**, so N is not automatically evidence that a previous owner threw the packaging away.
 
 Practical guidance:
 
 - **Display collectors:** ignore box grades entirely. This is your discount lever — an ITEM:A/BOX:C listing is often dramatically cheaper for a figure in perfect condition.
 - **Mint-in-box collectors:** treat any box grade below B+ as a coin flip, check for BOX:N before anything else, and consider paying up for an S or A listing instead.
 - **One edge case worth knowing:** a severely damaged box can occasionally compromise protection in transit. It's rare — AmiAmi packs well — but if you're ordering a heavy scale figure with a BOX:C, understand the inner blister is doing all the work.
+
+## Four Things the Grade Doesn't Cover
+
+The condition ranks describe the item and the box. Four categories sit outside them entirely, and AmiAmi says so on the same page most buyers never open.
+
+**Paper inserts, entry tickets, download codes and batteries are not guaranteed** — neither their presence nor whether they still work. A download code in a pre-owned box may already have been redeemed. If the code is the reason you're buying, pre-owned is the wrong market.
+
+**Candy is not guaranteed either.** *Shokugan* — the collectible figures sold legally as confectionery — are graded on the figure, not the sweet in the box.
+
+**Stickiness on older figures is not a defect you can return.** This is the one that catches Western collectors, and it is worth understanding rather than fearing. Soft PVC releases plasticiser over years, and figures a few years past release can develop a faintly tacky surface. **AmiAmi states plainly that this is a property of the material and is not exchangeable.** It is not a grading failure and it is not damage — it is what old PVC does. Factor it into anything from the early 2010s or before.
+
+**You don't get the shipping carton.** Only the product packaging. Irrelevant to most people, relevant if you resell.
 
 ## The Other Thing Nobody Tells You: There Are No Individual Photos
 
@@ -142,10 +149,10 @@ The cheapest way for AmiAmi to avoid it is to under-promise: grade a like-new fi
 
 After years of doing this, here's the decision framework I actually use:
 
-1. **Sold-out grail at a fair price?** Buy at S, A, A− or B+ without hesitation. These are new figures wearing pessimistic labels.
+1. **Sold-out grail at a fair price?** Buy at A, A− or B+ without hesitation. A and A− are unopened; B+ is opened with no damage found and nothing missing.
 2. **Display figure, best value?** B is the sweet spot. Expect ~90% odds of near-mint, accept the small chance of a minor cosmetic flaw you'll forget about in a week.
 3. **Deep discount hunting?** Read C listings carefully. If the described flaw is somewhere invisible (back of the base, underside, box-only issues), these are the best prices on authentic figures anywhere on the internet.
-4. **MIB/resale collecting?** Only S/A with BOX:A or B+, and accept that pre-owned may not be your market.
+4. **MIB/resale collecting?** Only A or A− with BOX:A, and accept that pre-owned may not be your market.
 5. **Never** buy J unless you own hobby knives and know why.
 
 One more habit worth stealing: pre-owned stock is one-of-a-kind. When a well-priced B+ of a rare figure appears, it's gone in hours. Decide your personal grade threshold *before* the figure you want shows up, so you can act instead of deliberating while someone in another timezone checks out your cart.
@@ -198,7 +205,7 @@ Fast. Each listing is one physical unit, and well-priced B+ copies of popular fi
 
 ## The Bottom Line
 
-AmiAmi's pre-owned grades are that rare thing on the internet: a rating system biased in the *buyer's* favor. S, A and A− are new figures in practice, B+ is the best value-to-risk ratio on the site, B is a bargain with a small asterisk, and C tells you honestly what's wrong before you pay. The only real trap is trusting box grades if mint packaging matters to you.
+AmiAmi's pre-owned grades are that rare thing on the internet: a rating system biased in the *buyer's* favor. A and A− are unopened figures, B+ is opened and undamaged and the best value-to-risk ratio on the site, B is a bargain that officially admits to wear and usually doesn't show it, and C tells you what's wrong — usually. The real traps are box grades if mint packaging matters to you, and BOX:N, which means no box at all.
 
 Set your grade threshold, ignore the box rating if you're a display collector, and that two-years-sold-out grail suddenly costs 40% less than everyone else is paying for it.
 
