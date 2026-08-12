@@ -223,8 +223,8 @@ date: 2026-08-10
       <h2>What each service would charge</h2>
       <div id="results"></div>
       <p class="calc-verified">Cheapest is not automatically best. Fees are the one thing arithmetic can settle; marketplace coverage, payment options, packing quality and how fast a service moves during a sale rush are not in these numbers. The <a href="/guides/japan-proxy-shopping-services-compared/" style="color:var(--accent);text-decoration:underline;text-underline-offset:2px">full guide</a> covers what each one trades away.</p>
-      <p class="calc-verified">ZenMarket's rate depends on where each item came from, so set "Bought from" per item — auctions and Mercari cost ¥800 against ¥300 at a Recommended Store. Its 1% funds deposit fee is included at the 1% floor; the real figure depends on your payment method. Buyee is calculated with its ¥0 Lite guarantee plan, not the ¥500 one it recommends, and its consolidation fee is left out because we could not confirm the current figure — we would rather leave a gap than guess.</p>
-      <p class="calc-verified">ZenMarket and Buyee re-checked against their own published pricing in August 2026; FROM JAPAN and Neokyo were verified in July 2026. Services change pricing more often than you'd expect — check current rates before a large order.</p>
+      <p class="calc-verified">ZenMarket's rate depends on where each item came from, so set "Bought from" per item — auctions and Mercari cost ¥800 against ¥300 at a Recommended Store. Its 1% funds deposit fee is included at the 1% floor; the real figure depends on your payment method. Buyee is calculated with its ¥0 Lite guarantee plan rather than the ¥500 one it recommends, and its consolidation is free. FROM JAPAN's ¥500 is its Product Protection Plan, which its own guide describes as applying to every item.</p>
+      <p class="calc-verified">All four re-checked against each company's own published pricing in August 2026. Neokyo's ¥350 does include domestic shipping to its warehouse, which is why it has no domestic line here. Services change pricing more often than you'd expect — check current rates before a large order.</p>
     </div>
 
   </div>
@@ -311,7 +311,7 @@ date: 2026-08-10
       'Neokyo': 'Neokyo wins here because its ¥350 per item already covers domestic shipping to the warehouse, and you are paying ' + stores + ' separate domestic shipment' + (stores > 1 ? 's' : '') + ' everywhere else. Lower the domestic figure and this lead narrows.',
       'ZenMarket': 'ZenMarket wins here on the mix of shops you picked. Its fee is per item but the rate depends on where the item came from — ¥300 at a Recommended Store, ¥500 at most shops, ¥800 on auctions and Mercari. Switch an item to auction and watch this change.',
       'Buyee': 'Buyee wins here because its ¥500 is charged per order rather than per item: you are buying ' + n + ' items across ' + stores + ' shop' + (stores > 1 ? 's' : '') + ', so the fee stops climbing while the per-item services keep going. Split the same cart across more shops and it reverses.',
-      'FROM JAPAN': 'FROM JAPAN wins here because its ¥800 per-shop cap kicks in: you are buying ' + n + ' items from only ' + stores + ' shop' + (stores > 1 ? 's' : '') + ', so the per-item fee stops climbing.'
+      'FROM JAPAN': 'FROM JAPAN wins here on a flat ¥500 an item, which beats ZenMarket once your items come from auctions or Mercari and beats Buyee once your cart is spread across several shops.'
     };
     if (!why[winner]) return '';
     return '<p class="calc-why"><strong>Why:</strong> ' + why[winner] + '</p>';
@@ -338,10 +338,10 @@ date: 2026-08-10
     var storeCount = Object.keys(byStore).length;
     var domesticTotal = storeCount * domestic;
 
-    // FROM JAPAN caps its per-item fee at ¥800 per store order.
-    var fjFee = Object.keys(byStore).reduce(function (s, k) {
-      return s + Math.min(300 * byStore[k], 800);
-    }, 0);
+    // FROM JAPAN's own buying guide gives a mandatory 500 yen per item and
+    // mentions no per-shop ceiling. We previously modelled 300 with an 800 cap
+    // and can no longer find support for either number.
+    var fjFee = 500 * n;
 
     // ZenMarket bills per item at a rate set by where the item came from.
     var zenFee = 0;
@@ -379,7 +379,7 @@ date: 2026-08-10
         fee: fjFee,
         shipping: domesticTotal,
         extra: 0,
-        note: '¥300/item, capped at ¥800 per shop — ' + storeCount + ' shop' + (storeCount > 1 ? 's' : '')
+        note: '¥500 × ' + n + ' item' + (n > 1 ? 's' : '') + ' (protection plan, not optional)'
       },
       {
         name: 'Neokyo',
