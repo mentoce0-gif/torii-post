@@ -36,7 +36,9 @@ Almost every solution falls into one of three buckets, and knowing which one you
 
 **Route 2: Cover it.** Waterproof cover seals work for small, isolated tattoos at facilities whose rule is "nothing visible." They do nothing at facilities whose rule is "no tattooed guests," and they are useless for anything larger than a playing card. More on the real limits below.
 
-**Route 3: Rent the room.** Book a private bath — *kashikiri* — and the policy question evaporates, because there is nobody to be uncomfortable. This is the universal fallback and it works everywhere in Japan, including at the strictest resorts. We wrote the full guide to that separately: [private onsen you can book in English](/guides/private-onsen-japan-book-in-english/).
+**Route 3: Rent the room.** Book a private bath — *kashikiri* — and the policy question usually evaporates, because there is nobody to be uncomfortable. It's the most reliable fallback in Japan, and it works at resorts that would never let you into the main bath.
+
+One caveat, because "private bath means the rules don't apply" is repeated everywhere and isn't quite true: **some facilities enforce their tattoo policy at the front door, not at the bath.** Solaniwa Onsen in Osaka is the clearest example — its policy requires every tattoo visible from your yukata to be covered with stickers it sells, and that applies while you are anywhere inside the building, private room booked or not. Check whether the rule is written about *the bath* or about *the facility* before you rely on this. We wrote the full guide separately: [private onsen you can book in English](/guides/private-onsen-japan-book-in-english/).
 
 Most trips end up using two of the three. You take the tattoo-friendly town for the real experience, and keep a private bath in your pocket for the night you end up somewhere else.
 
@@ -69,6 +71,8 @@ Prices are mid-2026 and the Tokyo ¥550 is the prefecture's regulated bathhouse 
 If you only remember one name from this page, make it this one. Kinosaki is a small onsen town on the Sea of Japan side of Hyogo, about two and a half hours from Kyoto, and it did something no other onsen destination has done: it aligned every public bathhouse behind a single policy instead of leaving each one to decide.
 
 All seven *soto-yu* — Sato-no-yu, Jizo-yu, Yanagi-yu, Ichino-yu, Gosho-no-yu, Mandara-yu and Ko-no-yu — admit tattoos of any size, with no requirement to cover anything. The town's official tourism site states it plainly rather than burying it in an FAQ, which is itself a signal: a place that is quietly tolerant doesn't advertise.
+
+**Two of the seven are shut as of August 2026, so plan for five.** Sato-no-yu has been closed for renovations since April 2024 with no announced reopening, and Ko-no-yu is closed from 11 May to 30 October 2026. The tattoo policy is unchanged at the others, but the "walk all seven in a yukata" itinerary you'll read elsewhere isn't currently possible — check the official bathhouse status page before you build a day around it.
 
 The experience is the reason to go rather than the policy. You stay at a ryokan, you change into a yukata and wooden sandals, and you spend the evening walking between bathhouses along a willow-lined canal with a pass that gets you into all of them. It is the closest thing Japan has to a hot-spring pub crawl, and doing it without calculating who can see what is the entire point.
 

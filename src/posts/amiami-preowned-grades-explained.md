@@ -8,7 +8,7 @@ category: "Buying from Japan"
 ---
 <div class="quick-answer">
 <span class="qa-label">Quick answer</span>
-<p><strong>AmiAmi grades run conservative — in the buyer's favor.</strong> A+ and A are new figures in practice. B+ looks new and is the best value-to-risk ratio on the site. B arrives near-mint roughly nine times out of ten. C has a real flaw, honestly described in the listing.</p>
+<p><strong>AmiAmi grades run conservative — in the buyer's favor.</strong> S, A and A− are new figures in practice. B+ looks new and is the best value-to-risk ratio on the site. B arrives near-mint roughly nine times out of ten. C has a real flaw, honestly described in the listing. There is no A+ grade, whatever other guides tell you.</p>
 <p>The one genuine trap: <strong>BOX grades are vague.</strong> Ignore them if you display your figures; avoid anything below BOX:B+ if you collect mint-in-box.</p>
 </div>
 
@@ -47,30 +47,37 @@ These are graded independently, and they matter to completely different people. 
 
 | Grade | Official meaning | What typically arrives | Typical discount vs new | Best for |
 |---|---|---|---|---|
-| **A+** | Unopened | A new figure | Small | Grail hunters who want zero risk |
-| **A** | Opened, like new | Indistinguishable from new | Modest | Safest secondhand buy on the site |
+| **S** | New — unused and unopened | A new figure | Smallest | Grail hunters who want zero risk |
+| **A** | Like new — sealed, unopened or apparently unopened | A new figure | Small | Sold-out items you want factory-fresh |
+| **A−** | Like new — not sealed by the maker, but appears unopened | Indistinguishable from new | Modest | Safest secondhand buy on the site |
 | **B+** | Practically like new | Looks new; flaws require deliberate searching | Solid | **Best value-to-risk ratio** |
 | **B** | Minor wear possible | Near-mint ~90% of the time; rare small cosmetic flaws | 30–50% | Display collectors |
 | **C** | Real flaws, described in listing | The described flaw, often milder than it sounds | Steep | Bargain hunters who read listings |
 | **J** | Junk / as-is | Broken or incomplete | Massive | Parts, repaints, customs |
 
-<div class="callout"><span class="callout-label">Heads up</span><p>Discount ranges are my observations from years of browsing, not official policy — pre-owned prices track the aftermarket, so a sold-out grail can cost more than its original MSRP at any grade.</p></div>
+<div class="callout"><span class="callout-label">Grades re-verified August 2026</span><p>We had the top of this scale wrong. Earlier versions of this guide described an "A+" grade and defined A as "opened, like new." AmiAmi's published condition definitions have no A+ at all: the scale runs S (new, unused and unopened), A (sealed, unopened or apparently unopened), then A− (not sealed but apparently unopened). The correction is throughout. Discount ranges remain our own observations rather than official policy — pre-owned prices track the aftermarket, so a sold-out grail can cost more than its original MSRP at any grade.</p></div>
 
 ## The Grades, From Best to Worst
 
 Here's the official meaning of each grade — and, more usefully, what my orders and the collective experience of the collector community say actually arrives.
 
-### A+ — Unopened
+### S — New
 
-The seal was never broken. Functionally this is a new figure that happens to have passed through someone else's hands. You'll pay the smallest discount versus new stock, and honestly, if the price gap is small, these are effectively new figures — sometimes of sold-out items, which is the entire appeal.
+AmiAmi's top pre-owned grade: guaranteed unused and unopened. Functionally a new figure that happens to have passed through someone else's hands, usually of something now sold out — which is the entire appeal.
 
 **What actually arrives:** a new figure. The only caveat is that "unopened" says nothing about the box condition — check the BOX grade if shelf presentation matters to you.
 
-### A — Opened, Like New
+### A — Like New, Sealed
 
-Opened, possibly assembled once, with no visible flaws. Think "display piece that lived in a dust-free cabinet for a month."
+The maker's seal is intact, or the item is otherwise unopened as far as AmiAmi can tell. Note that this is **not** the "opened but tidy" grade that a lot of English guides describe it as — including, until August 2026, this one.
 
-**What actually arrives:** indistinguishable from new in nearly every case. I have never personally received an A-grade item with a flaw I could find. The discount over new is usually modest, but for sold-out items this is the safest possible secondhand buy.
+**What actually arrives:** a new figure, same as S in practice.
+
+### A− — Like New, Unsealed
+
+Not sealed by the maker, but shows every sign of never having been opened. This is the grade that does the work most people think A does.
+
+**What actually arrives:** indistinguishable from new in nearly every case. The discount over new is usually modest, and for sold-out items this is the safest possible secondhand buy.
 
 ### B+ — Practically Like New
 
@@ -104,10 +111,12 @@ Now for the quirk that actually catches people. Item grading is conservative and
 
 Two reasons. First, unlike C-grade *items*, AmiAmi generally doesn't write damage descriptions for C-grade *boxes* — a C box might be lightly creased, or torn, or crushed, or missing its window film; you won't know which until it arrives. Second, box condition genuinely matters less to the grading process, so the line between box grades is blurrier.
 
+**There is also a BOX:N, and it means there is no box at all.** It's easy to skim past when you're reading the item grade, and no amount of ITEM:A makes up for it if the packaging was the point.
+
 Practical guidance:
 
 - **Display collectors:** ignore box grades entirely. This is your discount lever — an ITEM:A/BOX:C listing is often dramatically cheaper for a figure in perfect condition.
-- **Mint-in-box collectors:** treat any box grade below B+ as a coin flip, and consider paying up for A/A listings instead.
+- **Mint-in-box collectors:** treat any box grade below B+ as a coin flip, check for BOX:N before anything else, and consider paying up for an S or A listing instead.
 - **One edge case worth knowing:** a severely damaged box can occasionally compromise protection in transit. It's rare — AmiAmi packs well — but if you're ordering a heavy scale figure with a BOX:C, understand the inner blister is doing all the work.
 
 ## The Other Thing Nobody Tells You: There Are No Individual Photos
@@ -125,7 +134,7 @@ How to shop comfortably inside this policy:
 
 ## Why AmiAmi Grades So Conservatively
 
-This isn't altruism; it's incentive design, and it works in your favor. AmiAmi's dispute process is slow and manual — if you report a misgraded item, they request photos, review internally for about a week, and if they agree it was their error, compensate with points (reports in the community cluster around 600–800 points, roughly ¥600–800). That process is expensive for them and mildly unsatisfying for you.
+This isn't altruism; it's incentive design, and it works in your favor. AmiAmi's dispute process is slow and manual — if you report a misgraded item, they request photos, review internally for about a week, and if they agree it was their error, compensate with points. (Collectors report figures clustering around 600–800 points, roughly ¥600–800; AmiAmi publishes no compensation schedule, so treat that as anecdote rather than entitlement.) That process is expensive for them and mildly unsatisfying for you.
 
 The cheapest way for AmiAmi to avoid it is to under-promise: grade a like-new figure as B, so almost every customer is pleasantly surprised and disputes stay rare. That's exactly the pattern thousands of orders confirm. When a company's lazy path and your interests point the same direction, you can relax a little.
 
@@ -133,10 +142,10 @@ The cheapest way for AmiAmi to avoid it is to under-promise: grade a like-new fi
 
 After years of doing this, here's the decision framework I actually use:
 
-1. **Sold-out grail at a fair price?** Buy at A+, A, or B+ without hesitation. These are new figures wearing pessimistic labels.
+1. **Sold-out grail at a fair price?** Buy at S, A, A− or B+ without hesitation. These are new figures wearing pessimistic labels.
 2. **Display figure, best value?** B is the sweet spot. Expect ~90% odds of near-mint, accept the small chance of a minor cosmetic flaw you'll forget about in a week.
 3. **Deep discount hunting?** Read C listings carefully. If the described flaw is somewhere invisible (back of the base, underside, box-only issues), these are the best prices on authentic figures anywhere on the internet.
-4. **MIB/resale collecting?** Only A+/A with BOX:A or B+, and accept that pre-owned may not be your market.
+4. **MIB/resale collecting?** Only S/A with BOX:A or B+, and accept that pre-owned may not be your market.
 5. **Never** buy J unless you own hobby knives and know why.
 
 One more habit worth stealing: pre-owned stock is one-of-a-kind. When a well-priced B+ of a rare figure appears, it's gone in hours. Decide your personal grade threshold *before* the figure you want shows up, so you can act instead of deliberating while someone in another timezone checks out your cart.
@@ -179,7 +188,7 @@ For display collectors, almost always. The community's collective experience —
 Because the figure sold out years ago and the pre-owned market has repriced it. AmiAmi prices pre-owned stock against the current aftermarket, not the original MSRP. It can still be the cheapest authentic copy available anywhere.
 
 **What if my item arrives worse than its grade?**
-Contact AmiAmi with photos promptly. They review internally (expect about a week) and typically compensate confirmed misgrades with store points in the several-hundred-yen range. It's not a generous process, but you'll rarely need it — misgrades in the harsh direction are genuinely uncommon.
+Contact AmiAmi with photos promptly. They review internally (expect about a week) and, where they accept the error, have compensated collectors with store points in the several-hundred-yen range. There is no published policy setting that amount, so don't treat it as a guaranteed remedy. It's not a generous process, but you'll rarely need it — misgrades in the harsh direction are genuinely uncommon.
 
 **Do pre-owned purchases earn points or count toward shipping like new items?**
 They ship from the same warehouse and combine with in-stock new items in one box, which is a quiet bonus: pad a pre-owned bargain order with supplies or small in-stock items and save on shipping per item.
@@ -189,7 +198,7 @@ Fast. Each listing is one physical unit, and well-priced B+ copies of popular fi
 
 ## The Bottom Line
 
-AmiAmi's pre-owned grades are that rare thing on the internet: a rating system biased in the *buyer's* favor. A+ and A are new figures in practice, B+ is the best value-to-risk ratio on the site, B is a bargain with a small asterisk, and C tells you honestly what's wrong before you pay. The only real trap is trusting box grades if mint packaging matters to you.
+AmiAmi's pre-owned grades are that rare thing on the internet: a rating system biased in the *buyer's* favor. S, A and A− are new figures in practice, B+ is the best value-to-risk ratio on the site, B is a bargain with a small asterisk, and C tells you honestly what's wrong before you pay. The only real trap is trusting box grades if mint packaging matters to you.
 
 Set your grade threshold, ignore the box rating if you're a display collector, and that two-years-sold-out grail suddenly costs 40% less than everyone else is paying for it.
 

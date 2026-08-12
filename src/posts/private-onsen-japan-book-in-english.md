@@ -29,7 +29,7 @@ Four terms cover almost everything you'll see on booking sites:
 - **Rotenburo-tsuki room (露天風呂付き客室)** — a hotel or ryokan room with its own private open-air bath attached. The luxury version: no time slot, bathe at 2am if you like.
 - **Higaeri onsen (日帰り温泉)** — "day-use" hot springs. You don't stay overnight; you visit for a few hours. Day-use facilities with kashikiri baths are the cheapest way into a private onsen.
 
-One important non-difference: the water is the same. A kashikiri bath at a good onsen town draws from the same spring as the grand public bath. You're not getting a lesser experience — you're getting the same minerals with a lock on the door.
+One thing worth checking rather than assuming: whether the private bath actually holds onsen water. At day-use complexes it usually does, drawn from the same source as the grand bath. But it is not a rule. Kinosaki's own visitor FAQ states that under town regulations, the private baths inside guest rooms are **regular heated water, not hot spring water** — the onsen is in the seven public bathhouses. If the mineral water is the point of the trip and not just the privacy, ask the facility directly.
 
 ## The Three Routes to a Private Bath (and Which Is Yours)
 
@@ -44,13 +44,13 @@ One important non-difference: the water is the same. A kashikiri bath at a good 
 | Place | Where | Type | Private bath cost | How to book in English |
 |---|---|---|---|---|
 | **Hakone Yuryo** | Hakone (85 min from Tokyo) | Day-use complex, 19 private open-air baths | From ¥10,400 per room / 120 min (weekday) | Official English site; phone, or online from Aug 17, 2026 |
-| **Hyotan Onsen** | Beppu, Kyushu | Day-use bathhouse, 14 family baths | From ¥2,300 / room + admission | English website; phone up to 1 week ahead |
-| **Dogo Onsen Asuka-no-Yu** | Matsuyama, Shikoku | Historic public bathhouse annex, 2 special private bathrooms | ~¥2,040 / group + ¥1,690 / person | Tickets on Klook & KKday; phone 2h+ ahead |
-| **Solaniwa Onsen** | Osaka (city center) | Onsen theme park, private baths incl. tent-sauna suite | Admission ¥2,640 + private bath from ¥15,400 / 90 min | Tickets on Klook & Rakuten Travel Experiences |
+| **Hyotan Onsen** | Beppu, Kyushu | Day-use bathhouse, 14 family baths | ¥2,400 / 60 min, up to 3 adults | English website; phone up to 1 week ahead |
+| **Dogo Onsen Asuka-no-Yu** | Matsuyama, Shikoku | Historic public bathhouse annex, 2 special private bathrooms | ~¥2,040 / group + ¥1,690 / person | Official online booking from 90 days out; also Klook & KKday |
+| **Solaniwa Onsen** | Osaka (city center) | Onsen theme park, private baths incl. tent-sauna suite | Admission ¥2,310–3,630 by date (+¥150 bath tax) + private bath from ¥8,800 / 90 min | Tickets on Klook & Rakuten Travel Experiences |
 | **Kinosaki Onsen ryokan** | Hyogo (2.5h from Kyoto) | Ryokan stays with kashikiri baths | Often free–¥3,000 with a stay | Visit Kinosaki official English booking site |
 | **Kusatsu Onsen ryokan** | Gunma (from Tokyo) | Ryokan stays with kashikiri baths | Varies; some free per stay | Booking.com / Rakuten Travel with the keyword trick below |
 
-<div class="callout"><span class="callout-label">Last verified: July 2026</span><p>Every price here was checked against the facility's own published information, and Hakone Yuryo was re-checked in August 2026 after we found an error in our original figure. Prices move; treat these as solid estimates, not gospel.</p></div>
+<div class="callout"><span class="callout-label">Last verified: August 2026</span><p>Every price here was checked against the facility's own published information. Re-checking in August corrected four figures: Hakone Yuryo's session pricing, Hyotan's family bath (¥2,400 covers three adults, not ¥2,300 per room plus admission), Solaniwa's date-banded admission, and Asuka-no-Yu's booking window, which is 90 days rather than two hours. Prices move; treat these as solid estimates, not gospel.</p></div>
 
 ## 1. Hakone Yuryo — The Tokyo Day-Trip Answer
 
@@ -70,7 +70,7 @@ If you're building a whole day around this rather than just the bath, we've work
 
 Beppu produces more hot spring water than anywhere else in Japan, and [Hyotan Onsen](https://www.hyotan-onsen.com/english/) is its most decorated bathhouse — the only onsen in the entire country to hold three stars in the Michelin Green Guide, Michelin's rating for places worth traveling to, and it has held them seven editions running. (Worth stating plainly, since the word "Michelin" invites the assumption: this is the travel guide's sightseeing rating, not the restaurant one.)
 
-The family baths (*kazoku-buro* — remember, couples count as family here) are the deal of this entire guide: **from ¥2,300 per room** plus modest per-person admission, with 14 rooms across indoor and open-air styles. The water is Beppu's famous chloride spring, and the waterfall-massage baths in the public section are worth the admission on their own if you get curious afterward.
+The family baths (*kazoku-buro* — remember, couples count as family here) are the deal of this entire guide: **¥2,400 for a 60-minute session, and that price covers up to three adults** — not per person. Ninety minutes runs ¥3,600, extra guests are ¥700 each, and there are 14 rooms across indoor and open-air styles. You only pay the ¥1,160 bathhouse admission on top if you also want the main baths. The water is Beppu's famous chloride spring, and the waterfall-massage baths in the public section are worth the admission on their own if you get curious afterward.
 
 The friction: reservations for the nicer bath series are phone-only, up to one week ahead, and on-site foreign-language support is limited. The English website is thorough, though — pick your bath type there first, then have your hotel front desk make the two-minute call (more on that trick below).
 
@@ -80,7 +80,7 @@ The friction: reservations for the nicer bath series are phone-only, up to one w
 
 Dogo Onsen in Matsuyama is arguably Japan's oldest hot spring — the bathhouse that helped inspire *Spirited Away* — and its modern annex, [Asuka-no-Yu](https://dogo.jp/en/), solved the "historic atmosphere but zero privacy" problem elegantly. The second floor holds **two special private bathrooms** modeled on the bathing chamber once reserved for the imperial family, bookable by the session with tea and sweets served after your soak.
 
-Cost lands around ¥2,040 per group plus ¥1,690 per person — remarkably reasonable for what amounts to a private audience with 1,300 years of bathing history. Reservations open by phone at least two hours ahead, but here's the English-friendly part: **<a href="https://www.klook.com/en-US/activity/67998-dogo-onsen-annex-asuka-noyu-spring-matsuyama/?aid=129411" rel="sponsored noopener" target="_blank">Klook</a> and KKday both sell Asuka-no-Yu tickets with English checkout**, which removes the language barrier for the standard packages entirely.
+Cost lands around ¥2,040 per group plus ¥1,690 per adult — remarkably reasonable for what amounts to a private audience with 1,300 years of bathing history. **Bookings open 90 days ahead through Dogo's own reservation system**, so this is one of the few private baths in Japan you can lock in months out without a phone call; the consortium line (6:00–23:00) handles same-day slots. **<a href="https://www.klook.com/en-US/activity/67998-dogo-onsen-annex-asuka-noyu-spring-matsuyama/?aid=129411" rel="sponsored noopener" target="_blank">Klook</a> and KKday also sell Asuka-no-Yu tickets with English checkout** for the standard packages.
 
 **Book it if:** you want your private bath with a side of legitimate history, or you're routing through Shikoku.
 
@@ -88,9 +88,9 @@ Cost lands around ¥2,040 per group plus ¥1,690 per person — remarkably reaso
 
 [Solaniwa Onsen](https://solaniwa.com/en-us/) is an unapologetic onsen *theme park* — a sprawling Azuchi-Momoyama-styled complex near Osaka Bay where you wander between baths in a rented yukata. Purists sniff at it. Practically, it's the easiest private onsen logistics in this guide: it's in central Osaka, open until late, and **admission tickets sit on <a href="https://www.klook.com/en-US/activity/21381-solaniwa-onsen-admission-ticket-osaka/?aid=129411" rel="sponsored noopener" target="_blank">Klook</a> and Rakuten Travel Experiences with full English checkout.**
 
-Base admission runs ¥2,640. The private options go from standard rental baths up to a private open-air suite with its own tent sauna at ¥15,400 per 90 minutes — the splurge choice for a group that wants the full spa evening without leaving the city.
+Admission is date-banded rather than fixed: **¥2,310 to ¥3,630** depending on when you go, plus ¥150 bath tax, with a cheaper night rate after 17:00. Private rooms start at **¥8,800 per 90 minutes** for a standard room and climb through a deluxe tatami room at ¥12,100 to an open-air suite with its own tent sauna at ¥15,400 — the splurge choice for a group that wants the full spa evening without leaving the city.
 
-Worth knowing: Solaniwa is also one of the few onsen where tattooed visitors have a clearly defined path (cover seals for small tattoos, private baths for larger work), which is more than most facilities offer.
+Two things worth knowing before you book. Tattoos are handled by a **sticker system, and it applies to the whole building** — Solaniwa's policy requires every tattoo visible from your yukata to be fully covered with seals it sells, so booking a private room does not exempt you at the door. And the mixed-gender private baths are limited to **family groups** — couples who are married, parents and children, siblings — so an unmarried couple should confirm with the facility rather than assume.
 
 **Book it if:** you're in Osaka, you want zero logistics, or you're introducing onsen-skeptical friends to the concept gently.
 
@@ -129,7 +129,7 @@ That's the entire skill. The first booking feels like work; the second takes thr
 
 Private onsen pricing confuses people because it stacks. Here's the arithmetic for two people:
 
-- **Budget:** Hyotan Onsen family bath — roughly ¥2,300 for the room plus admission for two. Total: **around ¥4,000–4,500** for a private Michelin-starred soak.
+- **Budget:** Hyotan Onsen family bath — **¥2,400 for 60 minutes, covering up to three adults**, with the ¥1,160 bathhouse admission only if you also want the main baths. Total for two: **¥2,400** for a private Green Guide three-star soak, or ¥4,720 if you add the public baths as well.
 - **Midrange:** Hakone Yuryo private open-air bath — ¥10,400 for the room (2 people, 120 minutes, weekday). Add the main baths and it's ¥1,000 more per person. Total: **¥10,400–12,400** for the full forest-bath postcard.
 - **Splurge:** a Kinosaki or Kusatsu ryokan room with private rotenburo — **¥50,000–90,000 per night for two**, but that includes kaiseki dinner, breakfast, and unlimited 2am baths.
 
