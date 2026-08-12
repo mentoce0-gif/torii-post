@@ -170,7 +170,7 @@ The lesson: don't pick a service based on one comparison table (including mine).
 If you skipped the reviews, this is the short version. Answer these in order and stop at your first yes.
 
 **1. Is most of your cart from auctions or Mercari?**
-→ **Buyee.** This is the single biggest fork in the road. ZenMarket charges ¥800 per item on both platforms; Buyee charges ¥500 for the whole order. Three auction wins: ¥2,400 against ¥500. Buyee is also Mercari's official proxy partner, so processing is faster and fewer orders fall through.
+→ **Buyee.** This is the single biggest fork in the road, and we run it head-to-head in [ZenMarket vs Buyee](/guides/zenmarket-vs-buyee/), where one checkbox in Buyee's checkout turns out to decide most ordinary carts. ZenMarket charges ¥800 per item on both platforms; Buyee charges ¥500 for the whole order. Three auction wins: ¥2,400 against ¥500. Buyee is also Mercari's official proxy partner, so processing is faster and fewer orders fall through.
 
 **2. Are two or more items coming from the same shop?**
 → **Buyee**, for the structural reason above: one order, one fee. Four items from one shop costs ¥500 at Buyee against ¥2,000 at FROM JAPAN and ¥2,000 at ZenMarket if that shop happens to be Mercari. Nothing else here rewards grouping.
