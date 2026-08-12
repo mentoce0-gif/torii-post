@@ -213,7 +213,8 @@ date: 2026-08-10
       <h2>What each service would charge</h2>
       <div id="results"></div>
       <p class="calc-verified">Cheapest is not automatically best. Fees are the one thing arithmetic can settle; marketplace coverage, payment options, packing quality and how fast a service moves during a sale rush are not in these numbers. The <a href="/guides/japan-proxy-shopping-services-compared/" style="color:var(--accent);text-decoration:underline;text-underline-offset:2px">full guide</a> covers what each one trades away.</p>
-      <p class="calc-verified">Fee structures verified July 2026. Services change pricing more often than you'd expect — check current rates before a large order.</p>
+      <p class="calc-verified">Buyee is calculated with its ¥0 Lite guarantee plan. The Standard plan it recommends adds ¥500 per order, and its package consolidation fee is left out entirely because we could not confirm the current figure against Buyee's own pricing page — we would rather leave a gap than guess at it.</p>
+      <p class="calc-verified">Buyee fees re-checked against Buyee's published pricing in August 2026; the other four were verified in July 2026. Services change pricing more often than you'd expect — check current rates before a large order.</p>
     </div>
 
   </div>
@@ -285,7 +286,7 @@ date: 2026-08-10
     var why = {
       'Neokyo': 'Neokyo wins here because its ¥350 per item already covers domestic shipping to the warehouse, and you are paying ' + stores + ' separate domestic shipment' + (stores > 1 ? 's' : '') + ' everywhere else. Lower the domestic figure and this lead narrows.',
       'ZenMarket': 'The flat ¥300 wins here because your items are expensive enough that a percentage fee costs more than a fixed one.',
-      'Buyee': 'The 6% fee wins here because your items are cheap — below roughly ¥5,000 each, a percentage costs less than a ¥300 flat fee. It flips the moment your cart gets pricier.',
+      'Buyee': 'Buyee wins here because its ¥500 is charged per order rather than per item: you are buying ' + n + ' items across ' + stores + ' shop' + (stores > 1 ? 's' : '') + ', so the fee stops climbing while the per-item services keep going. Split the same cart across more shops and it reverses.',
       'FROM JAPAN': 'FROM JAPAN wins here because its ¥800 per-shop cap kicks in: you are buying ' + n + ' items from only ' + stores + ' shop' + (stores > 1 ? 's' : '') + ', so the per-item fee stops climbing.'
     };
     if (!why[winner]) return '';
@@ -327,11 +328,14 @@ date: 2026-08-10
         note: '¥300 flat × ' + n + ' item' + (n > 1 ? 's' : '') + ', free consolidation'
       },
       {
+        // Buyee's purchase fee is flat per order, not a percentage. Their own
+        // fees page is explicit that a second item in the same order does not
+        // add to it, so this scales with shops, not with items or with price.
         name: 'Buyee',
-        fee: goods * 0.06,
+        fee: 500 * storeCount,
         shipping: domesticTotal,
-        extra: n > 1 ? 500 : 0,
-        note: '6% of ' + yen(goods) + (n > 1 ? ', + ¥500 consolidation' : '')
+        extra: 0,
+        note: '¥500 flat × ' + storeCount + ' order' + (storeCount > 1 ? 's' : '') + ', any number of items each'
       },
       {
         name: 'FROM JAPAN',
