@@ -12,6 +12,13 @@ category: "Japan Travel"
 <p>The catch: most places bury the reservation behind a Japanese-only phone line. The workaround is knowing which facilities sell tickets through English platforms like Klook, which official sites have real English booking pages, and one front-desk trick that unlocks everywhere else.</p>
 </div>
 
+<div class="cta-box">
+<span class="cta-box-label">If you only want the short answer</span>
+<h4>Solaniwa Onsen, Osaka — the easiest one to actually book</h4>
+<p>Of the six places in this guide, this is the one with the fewest ways to go wrong: central Osaka, open late, admission sold in advance with full English checkout, and private baths bookable on top. It is not the most atmospheric bath on this page and we say so below — it is the one you can have confirmed in about four minutes.</p>
+<p class="cta-row"><a class="cta-button" href="https://www.klook.com/en-US/activity/21381-solaniwa-onsen-admission-ticket-osaka/?aid=129411" rel="sponsored noopener" target="_blank">Check dates on Klook →</a><span class="cta-sub">Admission ¥2,310–3,630 by date · private bath from ¥8,800/90 min · tattoos must be covered inside the building</span></p>
+</div>
+
 Somewhere between booking your flights and reading your third onsen etiquette guide, the doubt creeps in: *do I actually want to be naked in a pool of strangers?*
 
 Maybe you have tattoos and you're tired of researching which baths will turn you away. Maybe you're traveling as a couple and mixed bathing is off the table at 99% of onsen. Maybe you'd simply like your first hot spring experience to not double as an exposure therapy session.
@@ -180,3 +187,13 @@ Central Tokyo is the weak spot — real hot-spring kashikiri inside the city is 
 The private onsen was never the secret — the booking process was. Now you have the map: **Hakone Yuryo** for the Tokyo day trip, **Hyotan** for the Kyushu bargain, **Asuka-no-Yu** and **Solaniwa** when you want English checkout on <a href="https://www.klook.com/en-US/activity/21381-solaniwa-onsen-admission-ticket-osaka/?aid=129411" rel="sponsored noopener" target="_blank">Klook</a> and zero phone calls, **Kinosaki** for the full English-bookable ryokan town, and the keyword trick plus a front desk for everywhere else in Japan.
 
 Start with one day-use session early in your trip. Worst case, you've spent ¥4,000 learning that you love hot water with a locked door — and every onsen decision after that gets easier.
+
+<div class="cta-box">
+<span class="cta-box-label">Book the two that don't need a phone call</span>
+<h4>The English-checkout shortlist</h4>
+<ul>
+<li><strong>Solaniwa Onsen, Osaka</strong> — central, open late, admission plus private baths. The low-friction default.</li>
+<li><strong>Dogo Onsen Asuka-no-Yu, Matsuyama</strong> — two genuinely special private bathrooms attached to a 1,300-year-old bathhouse, at roughly a quarter of resort prices.</li>
+</ul>
+<p class="cta-row"><a class="cta-button" href="https://www.klook.com/en-US/activity/21381-solaniwa-onsen-admission-ticket-osaka/?aid=129411" rel="sponsored noopener" target="_blank">Solaniwa on Klook →</a> <a class="cta-button" href="https://www.klook.com/en-US/activity/67998-dogo-onsen-annex-asuka-noyu-spring-matsuyama/?aid=129411" rel="sponsored noopener" target="_blank">Asuka-no-Yu on Klook →</a><span class="cta-sub">Everything else on this page is booked directly with the facility, and we've linked those to their own sites rather than a reseller.</span></p>
+</div>

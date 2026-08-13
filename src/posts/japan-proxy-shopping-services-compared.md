@@ -205,7 +205,12 @@ So: match the service to the cart.
 | You hate invoice surprises | **Neokyo** | ¥350 an item with domestic shipping already inside it |
 | A shop that blocks proxies | **Japan Rabbit** | It's the only one that can |
 
+<div class="cta-box">
+<span class="cta-box-label">If you want one name and no more reading</span>
+<h4>ZenMarket</h4>
+<p>We stopped ranking these services because the cheapest one genuinely depends on your cart — that's what the calculator above is for. But if you're buying a few items from one shop and want to stop researching, this is the least surprising default: per-item pricing that's published plainly, free consolidation, and 60 days of storage while you decide what else to add.</p>
 <p class="cta-row"><a class="cta-button" href="https://zenmarket.jp/en/" rel="sponsored noopener" target="_blank">Visit ZenMarket →</a><span class="cta-sub">¥300–800/item by platform · free consolidation · 60-day storage</span></p>
+</div>
 
 Most people will end up using two of these, not one. That's not indecision — it's what the pricing actually rewards.
 

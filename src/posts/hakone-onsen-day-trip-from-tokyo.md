@@ -50,6 +50,13 @@ The honest summary: the Free Pass is excellent value for the sightseeing circuit
 
 One more wrinkle worth knowing: the pass gets you **discounts at over 70 facilities**, and Yunessun is one of them. If Yunessun is your bath and you're doing the loop anyway, that discount narrows the gap further.
 
+<div class="cta-box">
+<span class="cta-box-label">Only if you answered "loop trip"</span>
+<h4>Hakone Free Pass</h4>
+<p>We've just spent four hundred words arguing that most people reading this shouldn't buy this ticket, and we're not going to pretend otherwise now. But if you're riding the mountain railway, the ropeway and the lake boat, it stops being a question — the pass wins on the second ride and keeps winning.</p>
+<p class="cta-row"><a class="cta-button" href="https://www.klook.com/en-US/activity/821-hakone-transport-day-pass-tokyo/?aid=129411" rel="sponsored noopener" target="_blank">Check the Free Pass on Klook →</a><span class="cta-sub">¥7,100 / 2 days from Shinjuku · Romancecar seat not included (+¥1,200 each way) · doing a bath run only? Skip it and save ¥4,560</span></p>
+</div>
+
 ## 1. Kappa Tengoku — the cheapest real onsen near a Tokyo train
 
 Three minutes on foot from Hakone-Yumoto station, up a short slope behind it, is an open-air bath that costs **¥900**. There's no shuttle to wait for and no bus to work out. You walk off the train and you're basically there.
@@ -194,3 +201,14 @@ Check first. Hakone Yuryo does not admit children below elementary school age to
 If you have tattoos, go to **Hakone Yuryo** — it's the one that changed its rules, and it changed them properly. If you want the best water for the least money, go to **Tenzan**, bring cash, and check how many of you have ink. If you want to spend ¥900 and be soaking twenty minutes after your train arrives, walk up the hill to **Kappa Tengoku**. If you've got kids, **Yunessun** is the obvious call and nobody else's opinion matters.
 
 And unless you're riding the ropeway, don't buy the Free Pass. That one decision is worth more than every other tip here.
+
+<div class="cta-box">
+<span class="cta-box-label">The only two things worth buying before you go</span>
+<h4>Book ahead, or don't bother</h4>
+<ul>
+<li><strong>Yunessun</strong> — worth buying in advance, because the gate price moves across three tiers by date and the counter won't explain which one you're on.</li>
+<li><strong>Hakone Free Pass</strong> — worth buying <em>only</em> if you're doing the full sightseeing loop. For a bath run it's a ¥4,560 mistake.</li>
+</ul>
+<p>Everything else on this page is a walk-in. Kappa Tengoku, Tenzan and Hakone Yuryo's communal baths all take you at the door, and there's nothing to book.</p>
+<p class="cta-row"><a class="cta-button" href="https://www.klook.com/en-US/activity/13954-hakone-kowaki-en-yunessun-hot-spring-theme-park-one-day-ticket-tokyo/?aid=129411" rel="sponsored noopener" target="_blank">Yunessun tickets →</a> <a class="cta-button" href="https://www.klook.com/en-US/activity/821-hakone-transport-day-pass-tokyo/?aid=129411" rel="sponsored noopener" target="_blank">Free Pass →</a><span class="cta-sub">Links are affiliate links — they cost you nothing extra and don't change what we recommend, which is why we've told you twice not to buy the pass.</span></p>
+</div>
