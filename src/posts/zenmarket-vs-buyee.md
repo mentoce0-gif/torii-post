@@ -34,7 +34,7 @@ We had it wrong too, and corrected it in public — the details are in our [full
 
 Plus a **funds deposit fee starting at 1%**, which their fee summary lists under "always pay." Buying several units of the *same* item counts as one fee; different sizes or colours are charged separately.
 
-**<a href="https://buyee.jp/?lang=en">Buyee</a> bills per order, and the item count doesn't matter.**
+**<a href="https://i0c.xyz/dpl/6a7e5186a55c4?p1=vs-fees&amp;url=https%3A%2F%2Fbuyee.jp%2F%3Flang%3Den" rel="sponsored noopener" target="_blank">Buyee</a> bills per order, and the item count doesn't matter.**
 
 > Flat rate ¥500 per order. Even if the number of successful bids or purchases is more than two, it is a flat rate of ¥500. Even if multiple purchases are from the same store, it is a flat rate of ¥500.
 
@@ -167,7 +167,7 @@ No. FROM JAPAN charges ¥500 per order with no per-item multiplication, and Neok
 
 ## The Bottom Line
 
-If your shopping is auctions and Mercari — which describes most collectors — **use <a href="https://buyee.jp/?lang=en">Buyee</a>**, and switch the guarantee plan to Lite unless you specifically want the cover. The fee gap is large and structural, not marginal.
+If your shopping is auctions and Mercari — which describes most collectors — **use <a href="https://i0c.xyz/dpl/6a7e5186a55c4?p1=vs-verdict&amp;url=https%3A%2F%2Fbuyee.jp%2Fmercari%2F%3Flang%3Den" rel="sponsored noopener" target="_blank">Buyee</a>**, and switch the guarantee plan to Lite unless you specifically want the cover. The fee gap is large and structural, not marginal.
 
 If you're buying single items from ordinary Japanese shops, especially ZenMarket's Recommended Stores, and especially if you need somewhere to hold things for more than a month, **<a href="https://zenmarket.jp/en/">ZenMarket</a> earns its place.**
 

@@ -10,7 +10,7 @@ category: "Buying from Japan"
 <span class="qa-label">Quick answer</span>
 <p><strong>There is no single cheapest proxy, and anyone who tells you otherwise hasn't checked recently.</strong> What decides it is where you're buying and from how many sellers — not what your items cost.</p>
 <ul>
-<li><strong>Auctions or Mercari:</strong> <a href="https://buyee.jp/?lang=en">Buyee</a>, at ¥500 per order however many items are in it. ZenMarket charges ¥800 <em>per item</em> on these two platforms.</li>
+<li><strong>Auctions or Mercari:</strong> <a href="https://i0c.xyz/dpl/6a7e5186a55c4?p1=proxy-pillar-answerbox&amp;url=https%3A%2F%2Fbuyee.jp%2Fmercari%2F%3Flang%3Den" rel="sponsored noopener" target="_blank">Buyee</a>, at ¥500 per order however many items are in it. ZenMarket charges ¥800 <em>per item</em> on these two platforms.</li>
 <li><strong>Amazon, Rakuten and ordinary shops:</strong> <a href="https://zenmarket.jp/en/">ZenMarket</a> at ¥500 per item — ¥300 at its Recommended Stores — with free consolidation and 60 days of storage.</li>
 <li><strong>Auction items spread across many sellers:</strong> FROM JAPAN, at ¥500 per order regardless of what the item cost.</li>
 <li><strong>Rare finds and proxy-blocking stores:</strong> Japan Rabbit's human concierge.</li>
@@ -30,7 +30,7 @@ I've used all five of the services below. Here's the honest breakdown, including
 | Service | Service Fee | Consolidation | Best Marketplace Access | Payment Options | Best For |
 |---|---|---|---|---|---|
 | **[ZenMarket](https://zenmarket.jp/en/)** | **¥300–800 per item**, by platform (+1% deposit fee) | **Free** | Auctions, Rakuten, Mercari + 1,000s of shops | PayPal, cards, crypto, bank transfer | Ordinary shops; long waits (60-day storage) |
-| **[Buyee](https://buyee.jp/?lang=en)** | **¥500 flat per order** (any number of items) | **Free** | **Official Mercari partner** | Cards, PayPal, Apple Pay | Several items from one shop; Mercari |
+| **<a href="https://i0c.xyz/dpl/6a7e5186a55c4?p1=proxy-pillar-table&amp;url=https%3A%2F%2Fbuyee.jp%2F%3Flang%3Den" rel="sponsored noopener" target="_blank">Buyee</a>** | **¥500 flat per order** (any number of items) | **Free** | **Official Mercari partner** | Cards, PayPal, Apple Pay | Several items from one shop; Mercari |
 | **[FROM JAPAN](https://www.fromjapan.co.jp/en/)** | **¥500 per order** (same item ×N counts once) | Free (automatic) | Wide, strong for bulk store orders | Cards, PayPal, bank transfer | Auction carts spread across sellers |
 | **[Neokyo](https://neokyo.com/en)** | ¥350 per item (incl. domestic shipping) | Free (+¥500 packing under 2kg) | Solid coverage, simple interface | Cards, PayPal | Predictable flat-fee budgeting |
 | **[Japan Rabbit](https://japanrabbit.com/)** (formerly White Rabbit Express) | Quote-based, concierge pricing | Included in quote | **Anywhere — even stores that block proxies** | Cards | Rare finds, negotiations, hard-to-buy items |
@@ -104,6 +104,13 @@ The platform itself is polished, with apps that actually work, frequent coupon c
 We could not confirm Buyee's package consolidation fee. Their FAQ says the service exists, has no application deadline, and works across different shops, but every page we could reach declines to name a price. Our July table said ¥500 per package; we can no longer stand behind that figure, so we've stopped asserting it rather than repeat it.
 
 **Choose Buyee if:** you shop primarily on Mercari, or you can group two or more items into a single order from one shop. Avoid it when your cart is one item, or when it's spread thinly across many different sellers — that's the pattern its pricing punishes hardest.
+
+<div class="cta-box">
+<span class="cta-box-label">If Mercari is where you shop</span>
+<h4>Buyee</h4>
+<p>The official proxy partner of Mercari Japan, at ¥500 per order no matter how many items are in it. From the second item onwards it's the cheapest option on this page; for a single item spread across several sellers it's the most expensive. If you're buying one thing from one seller, use ZenMarket instead — the difference is real money.</p>
+<p class="cta-row"><a class="cta-button" href="https://i0c.xyz/dpl/6a7e5186a55c4?p1=proxy-pillar-cta&amp;url=https%3A%2F%2Fbuyee.jp%2Fmercari%2F%3Flang%3Den" rel="sponsored noopener" target="_blank">Search Mercari on Buyee →</a><span class="cta-sub">Switch the guarantee plan down to the free Lite tier at checkout unless you want the cover — it isn't the default</span></p>
+</div>
 
 ## FROM JAPAN — Flat per Item, Whatever the Item Costs
 
