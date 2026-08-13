@@ -4,9 +4,12 @@
 //   node tools/make-icons.js
 //
 // Produces:
-//   src/favicon.ico                     16 / 32 / 48, PNG payloads
+//   src/favicon.ico                     16 / 32 / 48 / 256, PNG payloads
 //   src/assets/img/apple-touch-icon.png 180x180 (iOS home screen)
-//   src/assets/img/icon-512.png         512x512 (social avatars, manifests)
+//   src/assets/img/icon-512.png         512x512 (manifests)
+//   src/assets/img/icon-1024.png        1024x1024 (profile avatars — Pinterest,
+//                                       Telegram, PayPal; upload the largest you
+//                                       have and let each service downscale)
 
 const fs = require("fs");
 const path = require("path");
@@ -15,7 +18,7 @@ const sharp = require("sharp");
 const SRC = path.join(__dirname, "..", "src", "assets", "img", "favicon.svg");
 const IMG = path.join(__dirname, "..", "src", "assets", "img");
 const ICO = path.join(__dirname, "..", "src", "favicon.ico");
-const ICO_SIZES = [16, 32, 48];
+const ICO_SIZES = [16, 32, 48, 256];
 
 // Minimal ICO writer. An .ico is a 6-byte header, one 16-byte directory entry
 // per image, then the image payloads — which modern browsers accept as PNG.
@@ -53,6 +56,9 @@ function buildIco(pngs) {
 
   fs.writeFileSync(path.join(IMG, "apple-touch-icon.png"), await png(180));
   fs.writeFileSync(path.join(IMG, "icon-512.png"), await png(512));
+  fs.writeFileSync(path.join(IMG, "icon-1024.png"), await png(1024));
 
-  console.log(`favicon.ico (${ICO_SIZES.join("/")}) + apple-touch-icon.png + icon-512.png`);
+  console.log(
+    `favicon.ico (${ICO_SIZES.join("/")}) + apple-touch-icon.png + icon-512.png + icon-1024.png`
+  );
 })();
