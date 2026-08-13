@@ -24,7 +24,7 @@ We had it wrong too, and corrected it in public — the details are in our [full
 
 ## What They Actually Charge
 
-**ZenMarket bills per item, at a rate set by where the item came from.**
+**<a href="https://zenmarket.jp/en/">ZenMarket</a> bills per item, at a rate set by where the item came from.**
 
 | Where you bought it | Fee per item |
 |---|---|
@@ -34,7 +34,7 @@ We had it wrong too, and corrected it in public — the details are in our [full
 
 Plus a **funds deposit fee starting at 1%**, which their fee summary lists under "always pay." Buying several units of the *same* item counts as one fee; different sizes or colours are charged separately.
 
-**Buyee bills per order, and the item count doesn't matter.**
+**<a href="https://buyee.jp/?lang=en">Buyee</a> bills per order, and the item count doesn't matter.**
 
 > Flat rate ¥500 per order. Even if the number of successful bids or purchases is more than two, it is a flat rate of ¥500. Even if multiple purchases are from the same store, it is a flat rate of ¥500.
 
@@ -167,8 +167,8 @@ No. FROM JAPAN charges ¥500 per order with no per-item multiplication, and Neok
 
 ## The Bottom Line
 
-If your shopping is auctions and Mercari — which describes most collectors — **use Buyee**, and switch the guarantee plan to Lite unless you specifically want the cover. The fee gap is large and structural, not marginal.
+If your shopping is auctions and Mercari — which describes most collectors — **use <a href="https://buyee.jp/?lang=en">Buyee</a>**, and switch the guarantee plan to Lite unless you specifically want the cover. The fee gap is large and structural, not marginal.
 
-If you're buying single items from ordinary Japanese shops, especially ZenMarket's Recommended Stores, and especially if you need somewhere to hold things for more than a month, **ZenMarket earns its place.**
+If you're buying single items from ordinary Japanese shops, especially ZenMarket's Recommended Stores, and especially if you need somewhere to hold things for more than a month, **<a href="https://zenmarket.jp/en/">ZenMarket</a> earns its place.**
 
 And whichever you pick: check the plan dropdown before you confirm. On most ordinary carts it is worth more than the difference between the two companies.
