@@ -223,7 +223,7 @@ Most people will end up using two of these, not one. That's not indecision — i
 
 ## Which International Shipping Method Should You Pick?
 
-Once your box is packed, every service offers roughly the same menu of carriers, and the right choice depends on what's inside:
+Once your box is packed, every service offers roughly the same menu of carriers, and the right choice depends on what's inside. **One caveat before the list if you're in the United States:** Japan Post stopped accepting most goods parcels to America in August 2025, and the menu below narrows sharply as a result — EMS and airmail small packet are not currently options on a direct shop order, and proxies route around this with their own carrier contracts rather than escaping it entirely. For a concrete picture of what a Japanese shop can and can't offer an American address now, see [what AmiAmi shipping to the US actually costs](/guides/amiami-shipping-to-the-us/).
 
 - **DHL / FedEx express** — 3–7 days, full tracking, best for anything valuable or fragile. Costs the most upfront but handles customs paperwork smoothly, which can actually make it *cheaper* in tears and delays for high-value orders.
 - **EMS (Japan Post express)** — the classic middle option: 4–10 days to most countries, solid tracking, decent insurance, usually cheaper than DHL for small-to-medium boxes.

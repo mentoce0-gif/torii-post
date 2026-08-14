@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- Left: the parcel and a price tag with nothing written on it — the whole
+       point of the article is that no number exists until you're invoiced.
+       Right: the three routes the US actually has left, drawn at the lengths
+       they take. Short and direct, dashed and middling, and the long slow one
+       that goes by sea. -->
+  <rect width="1200" height="630" fill="#FAFAF9"/>
+  <rect width="430" height="630" fill="#ECEEED"/>
+
+  <rect x="118" y="238" width="196" height="164" rx="6" fill="none" stroke="#1A1A1A" stroke-width="9"/>
+  <path d="M 118 292 h 196" stroke="#1A1A1A" stroke-width="7"/>
+  <path d="M 216 238 v 54" stroke="#2F4F4F" stroke-width="7"/>
+  <path d="M 216 292 v 110" stroke="#2F4F4F" stroke-width="5" opacity="0.4"/>
+
+  <g transform="rotate(-16 258 452)">
+    <path d="M 196 420 h 150 l 34 34 l -34 34 h -150 z" fill="#FAFAF9" stroke="#1A1A1A" stroke-width="8" stroke-linejoin="round"/>
+    <circle cx="352" cy="454" r="7" fill="#1A1A1A"/>
+  </g>
+  <path d="M 250 408 l 12 22" stroke="#2F4F4F" stroke-width="7" stroke-linecap="round"/>
+
+  <path d="M 560 190 h 470" fill="none" stroke="#1A1A1A" stroke-width="8" stroke-linecap="round"/>
+  <path d="M 560 315 h 470" fill="none" stroke="#2F4F4F" stroke-width="7" stroke-dasharray="26 20" stroke-linecap="round"/>
+  <path d="M 560 452 c 52 -34 104 34 156 0 c 52 -34 104 34 156 0 c 40 -26 80 14 158 0"
+        fill="none" stroke="#2F4F4F" stroke-width="6" stroke-linecap="round" opacity="0.75"/>
+
+  <g fill="#FAFAF9" stroke="#1A1A1A" stroke-width="7">
+    <circle cx="546" cy="190" r="13"/>
+    <circle cx="546" cy="315" r="13"/>
+    <circle cx="546" cy="452" r="13"/>
+  </g>
+
+  <g fill="none" stroke="#1A1A1A" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 1030 190 l 40 0 M 1050 170 l 20 20 l -20 20"/>
+  </g>
+  <g fill="none" stroke="#2F4F4F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 1030 315 l 40 0 M 1050 295 l 20 20 l -20 20"/>
+    <path d="M 1030 452 l 40 0 M 1050 432 l 20 20 l -20 20"/>
+  </g>
+
+  <path d="M 1118 150 v 350" stroke="#1A1A1A" stroke-width="6" stroke-linecap="round" opacity="0.35"/>
+</svg>
