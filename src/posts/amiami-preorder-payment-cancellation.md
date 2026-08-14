@@ -202,3 +202,10 @@ What it asks in return is attention at two specific moments. The first is the Pa
 Get those two right and the rest of the system will treat you well for years.
 
 If AmiAmi doesn't ship to your country, or the item you want is on a Japanese site that won't sell to you at all, the mechanics are different again — a proxy service buys on your behalf and the payment structure changes with it. I've compared [the five main proxy shopping services](/guides/japan-proxy-shopping-services-compared/) on fees and who each one actually suits, and looked in more detail at [ZenMarket versus Buyee](/guides/zenmarket-vs-buyee/), which is the comparison most collectors end up making.
+
+<div class="cta-box">
+<span class="cta-box-label">When the figure isn't on AmiAmi at all</span>
+<h4>Buyee</h4>
+<p>The official proxy partner of Mercari Japan, which is where a lot of out-of-print figures end up once retail has moved on. The fee is ¥500 per order no matter how many items are in it — cheapest from the second item, worst value for one item spread across several sellers. One thing to carry across carefully: <strong>every rule on this page is AmiAmi's.</strong> A different counterparty means a different payment clock and a different cancellation policy, so read theirs rather than assuming these transfer.</p>
+<p class="cta-row"><a class="cta-button" href="https://i0c.xyz/dpl/6a7e5186a55c4?p1=preorder-cta&amp;url=https%3A%2F%2Fbuyee.jp%2Fmercari%2F%3Flang%3Den" rel="sponsored noopener" target="_blank">Search Mercari on Buyee →</a><span class="cta-sub">Switch the guarantee plan down to the free Lite tier at checkout unless you want the cover — it isn't the default</span></p>
+</div>

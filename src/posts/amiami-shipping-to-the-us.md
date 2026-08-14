@@ -139,6 +139,13 @@ It isn't free: you're adding a service fee and usually a second domestic shippin
 
 I've compared [the five main proxy services on fees and who each one suits](/guides/japan-proxy-shopping-services-compared/), including the two most collectors end up choosing between in [ZenMarket versus Buyee](/guides/zenmarket-vs-buyee/).
 
+<div class="cta-box">
+<span class="cta-box-label">If the lane is the problem rather than the price</span>
+<h4>Buyee</h4>
+<p>Buys with a Japanese address and ships on its own carrier contracts, so what it can offer doesn't depend on what AmiAmi can offer that month — and it consolidates several shops into one box. The service fee is ¥500 per order however many items are in it, which makes it cheap from the second item and poor value for one item spread across sellers. It does not, however, change the physics of moving a box from Japan to America: <strong>check which methods it actually offers your address before you commit to it as the answer.</strong></p>
+<p class="cta-row"><a class="cta-button" href="https://i0c.xyz/dpl/6a7e5186a55c4?p1=shipping-us-cta&amp;url=https%3A%2F%2Fbuyee.jp%2F%3Flang%3Den" rel="sponsored noopener" target="_blank">Check Buyee's shipping options →</a><span class="cta-sub">Switch the guarantee plan down to the free Lite tier at checkout unless you want the cover — it isn't the default</span></p>
+</div>
+
 ## FAQ
 
 **How much is AmiAmi shipping to the US?**
