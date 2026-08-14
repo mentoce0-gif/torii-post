@@ -247,7 +247,7 @@ Depends on your country's de minimis threshold. US buyers currently face duties 
 There isn't one, and the honest answer is shorter than you'd like: check where you're buying from. Auctions and Mercari go to Buyee, because ZenMarket charges ¥800 an item on those two platforms and Buyee charges ¥500 for the order. Ordinary shops go to ZenMarket or FROM JAPAN. Several items from a single seller go to Buyee or FROM JAPAN. It depends on the shape of your cart, not what it cost.
 
 **Can proxies buy pre-orders and lottery items?**
-Pre-orders: yes, all the major services handle them, though your storage clock and payment timing vary. Lottery (chuusen) items and fan club exclusives: usually only via concierge services like Japan Rabbit.
+Pre-orders: yes, all the major services handle them, though your storage clock and payment timing vary. Lottery (chuusen) items and fan club exclusives: usually only via concierge services like Japan Rabbit. Worth knowing that payment timing differs sharply between buying direct and buying through a proxy — Japanese shops often take nothing until release, and the shop's own deadline can be short and unforgiving once it starts. AmiAmi is the clearest example: [when it charges you, and how cancellation actually works](/guides/amiami-preorder-payment-cancellation/).
 
 **How long does the whole process take?**
 Typical timeline: 2–5 days for the item to reach the warehouse, then 4–10 days international express shipping. Budget two to three weeks door-to-door for a normal order, longer if you're consolidating multiple purchases.

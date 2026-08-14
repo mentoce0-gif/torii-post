@@ -242,4 +242,6 @@ AmiAmi's pre-owned grades are that rare thing on the internet: a rating system b
 
 Set your grade threshold, ignore the box rating if you're a display collector, and that two-years-sold-out grail suddenly costs 40% less than everyone else is paying for it.
 
+One last thing worth knowing before you order, whether new or pre-owned: AmiAmi doesn't charge you at checkout. Payment is requested later, and the window to pay — or to change your mind — is narrower than most people expect. I've written up [when AmiAmi actually charges you and how cancellation really works](/guides/amiami-preorder-payment-cancellation/), including a point their own help pages contradict each other on.
+
 
