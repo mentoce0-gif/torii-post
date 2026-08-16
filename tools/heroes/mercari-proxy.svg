@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- One listing, three buyers, one clock. On Mercari the item is the
+       scarce thing, not the service fee — the price tag is drawn small on
+       purpose, because it is the smallest number in the decision. -->
+  <rect width="1200" height="630" fill="#FAFAF9"/>
+  <rect x="0" y="0" width="1200" height="630" fill="none"/>
+
+  <!-- The single listing, dead centre -->
+  <rect x="500" y="238" width="200" height="200" rx="8" fill="#ECEEED" stroke="#1A1A1A" stroke-width="9"/>
+  <path d="M 500 300 h 200" stroke="#1A1A1A" stroke-width="7"/>
+  <path d="M 600 238 v 62" stroke="#2F4F4F" stroke-width="7"/>
+  <circle cx="600" cy="372" r="34" fill="none" stroke="#2F4F4F" stroke-width="7"/>
+  <path d="M 600 352 v 20 l 15 10" fill="none" stroke="#2F4F4F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Three buyers converging, only one of them lands -->
+  <g fill="none" stroke="#1A1A1A" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 214 338 h 232"/>
+    <path d="M 418 314 l 28 24 l -28 24"/>
+  </g>
+  <g fill="none" stroke="#2F4F4F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity="0.55">
+    <path d="M 250 168 c 96 0 148 40 190 82"/>
+    <path d="M 414 224 l 34 12 l -14 32"/>
+    <path d="M 250 508 c 96 0 148 -40 190 -82"/>
+    <path d="M 414 452 l 34 -12 l -14 -32"/>
+  </g>
+
+  <!-- The fee: deliberately the smallest thing in the frame -->
+  <g transform="translate(760 352)">
+    <path d="M 0 0 h 74 l 22 22 l -22 22 h -74 z" fill="#FAFAF9" stroke="#1A1A1A" stroke-width="6" stroke-linejoin="round"/>
+    <circle cx="84" cy="22" r="5" fill="#1A1A1A"/>
+  </g>
+  <path d="M 700 374 h 56" stroke="#1A1A1A" stroke-width="6" stroke-linecap="round" opacity="0.4"/>
+
+  <path d="M 132 566 h 936" stroke="#1A1A1A" stroke-width="5" stroke-linecap="round" opacity="0.22"/>
+</svg>
