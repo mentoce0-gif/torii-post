@@ -163,7 +163,9 @@ Both handle AmiAmi and the secondhand shops fine, and the fee logic above applie
 
 **Are these really the only two worth considering?**
 
-No. FROM JAPAN charges ¥500 per order with no per-item multiplication, and Neokyo folds domestic shipping into a ¥350 per-item fee, which changes the maths for carts spread across many sellers. We compare all five in the [full guide](/guides/japan-proxy-shopping-services-compared/).
+No. One Map (formerly FROM JAPAN) charges ¥500 per item, and folds inspection and 60 days of storage into that one fee — which makes it worth a look on a single item, and the wrong answer on several. Neokyo folds domestic shipping into a ¥350 per-item fee, which changes the maths for carts spread across many sellers. We compare all five in the [full guide](/guides/japan-proxy-shopping-services-compared/).
+
+*(Corrected 16 August 2026: this answer previously said FROM JAPAN charges ¥500 per order. Their own fee page says per item.)*
 
 ## The Bottom Line
 

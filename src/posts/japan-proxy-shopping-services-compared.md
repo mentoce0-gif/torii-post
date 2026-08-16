@@ -12,7 +12,7 @@ category: "Buying from Japan"
 <ul>
 <li><strong>Auctions or Mercari:</strong> <a href="https://i0c.xyz/dpl/6a7e5186a55c4?p1=proxy-pillar-answerbox&amp;url=https%3A%2F%2Fbuyee.jp%2Fmercari%2F%3Flang%3Den" rel="sponsored noopener" target="_blank">Buyee</a>, at ¥500 per order however many items are in it. ZenMarket charges ¥800 <em>per item</em> on these two platforms.</li>
 <li><strong>Amazon, Rakuten and ordinary shops:</strong> <a href="https://zenmarket.jp/en/">ZenMarket</a> at ¥500 per item — ¥300 at its Recommended Stores — with free consolidation and 60 days of storage.</li>
-<li><strong>Auction items spread across many sellers:</strong> FROM JAPAN, at ¥500 per order regardless of what the item cost.</li>
+<li><strong>One item you'd like checked before it ships:</strong> One Map (FROM JAPAN), at ¥500 per item — that one fee includes inspection and 60 days of storage.</li>
 <li><strong>Rare finds and proxy-blocking stores:</strong> Japan Rabbit's human concierge.</li>
 </ul>
 </div>
@@ -31,11 +31,13 @@ I've used all five of the services below. Here's the honest breakdown, including
 |---|---|---|---|---|---|
 | **[ZenMarket](https://zenmarket.jp/en/)** | **¥300–800 per item**, by platform (+1% deposit fee) | **Free** | Auctions, Rakuten, Mercari + 1,000s of shops | PayPal, cards, crypto, bank transfer | Ordinary shops; long waits (60-day storage) |
 | **<a href="https://i0c.xyz/dpl/6a7e5186a55c4?p1=proxy-pillar-table&amp;url=https%3A%2F%2Fbuyee.jp%2F%3Flang%3Den" rel="sponsored noopener" target="_blank">Buyee</a>** | **¥500 flat per order** (any number of items) | **Free** | **Official Mercari partner** | Cards, PayPal, Apple Pay | Several items from one shop; Mercari |
-| **[FROM JAPAN](https://www.fromjapan.co.jp/en/)** | **¥500 per order** (same item ×N counts once) | Free (automatic) | Wide, strong for bulk store orders | Cards, PayPal, bank transfer | Auction carts spread across sellers |
+| **[One Map by FROM JAPAN](https://www.fromjapan.co.jp/en/)** | **¥500 per item** (same item ×N counts once) | **Included in the ¥500** | Wide — Mandarake, Surugaya and Lashinban natively | Cards, PayPal, Alipay, deposit | Single items; inspection and 60-day storage are included |
 | **[Neokyo](https://neokyo.com/en)** | ¥350 per item (incl. domestic shipping) | Free (+¥500 packing under 2kg) | Solid coverage, simple interface | Cards, PayPal | Predictable flat-fee budgeting |
 | **[Japan Rabbit](https://japanrabbit.com/)** (formerly White Rabbit Express) | Quote-based, concierge pricing | Included in quote | **Anywhere — even stores that block proxies** | Cards | Rare finds, negotiations, hard-to-buy items |
 
-<div class="callout"><span class="callout-label">All fees re-verified August 2026</span><p>We re-checked every service against its own published pricing in August, and corrected three of our own figures. Buyee was listed at a 6% commission — it charges a flat ¥500 per order, and consolidates for free. ZenMarket was listed at a flat ¥300 — it charges ¥300, ¥500 or ¥800 by platform, having raised its Mercari and auction rates during 2026. FROM JAPAN was listed at ¥300 with an ¥800 per-store cap — its own support pages give ¥500 per order and no cap at all. Those corrections are why this guide no longer ranks these services.</p></div>
+<div class="callout"><span class="callout-label">Correction, 16 August 2026 — we described FROM JAPAN's fee wrongly</span><p>Between 8 and 16 August this guide said FROM JAPAN charges <strong>¥500 per order</strong>. Their own Service Fees page says <strong>500 yen per item</strong>, with only multiple units of the <em>same</em> item counting once. We fixed this figure from ¥300 to ¥500 on 8 August and changed "per item" to "per order" in the same edit, which was wrong and made the service look cheaper than it is. The worked examples further down were always calculated per item and did not change; the sentences describing the structure did, and so did two recommendations that followed from them. Their storage is also 60 days rather than 30, and the company now trades as <strong>One Map by FROM JAPAN</strong>.</p></div>
+
+<div class="callout"><span class="callout-label">All fees re-verified August 2026</span><p>We re-checked every service against its own published pricing in August, and corrected three of our own figures. Buyee was listed at a 6% commission — it charges a flat ¥500 per order, and consolidates for free. ZenMarket was listed at a flat ¥300 — it charges ¥300, ¥500 or ¥800 by platform, having raised its Mercari and auction rates during 2026. FROM JAPAN was listed at ¥300 with an ¥800 per-store cap — its own support pages give ¥500 per item and no cap at all. Those corrections are why this guide no longer ranks these services.</p></div>
 
 ## How Proxy Shopping Actually Works (60-Second Version)
 
@@ -114,9 +116,13 @@ We could not confirm Buyee's package consolidation fee. Their FAQ says the servi
 
 ## FROM JAPAN — Flat per Item, Whatever the Item Costs
 
-FROM JAPAN has been around since the early days of proxy shopping. We previously described its fee as ¥300 per item with an ¥800 per-store cap. **Re-checking against their own support pages in August 2026, neither figure is supported.** What they publish is a single line: **¥500 per order**, with multiple units of the same item charged once rather than per unit. No per-store ceiling appears anywhere.
+FROM JAPAN has been around since the early days of proxy shopping, and now trades as **One Map by FROM JAPAN**. We previously described its fee as ¥300 per item with an ¥800 per-store cap. **Re-checking against their own Service Fees page in August 2026, neither figure is supported.** What they publish is **500 yen per item** — multiple units of the *same* item count once, but two different items are two fees. No per-store ceiling appears anywhere.
 
-The fee doesn't scale with what you paid, so a ¥50,000 watch and a ¥500 keychain cost the same to buy. Against ZenMarket's ¥800 on auctions and Mercari, that ¥500 is the cheaper answer for auction-heavy carts, which is precisely where Buyee's per-order pricing falls apart.
+The fee doesn't scale with what you paid, so a ¥50,000 watch and a ¥500 keychain cost the same to buy. Against ZenMarket's ¥800 on auctions and Mercari, ¥500 an item is the cheaper rate. Against Buyee's ¥500 for the whole order, it is the more expensive one the moment your cart holds a second item — and the gap widens with every item after that.
+
+What that ¥500 buys is more than the other services include, and it is the reason to consider them at all. Their own plan table lists **60 days of free storage**, item consolidation, a guarantee on the domestic leg, a guarantee on the international leg, and a **check service** — they confirm the right item arrived and that it isn't significantly damaged. Buyee sells the equivalent inspection separately at ¥300. So on a single item the two land in different places than the headline suggests: ¥500 at One Map with the item checked, against ¥500 at Buyee with nothing checked, or ¥800 with.
+
+They are explicit about the limits of that check. Subtle flaws, functionality and authenticity are **not** covered, and for trading cards bought from private sellers, items that have been switched, re-shrunk or removed fall outside the plan even when the contents differ from the description.
 
 Their billing runs in two stages, and it catches first-timers. **Charge 1 is the item price alone.** Charge 2 arrives only after the goods reach the warehouse and get weighed, and bundles the international shipping, the ¥500 fee, any domestic shipping, and customs where it applies. You genuinely cannot know your total at the point of ordering — which is honest of them, since the shipping is measured rather than estimated, but it means budgeting on the first number is a mistake.
 
@@ -128,7 +134,7 @@ Their "Buy for me" concierge option is also worth knowing about. For listings th
 
 **The downsides:** The two-step payment system (pay for the item first, then pay fees + shipping later) confuses first-timers and means two separate currency conversions. The website feels a generation older than ZenMarket's or Buyee's. Processing can be slower, which matters for auction wins with impatient sellers.
 
-**Choose FROM JAPAN if:** your cart is auction or Mercari items spread across several sellers — the one pattern that's expensive at both ZenMarket and Buyee — or you need human help with a tricky listing.
+**Choose One Map if:** you're buying one thing and would rather it were looked at before it crosses an ocean, you're waiting out a long pre-order and want the 60 days, or you need human help with a tricky listing. **Don't choose it for a cart with several different items** — that is the one shape where its per-item fee is the worst of the three.
 
 ## Neokyo — Strongest When You Hate Fee Surprises
 
@@ -197,7 +203,7 @@ If you skipped the reviews, this is the short version. Answer these in order and
 
 This guide used to end with a numbered podium, ZenMarket in first place. We've removed it, and it's worth explaining why rather than quietly editing it out.
 
-We re-checked every fee in August 2026 and found three of our own figures were wrong. Buyee was listed at 6% of item price; it actually charges ¥500 per order. ZenMarket was listed at a flat ¥300; it actually charges ¥300, ¥500 or ¥800 depending on the platform. FROM JAPAN's ¥300 fee and ¥800 per-store cap turned out to be unsupported too — it charges ¥500 per order. Every correction pointed the same direction: **a single ranking was hiding the fact that these services win and lose on completely different carts.**
+We re-checked every fee in August 2026 and found three of our own figures were wrong. Buyee was listed at 6% of item price; it actually charges ¥500 per order. ZenMarket was listed at a flat ¥300; it actually charges ¥300, ¥500 or ¥800 depending on the platform. FROM JAPAN's ¥300 fee and ¥800 per-store cap turned out to be unsupported too — it charges ¥500 per item. Every correction pointed the same direction: **a single ranking was hiding the fact that these services win and lose on completely different carts.**
 
 The same three items cost ¥1,500 at FROM JAPAN and ¥2,100 at ZenMarket when bought from auctions — then ¥500 at Buyee when bought from one shop instead. No ordering of those services survives contact with both carts. A podium would just be us picking one reader and ignoring the rest.
 
@@ -207,8 +213,9 @@ So: match the service to the cart.
 |---|---|---|
 | Auctions or Mercari | **Buyee** | ¥500 per order against ZenMarket's ¥800 *per item* |
 | Several items from one shop | **Buyee** | One order, one fee, however many items are in it |
-| Single items, ordinary shops | **ZenMarket** or **FROM JAPAN** | ¥300–500 an item, free consolidation, no per-order penalty |
-| Anything you'll hold >30 days | **ZenMarket** | 60 days free storage against Buyee's 30 |
+| Single items, ordinary shops | **ZenMarket** or **One Map** | ¥300–500 an item, free consolidation, no per-order penalty |
+| One item you want checked first | **One Map** | Inspection is inside the ¥500; Buyee charges ¥300 for it |
+| Anything you'll hold >30 days | **ZenMarket** or **One Map** | 60 days free storage at both, against Buyee's 30 |
 | You hate invoice surprises | **Neokyo** | ¥350 an item with domestic shipping already inside it |
 | A shop that blocks proxies | **Japan Rabbit** | It's the only one that can |
 
@@ -244,7 +251,7 @@ As a rough guide in 2026: a 1kg box runs about ¥2,500–4,500 via airmail-class
 Depends on your country's de minimis threshold. US buyers currently face duties on most shipments, EU buyers pay VAT on virtually everything, and thresholds change — check your country's current rules before a big order rather than relying on year-old forum posts.
 
 **Which service is cheapest overall?**
-There isn't one, and the honest answer is shorter than you'd like: check where you're buying from. Auctions and Mercari go to Buyee, because ZenMarket charges ¥800 an item on those two platforms and Buyee charges ¥500 for the order. Ordinary shops go to ZenMarket or FROM JAPAN. Several items from a single seller go to Buyee or FROM JAPAN. It depends on the shape of your cart, not what it cost.
+There isn't one, and the honest answer is shorter than you'd like: check where you're buying from, and count your items. Auctions and Mercari go to Buyee, because ZenMarket charges ¥800 an item on those two platforms and Buyee charges ¥500 for the order. Single items from ordinary shops go to ZenMarket or One Map. **Several items of any kind go to Buyee**, because it is the only one of the three that doesn't multiply its fee by the item count. It depends on the shape of your cart, not what it cost.
 
 **Can proxies buy pre-orders and lottery items?**
 Pre-orders: yes, all the major services handle them, though your storage clock and payment timing vary. Lottery (chuusen) items and fan club exclusives: usually only via concierge services like Japan Rabbit. Worth knowing that payment timing differs sharply between buying direct and buying through a proxy — Japanese shops often take nothing until release, and the shop's own deadline can be short and unforgiving once it starts. AmiAmi is the clearest example: [when it charges you, and how cancellation actually works](/guides/amiami-preorder-payment-cancellation/).
@@ -266,7 +273,7 @@ This is where service quality really shows. All five services will photograph it
 
 ## The Bottom Line
 
-The "seller does not ship internationally" wall stopped being a real obstacle years ago — it's now just a routing problem. What's left is a pricing problem, and it has a short answer: **look at where your items are coming from before you pick a service.** Auctions and Mercari push you toward Buyee; ordinary shops push you toward ZenMarket or FROM JAPAN; a long wait for a pre-order pushes you toward ZenMarket's 60-day storage regardless of the rest.
+The "seller does not ship internationally" wall stopped being a real obstacle years ago — it's now just a routing problem. What's left is a pricing problem, and it has a short answer: **look at where your items are coming from before you pick a service.** Auctions and Mercari push you toward Buyee; single items from ordinary shops push you toward ZenMarket or One Map; a second item in the cart pushes you back to Buyee, whatever else is true; and a long wait for a pre-order pushes you toward the 60-day storage that ZenMarket and One Map both offer and Buyee doesn't.
 
 Whichever you pick, [start with a small test order](https://zenmarket.jp/en/) before trusting a service with a ¥40,000 grail. You'll learn the interface, see the real fees on an invoice, and shop with confidence after that.
 
