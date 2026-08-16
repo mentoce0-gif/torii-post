@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- The whole article in one picture: the same four items, billed two ways.
+       Left, one basket carries all four under a single tag. Right, the same
+       four stand apart, each wearing its own. Nothing about the items
+       changed — only who is counting them. -->
+  <rect width="1200" height="630" fill="#FAFAF9"/>
+  <rect width="580" height="630" fill="#ECEEED"/>
+
+  <!-- Left: one order, one fee -->
+  <path d="M 150 300 h 300 l -34 190 h -232 z" fill="none" stroke="#1A1A1A" stroke-width="9" stroke-linejoin="round"/>
+  <path d="M 214 300 c 0 -76 172 -76 172 0" fill="none" stroke="#1A1A1A" stroke-width="8"/>
+  <g fill="none" stroke="#2F4F4F" stroke-width="7">
+    <rect x="196" y="344" width="60" height="60" rx="4"/>
+    <rect x="272" y="344" width="60" height="60" rx="4"/>
+    <rect x="348" y="344" width="60" height="60" rx="4"/>
+    <rect x="234" y="418" width="60" height="60" rx="4"/>
+  </g>
+
+  <g transform="rotate(-8 300 552)">
+    <path d="M 232 522 h 118 l 30 30 l -30 30 h -118 z" fill="#FAFAF9" stroke="#1A1A1A" stroke-width="8" stroke-linejoin="round"/>
+    <circle cx="356" cy="552" r="6" fill="#1A1A1A"/>
+  </g>
+
+  <!-- The divider: same goods, different accounting -->
+  <path d="M 600 96 v 438" stroke="#1A1A1A" stroke-width="6" stroke-linecap="round" opacity="0.3"/>
+
+  <!-- Right: four items, four fees -->
+  <g fill="none" stroke="#2F4F4F" stroke-width="7">
+    <rect x="662" y="214" width="76" height="76" rx="4"/>
+    <rect x="900" y="214" width="76" height="76" rx="4"/>
+    <rect x="662" y="406" width="76" height="76" rx="4"/>
+    <rect x="900" y="406" width="76" height="76" rx="4"/>
+  </g>
+
+  <g fill="#FAFAF9" stroke="#1A1A1A" stroke-width="7" stroke-linejoin="round">
+    <path d="M 762 228 h 52 l 22 24 l -22 24 h -52 z"/>
+    <path d="M 762 420 h 52 l 22 24 l -22 24 h -52 z"/>
+    <path d="M 1000 228 h 52 l 22 24 l -22 24 h -52 z"/>
+    <path d="M 1000 420 h 52 l 22 24 l -22 24 h -52 z"/>
+  </g>
+  <g fill="#1A1A1A">
+    <circle cx="824" cy="252" r="5"/>
+    <circle cx="824" cy="444" r="5"/>
+    <circle cx="1062" cy="252" r="5"/>
+    <circle cx="1062" cy="444" r="5"/>
+  </g>
+</svg>
