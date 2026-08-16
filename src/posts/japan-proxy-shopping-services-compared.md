@@ -19,11 +19,11 @@ category: "Buying from Japan"
 
 So you finally found it. That out-of-print figure, that limited-edition vinyl, that perfect secondhand Seiko on Mercari Japan — and then you hit the wall every overseas buyer eventually hits: *"This seller does not ship internationally."*
 
-I've been buying from Japanese sites for years, and I can tell you the wall is real, but it's also completely climbable. Japanese online marketplaces — Mercari, Yahoo! Auctions, Rakuten, Surugaya, AmiAmi's pre-owned section — are treasure troves that most sellers simply never bother opening up to international buyers. Not because they don't want your money, but because international shipping paperwork is a hassle and most individual sellers won't touch it.
+The wall is real, but it's also completely climbable. Japanese online marketplaces — Mercari, Yahoo! Auctions, Rakuten, Surugaya, AmiAmi's pre-owned section — are treasure troves that most sellers simply never bother opening up to international buyers. Not because they don't want your money, but because international shipping paperwork is a hassle and most individual sellers won't touch it.
 
 That's where proxy shopping services come in. A proxy buys the item for you with a Japanese address and payment method, receives it at their warehouse, and ships it to your door. Simple concept — but the fees, shipping options, and quality of service vary wildly between companies, and picking the wrong one for your situation can quietly add 20–30% to your total cost.
 
-I've used all five of the services below. Here's the honest breakdown, including who each one is actually right for.
+We priced the same carts through all five of the services below, using their own published fee tables and shipping calculators. Here's the honest breakdown, including who each one is actually right for, and the date we last checked the numbers.
 
 ## Quick Comparison Table
 

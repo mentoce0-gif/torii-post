@@ -16,7 +16,7 @@ You've found the figure. It's been sold out for two years, aftermarket prices ar
 
 And now you're doing what every collector does the first time: hovering over the buy button, wondering what horrors "B" might be hiding. Scratches? Sun damage? A mysterious smell?
 
-I've bought a lot of pre-owned figures from AmiAmi over the years, across almost every grade they assign, and here's the short version: **AmiAmi's grades are conservative to a degree that regularly surprises Western buyers.** A "B" from AmiAmi routinely arrives in condition that eBay sellers would confidently list as "like new." But the system has real quirks — including one genuine trap around box grades — and knowing them is the difference between bargain hunting with confidence and gambling.
+We read AmiAmi's own condition definitions against what buyers report actually receiving, across almost every grade they assign, and here's the short version: **AmiAmi's grades are conservative to a degree that regularly surprises Western buyers.** A "B" from AmiAmi routinely arrives in condition that eBay sellers would confidently list as "like new." But the system has real quirks — including one genuine trap around box grades — and knowing them is the difference between bargain hunting with confidence and gambling.
 
 This guide decodes every grade, explains what actually shows up at your door, and covers what to do on the rare occasion something arrives worse than described.
 
@@ -82,7 +82,7 @@ The official definition is precise and better than most people assume: **opened,
 
 Here's the grade that scares everyone. Read the official wording carefully, because it is stronger than English guides usually render it: **opened, some dirt or damage is *visible*, all contents present.** Not "may have" — AmiAmi is saying there is something there. What separates B from C is that on a B, everything is still in the box.
 
-**What actually arrives:** the overwhelming majority of B items arrive looking new or near-new. Long-running community threads on this are almost comical — thread after thread of "I nervously ordered a B/B and it was flawless." One collector who documented dozens of B purchases reported finding genuine (still small) flaws on roughly two out of thirty figures. That matches my own hit rate almost exactly: most Bs are indistinguishable from new; occasionally one has a faint paint transfer or a tiny scuff you'd need to hunt for.
+**What actually arrives:** the overwhelming majority of B items arrive looking new or near-new. Long-running community threads on this are almost comical — thread after thread of "I nervously ordered a B/B and it was flawless." One collector who documented dozens of B purchases reported finding genuine (still small) flaws on roughly two out of thirty figures. The reports converge on the same picture: most Bs are indistinguishable from new; occasionally one has a faint paint transfer or a tiny scuff you'd need to hunt for.
 
 The asterisk cuts both ways, and it is worth being honest about it. **The official definition and our experience disagree**, and we are not going to pretend otherwise: AmiAmi's page says damage is visible, while most B items we and the community have received look near-new. Our reading is that this is the conservative grading working as intended — the definition describes the worst a B may be, not the average. But it is their definition, not ours, and a B that arrives with a visible scuff is AmiAmi delivering exactly what it promised.
 
@@ -175,9 +175,9 @@ This isn't altruism; it's incentive design, and it works in your favor. AmiAmi's
 
 The cheapest way for AmiAmi to avoid it is to under-promise: grade a like-new figure as B, so almost every customer is pleasantly surprised and disputes stay rare. That's exactly the pattern thousands of orders confirm. When a company's lazy path and your interests point the same direction, you can relax a little.
 
-## My Actual Buying Strategy, Grade by Grade
+## Which Grade to Buy, Case by Case
 
-After years of doing this, here's the decision framework I actually use:
+Putting the published grade definitions together with the outcomes buyers report, here's the decision framework this points to:
 
 1. **Sold-out grail at a fair price?** Buy at A, A− or B+ without hesitation. A and A− are unopened; B+ is opened with no damage found and nothing missing.
 2. **Display figure, best value?** B is the sweet spot. Expect ~90% odds of near-mint, accept the small chance of a minor cosmetic flaw you'll forget about in a week.
