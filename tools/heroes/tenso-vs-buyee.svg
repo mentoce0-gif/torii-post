@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- Two routes out of Japan that look like rival companies and are not.
+       Left, you buy and the parcel is only forwarded — one hop, and a
+       heavier weight on the scale. Right, the service buys for you — an
+       extra hop, and the lighter charge. Both roads leave the same
+       building, which is the point: one operator, two products. -->
+  <rect width="1200" height="630" fill="#FAFAF9"/>
+
+  <!-- The single building both services run out of -->
+  <g transform="translate(600 84)">
+    <path d="M -78 96 v -66 l 78 -44 l 78 44 v 66 z" fill="#ECEEED" stroke="#1A1A1A" stroke-width="8" stroke-linejoin="round"/>
+    <rect x="-26" y="42" width="52" height="54" fill="#FAFAF9" stroke="#2F4F4F" stroke-width="6"/>
+  </g>
+
+  <path d="M 600 180 v 46" stroke="#1A1A1A" stroke-width="7" stroke-linecap="round"/>
+  <path d="M 600 226 h -244 v 44 M 600 226 h 244 v 44" fill="none" stroke="#1A1A1A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Left route: you buy, they only forward. Heavier on the scale. -->
+  <g fill="none" stroke="#2F4F4F" stroke-width="7">
+    <rect x="284" y="296" width="144" height="112" rx="6"/>
+    <path d="M 284 340 h 144"/>
+  </g>
+  <path d="M 356 296 v 44" stroke="#2F4F4F" stroke-width="7"/>
+
+  <g stroke="#1A1A1A" stroke-width="8" fill="none" stroke-linecap="round">
+    <path d="M 356 440 v 34"/>
+    <path d="M 268 474 h 176"/>
+    <path d="M 300 474 c 0 46 112 46 112 0" />
+  </g>
+  <circle cx="356" cy="522" r="9" fill="#1A1A1A"/>
+
+  <!-- Right route: an extra hop, and a lighter charge -->
+  <g fill="none" stroke="#2F4F4F" stroke-width="7">
+    <rect x="772" y="296" width="144" height="112" rx="6"/>
+    <path d="M 772 340 h 144"/>
+  </g>
+  <path d="M 844 296 v 44" stroke="#2F4F4F" stroke-width="7"/>
+
+  <g stroke="#1A1A1A" stroke-width="8" fill="none" stroke-linecap="round">
+    <path d="M 844 440 v 34"/>
+    <path d="M 780 474 h 128"/>
+    <path d="M 804 474 c 0 30 80 30 80 0" />
+  </g>
+  <circle cx="844" cy="508" r="9" fill="#1A1A1A"/>
+
+  <path d="M 132 560 h 936" stroke="#1A1A1A" stroke-width="5" stroke-linecap="round" opacity="0.25"/>
+</svg>
