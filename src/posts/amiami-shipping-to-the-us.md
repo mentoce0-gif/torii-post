@@ -1,8 +1,8 @@
 ---
-title: "What AmiAmi Shipping to the US Actually Costs — and Why Nobody Can Quote You"
-description: "The US lost every Japan Post option in 2025. Here's what's left, what the price includes that other countries' shipping doesn't, and the structural reason AmiAmi can't tell you the number before it invoices you."
+title: "AmiAmi Shipping to the US: Real Costs and Delivery Times"
+description: "ECMS, DHL and Surface Mail Premium are all the US has left in 2026. What each costs, what the price already includes, and why surface takes 2-3 months."
 date: 2026-08-14
-updated: 2026-08-15
+updated: 2026-08-23
 image: /assets/img/hero-amiami-us-shipping.png
 imageAlt: "Minimal illustration of a parcel with a blank price tag and three shipping routes of different lengths"
 category: "Buying from Japan"
