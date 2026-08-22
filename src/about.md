@@ -3,6 +3,7 @@ layout: layouts/base.njk
 title: About
 description: Who writes Torii Post and why it exists.
 permalink: /about/
+date: 2026-07-27
 ---
 <div class="page"><div class="container page-container">
 <h1>About Torii Post</h1>

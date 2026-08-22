@@ -2,6 +2,7 @@
 title: "Private Onsen in Japan You Can Actually Book in English (2026 Guide)"
 description: "How to reserve a kashikiri (private) onsen bath in English — six real places that take foreign bookings, what they cost, and the booking tricks nobody explains."
 date: 2026-07-29
+updated: 2026-08-13
 image: /assets/img/hero-private-onsen.png
 imageAlt: "Minimal illustration of a private open-air bath with steam rising, torii in the corner"
 category: "Japan Travel"

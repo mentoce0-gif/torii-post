@@ -2,6 +2,7 @@
 title: "AmiAmi Pre-Owned Grades Explained: What A, B+, B and C Actually Mean"
 description: "What AmiAmi's pre-owned ITEM and BOX grades really mean in practice — from years of buying nearly every grade — plus the one genuine trap in the system."
 date: 2026-07-27
+updated: 2026-08-16
 image: /assets/img/hero-amiami-grades.png
 imageAlt: "Minimal illustration of collectible figure boxes on a shelf, one highlighted"
 category: "Buying from Japan"

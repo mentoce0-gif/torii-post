@@ -3,6 +3,7 @@ layout: layouts/base.njk
 title: Privacy Policy
 description: What data Torii Post collects and how it's used.
 permalink: /privacy-policy/
+date: 2026-07-27
 ---
 <div class="page"><div class="container page-container">
 <h1>Privacy Policy</h1>

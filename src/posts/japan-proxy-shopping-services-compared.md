@@ -2,6 +2,7 @@
 title: "ZenMarket vs Buyee vs FROM JAPAN: Japan's Top 5 Proxy Shopping Services, Compared Honestly (2026)"
 description: "An independent, hands-on comparison of Japan's five biggest proxy shopping services — real fees, the hidden costs nobody mentions, and which one fits how you actually shop."
 date: 2026-07-27
+updated: 2026-08-16
 image: /assets/img/hero-proxy-services.png
 imageAlt: "Minimal illustration of a torii gate and parcels traveling overseas"
 category: "Buying from Japan"

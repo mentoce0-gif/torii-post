@@ -2,6 +2,7 @@
 title: "Onsen With Tattoos in Japan: Where You Can Actually Bathe (2026)"
 description: "Eleven hot springs and bathhouses that admit tattooed guests — sorted by how well each policy is actually documented, plus how to verify any facility yourself before you go."
 date: 2026-08-02
+updated: 2026-08-13
 image: /assets/img/hero-tattoo-onsen.png
 imageAlt: "Minimal illustration of a bathhouse curtain and steam, with a torii in the corner"
 category: "Japan Travel"

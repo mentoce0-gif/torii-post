@@ -2,6 +2,7 @@
 title: "ZenMarket vs Buyee (2026): Which Is Actually Cheaper for Your Cart?"
 description: "Both changed their fees in 2026 and most comparisons still quote the old numbers. Run the real ones and the answer flips on a single checkbox most buyers never touch."
 date: 2026-08-13
+updated: 2026-08-16
 image: /assets/img/hero-proxy-services.png
 imageAlt: "Minimal illustration of a torii gate and parcels traveling overseas"
 category: "Buying from Japan"

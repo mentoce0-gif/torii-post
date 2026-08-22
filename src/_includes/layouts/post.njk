@@ -1,6 +1,7 @@
 ---
 layout: layouts/base.njk
 ---
+{%- set lastmod = updated or page.date %}
 <article class="post">
   <div class="container post-container">
     <header class="post-header">
@@ -8,7 +9,7 @@ layout: layouts/base.njk
       <h1 class="post-title">{{ title }}</h1>
       {% if description %}<p class="post-lede">{{ description }}</p>{% endif %}
       <div class="post-meta">
-        <span>Updated {{ page.date | readableDate }}</span>
+        <span>{% if updated %}Updated {{ updated | readableDate }}{% else %}Published {{ page.date | readableDate }}{% endif %}</span>
         <span>·</span>
         <span>{{ content | readingTime }} min read</span>
         <span>·</span>
@@ -67,7 +68,7 @@ layout: layouts/base.njk
   "headline": {{ title | dump | safe }},
   "description": {{ description | dump | safe }},
   "datePublished": "{{ page.date | isoDate }}",
-  "dateModified": "{{ page.date | isoDate }}",
+  "dateModified": "{{ lastmod | isoDate }}",
   {% if image %}"image": "{{ site.url }}{{ image }}",{% endif %}
   "author": { "@type": "Organization", "name": "{{ site.name }}", "url": "{{ site.url }}/about/" },
   "publisher": { "@type": "Organization", "name": "{{ site.name }}", "url": "{{ site.url }}" }

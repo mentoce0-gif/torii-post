@@ -2,6 +2,7 @@
 title: "What AmiAmi Shipping to the US Actually Costs — and Why Nobody Can Quote You"
 description: "The US lost every Japan Post option in 2025. Here's what's left, what the price includes that other countries' shipping doesn't, and the structural reason AmiAmi can't tell you the number before it invoices you."
 date: 2026-08-14
+updated: 2026-08-15
 image: /assets/img/hero-amiami-us-shipping.png
 imageAlt: "Minimal illustration of a parcel with a blank price tag and three shipping routes of different lengths"
 category: "Buying from Japan"

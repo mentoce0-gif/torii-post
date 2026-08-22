@@ -3,6 +3,7 @@ layout: layouts/base.njk
 title: Affiliate Disclosure
 description: How Torii Post makes money, in plain language.
 permalink: /affiliate-disclosure/
+date: 2026-07-27
 ---
 <div class="page"><div class="container page-container">
 <h1>Affiliate Disclosure</h1>

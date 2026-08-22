@@ -2,6 +2,7 @@
 title: "Hakone Onsen Day Trip From Tokyo: What Each Bath Costs and Who Gets Turned Away (2026)"
 description: "A day trip to Hakone's hot springs, costed honestly — four day-use baths from ¥900 to ¥15,400, whether the Free Pass actually pays for itself, and which places admit tattooed guests."
 date: 2026-08-07
+updated: 2026-08-13
 image: /assets/img/hero-hakone-day-onsen.png
 imageAlt: "Minimal illustration of a mountain and hot spring bath beside a switchback rail line climbing to three stops"
 category: "Japan Travel"

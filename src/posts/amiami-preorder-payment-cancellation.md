@@ -2,6 +2,7 @@
 title: "AmiAmi Preorders: When You're Actually Charged, and When You Can Still Cancel"
 description: "AmiAmi doesn't take your money when you preorder. Here's what actually triggers the invoice, the seven-day rule that catches people out, and where the cancellation window really closes — including a point their own help pages contradict each other on."
 date: 2026-08-14
+updated: 2026-08-15
 image: /assets/img/hero-amiami-preorders.png
 imageAlt: "Minimal illustration of a boxed figure, a long unpaid gap, an invoice email, and a deadline closing"
 category: "Buying from Japan"
