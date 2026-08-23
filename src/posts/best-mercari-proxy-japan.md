@@ -2,6 +2,7 @@
 title: "The Best Proxy for Mercari Japan (2026): We Priced Four, and the Cheapest Isn't the One We'd Use"
 description: "Mercari Japan won't sell to you directly, so a proxy is the only route. We checked what four of them charge for Mercari specifically. Neokyo is cheapest on fees — and on Mercari, fees are the smallest thing you're choosing between."
 date: 2026-08-16
+updated: 2026-08-23
 image: /assets/img/hero-mercari-proxy.png
 imageAlt: "Minimal illustration of three buyers converging on a single listing with a clock inside it, and a small price tag off to one side"
 category: "Buying from Japan"
@@ -11,7 +12,7 @@ category: "Buying from Japan"
 <p><strong>Cheapest on fees: Neokyo, at ¥350 an item with domestic shipping included.</strong> That's a real answer and we're not going to hide it behind anything.</p>
 <ul>
 <li><strong>But Mercari is one-of-a-kind stock that sells in minutes.</strong> A failed order doesn't cost you ¥300 — it costs you the item, and there isn't another one.</li>
-<li><strong>That's why we'd use <a href="https://i0c.xyz/dpl/6a7e5186a55c4?p1=mercari-answerbox&amp;url=https%3A%2F%2Fbuyee.jp%2Fmercari%2F%3Flang%3Den" rel="sponsored noopener" target="_blank">Buyee</a>:</strong> it's Mercari's official proxy partner, it shows the whole catalogue rather than a filtered subset, and it surfaces Mercari's own authentication status in search.</li>
+<li><strong>That's why we'd use Buyee:</strong> it's Mercari's official proxy partner, it shows the whole catalogue rather than a filtered subset, and it surfaces Mercari's own authentication status in search.</li>
 <li><strong>Avoid ZenMarket for Mercari specifically.</strong> Mercari sits in its most expensive tier at <strong>¥800 per item</strong>, and Mercari purchases there cannot be cancelled at all.</li>
 <li><strong>The biggest saving isn't the fee.</strong> Two of these services run 8–9% discount campaigns on the item price. On a ¥20,000 figure that's ¥1,600 — several times the entire fee difference.</li>
 </ul>
@@ -30,7 +31,7 @@ All four figures come from the companies' own fee pages, read on 16 August 2026.
 | Service | Mercari fee | Free storage | Notes |
 |---|---|---|---|
 | **[Neokyo](https://neokyo.com/en)** | **¥350 per item** — domestic shipping included | 45 days | ¥500 packing fee per parcel (under 2kg) |
-| **<a href="https://i0c.xyz/dpl/6a7e5186a55c4?p1=mercari-fees&amp;url=https%3A%2F%2Fbuyee.jp%2Fmercari%2F%3Flang%3Den" rel="sponsored noopener" target="_blank">Buyee</a>** | **¥500 per order** — any number of items | 30 days | Official Mercari partner |
+| **Buyee** | **¥500 per order** — any number of items | 30 days | Official Mercari partner |
 | **[One Map by FROM JAPAN](https://www.fromjapan.co.jp/en/)** | ¥500 per item | 60 days | Inspection and consolidation included |
 | **[ZenMarket](https://zenmarket.jp/en/)** | **¥800 per item** + 1% deposit fee | 60 days | Mercari is its *most expensive* tier |
 
@@ -171,7 +172,6 @@ That isn't ZenMarket being awkward. It's how Mercari works — an instant purcha
 <span class="cta-box-label">When the listing matters more than ¥300</span>
 <h4>Buyee</h4>
 <p><strong>It is not the cheapest — Neokyo is, and by a clear margin on multi-seller carts.</strong> What Buyee has is Mercari's official partnership, the full catalogue rather than a filtered subset, and Mercari's own authentication status as a search filter. On a marketplace where every listing is one-of-a-kind and sells in minutes, an order that completes is worth more than an order that saves ¥300. If you're buying ordinary goods and price is the whole question, use Neokyo and don't feel bad about it.</p>
-<p class="cta-row"><a class="cta-button" href="https://i0c.xyz/dpl/6a7e5186a55c4?p1=mercari-cta&amp;url=https%3A%2F%2Fbuyee.jp%2Fmercari%2F%3Flang%3Den" rel="sponsored noopener" target="_blank">Search Mercari on Buyee →</a><span class="cta-sub">Switch the guarantee plan down to the free Lite tier at checkout unless you want the cover — it isn't the default</span></p>
 </div>
 
 ## FAQ

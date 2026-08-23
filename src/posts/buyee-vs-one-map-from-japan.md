@@ -2,6 +2,7 @@
 title: "Buyee vs One Map (formerly FROM JAPAN): One Charges Per Order, One Charges Per Item"
 description: "Both charge ¥500. That's where the similarity ends — one bills the order, the other bills every item in it. Which is cheaper depends entirely on how many sellers you're buying from, and on one cart they cost exactly the same."
 date: 2026-08-16
+updated: 2026-08-23
 image: /assets/img/hero-buyee-vs-one-map.png
 imageAlt: "Minimal illustration: four items in one basket with a single price tag, beside the same four items each carrying its own"
 category: "Buying from Japan"
@@ -10,7 +11,7 @@ category: "Buying from Japan"
 <span class="qa-label">Quick answer</span>
 <p><strong>Both charge ¥500. Buyee charges it once per order; One Map charges it once per item.</strong> That single difference decides almost everything, and it does <em>not</em> mean one is simply cheaper.</p>
 <ul>
-<li><strong>Several items from one shop:</strong> <a href="https://i0c.xyz/dpl/6a7e5186a55c4?p1=vs-onemap-answerbox&amp;url=https%3A%2F%2Fbuyee.jp%2F%3Flang%3Den" rel="sponsored noopener" target="_blank">Buyee</a>, and it isn't close. Four figures from one seller is ¥500 there and ¥2,000 at One Map.</li>
+<li><strong>Several items from one shop:</strong> Buyee, and it isn't close. Four figures from one seller is ¥500 there and ¥2,000 at One Map.</li>
 <li><strong>Items spread across different sellers:</strong> <strong>they tie.</strong> Every separate seller is a separate ¥500 at both.</li>
 <li><strong>One item:</strong> One Map, on like-for-like terms — its ¥500 includes an inspection that Buyee sells for ¥300.</li>
 <li><strong>Waiting out a pre-order:</strong> One Map. <strong>60 days of free storage against Buyee's 30.</strong></li>
@@ -30,7 +31,7 @@ So the useful question isn't which is cheaper. It's what shape your cart is.
 
 Here is the language each company uses, because the wording is the whole story.
 
-**<a href="https://i0c.xyz/dpl/6a7e5186a55c4?p1=vs-onemap-fees&amp;url=https%3A%2F%2Fbuyee.jp%2F%3Flang%3Den" rel="sponsored noopener" target="_blank">Buyee</a> — flat ¥500 per order:**
+**Buyee — flat ¥500 per order:**
 
 > Flat rate ¥500 / Per order […] Even if the number of successful bids / purchases are more than 2, it is a flat rate of ¥500. […] Even if multiple purchases are from the same store, it is a flat rate of ¥500.
 
@@ -162,7 +163,6 @@ Most people who buy from Japan regularly end up with an account at both and rout
 <span class="cta-box-label">If your cart has more than one thing in it</span>
 <h4>Buyee</h4>
 <p>One ¥500 fee for the whole order however many items are in it, which is the one place these two services genuinely diverge — four figures from a single seller costs ¥500 here against ¥2,000 at One Map. It's also Mercari Japan's official proxy partner, so orders there fail less often rather than merely costing less. For a single item, or a pre-order you'll be sitting on for two months, One Map is the better answer and we'd rather say so.</p>
-<p class="cta-row"><a class="cta-button" href="https://i0c.xyz/dpl/6a7e5186a55c4?p1=vs-onemap-cta&amp;url=https%3A%2F%2Fbuyee.jp%2Fmercari%2F%3Flang%3Den" rel="sponsored noopener" target="_blank">Search Mercari on Buyee →</a><span class="cta-sub">Switch the guarantee plan down to the free Lite tier at checkout unless you want the cover — it isn't the default</span></p>
 </div>
 
 ## FAQ

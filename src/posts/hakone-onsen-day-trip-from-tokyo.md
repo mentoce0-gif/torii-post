@@ -2,7 +2,7 @@
 title: "Hakone Onsen Day Trip From Tokyo: What Each Bath Costs and Who Gets Turned Away (2026)"
 description: "A day trip to Hakone's hot springs, costed honestly — four day-use baths from ¥900 to ¥15,400, whether the Free Pass actually pays for itself, and which places admit tattooed guests."
 date: 2026-08-07
-updated: 2026-08-13
+updated: 2026-08-23
 image: /assets/img/hero-hakone-day-onsen.png
 imageAlt: "Minimal illustration of a mountain and hot spring bath beside a switchback rail line climbing to three stops"
 category: "Japan Travel"
@@ -38,7 +38,7 @@ Two things in that table deserve more than a row each, because they're where tri
 
 ## The Free Pass math, done honestly
 
-The <a href="https://www.klook.com/en-US/activity/821-hakone-transport-day-pass-tokyo/?aid=129411" rel="sponsored noopener" target="_blank">Hakone Free Pass</a> is Odakyu's regional ticket: unlimited travel on eight transport networks inside Hakone, plus the round trip from Shinjuku to Odawara. It costs **¥7,100 for two days from Shinjuku** (¥7,500 for three), or **¥6,000 for two days if you only want the Hakone-area portion** and are getting to Odawara some other way.
+The Hakone Free Pass is Odakyu's regional ticket: unlimited travel on eight transport networks inside Hakone, plus the round trip from Shinjuku to Odawara. It costs **¥7,100 for two days from Shinjuku** (¥7,500 for three), or **¥6,000 for two days if you only want the Hakone-area portion** and are getting to Odawara some other way.
 
 Note what it does *not* include: the Romancecar, Odakyu's reserved limited express. That's the comfortable train with the panoramic front windows, and it's **an extra ¥1,200 each way** from Shinjuku. The Free Pass gets you on the regular express for free; the Romancecar is a seat reservation on top.
 
@@ -55,7 +55,6 @@ One more wrinkle worth knowing: the pass gets you **discounts at over 70 facilit
 <span class="cta-box-label">Only if you answered "loop trip"</span>
 <h4>Hakone Free Pass</h4>
 <p>We've just spent four hundred words arguing that most people reading this shouldn't buy this ticket, and we're not going to pretend otherwise now. But if you're riding the mountain railway, the ropeway and the lake boat, it stops being a question — the pass wins on the second ride and keeps winning.</p>
-<p class="cta-row"><a class="cta-button" href="https://www.klook.com/en-US/activity/821-hakone-transport-day-pass-tokyo/?aid=129411" rel="sponsored noopener" target="_blank">Check the Free Pass on Klook →</a><span class="cta-sub">¥7,100 / 2 days from Shinjuku · Romancecar seat not included (+¥1,200 each way) · doing a bath run only? Skip it and save ¥4,560</span></p>
 </div>
 
 ## 1. Kappa Tengoku — the cheapest real onsen near a Tokyo train
@@ -118,7 +117,7 @@ It splits into two halves, ticketed separately or together:
 - **Mori no Yu**, the traditional nude bathing zone: **¥1,500–1,800**
 - **Passport**, both: **¥3,500–4,000**
 
-Those ranges aren't hedging. Yunessun uses **variable pricing across three tiers**, so the price on a quiet weekday is genuinely lower than on a summer Saturday. Anyone quoting you a single figure is quoting one tier and not telling you. Tickets are also <a href="https://www.klook.com/en-US/activity/13954-hakone-kowaki-en-yunessun-hot-spring-theme-park-one-day-ticket-tokyo/?aid=129411" rel="sponsored noopener" target="_blank">sold in advance on Klook</a> with English checkout, which is the simplest route if you'd rather not work out the tier system at the gate.
+Those ranges aren't hedging. Yunessun uses **variable pricing across three tiers**, so the price on a quiet weekday is genuinely lower than on a summer Saturday. Anyone quoting you a single figure is quoting one tier and not telling you. Tickets are also sold in advance on Klook with English checkout, which is the simplest route if you'd rather not work out the tier system at the gate.
 
 **On tattoos, be careful here.** Several English guides claim the swimsuit zone is tattoo-friendly on the logic that you're clothed anyway. **That is not what the facility says.** Yunessun's official position is that guests with tattoos — including small ones — are refused entry in principle. In the swimsuit zone you may enter if the tattoo is covered by a rash guard or similar clothing. In Mori no Yu, you may enter only if it's completely covered by **two of the facility's designated tattoo-concealing seals**, which you buy on site.
 
@@ -211,5 +210,4 @@ And unless you're riding the ropeway, don't buy the Free Pass. That one decision
 <li><strong>Hakone Free Pass</strong> — worth buying <em>only</em> if you're doing the full sightseeing loop. For a bath run it's a ¥4,560 mistake.</li>
 </ul>
 <p>Everything else on this page is a walk-in. Kappa Tengoku, Tenzan and Hakone Yuryo's communal baths all take you at the door, and there's nothing to book.</p>
-<p class="cta-row"><a class="cta-button" href="https://www.klook.com/en-US/activity/13954-hakone-kowaki-en-yunessun-hot-spring-theme-park-one-day-ticket-tokyo/?aid=129411" rel="sponsored noopener" target="_blank">Yunessun tickets →</a> <a class="cta-button" href="https://www.klook.com/en-US/activity/821-hakone-transport-day-pass-tokyo/?aid=129411" rel="sponsored noopener" target="_blank">Free Pass →</a><span class="cta-sub">Links are affiliate links — they cost you nothing extra and don't change what we recommend, which is why we've told you twice not to buy the pass.</span></p>
 </div>

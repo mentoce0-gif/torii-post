@@ -2,13 +2,14 @@
 title: "Tenso vs Buyee: Same Company, and the One That Does More Work Costs Less"
 description: "tenso.com and Buyee are both operated by tenso, inc. — it says so on their own company page. We priced the same box through both: the forwarding service that only ships your parcel charges ¥400 more than the proxy that buys it for you."
 date: 2026-08-16
+updated: 2026-08-23
 image: /assets/img/hero-tenso-vs-buyee.png
 imageAlt: "Minimal illustration of one building branching into two routes, each with an identical parcel on a scale, one dipping lower than the other"
 category: "Buying from Japan"
 ---
 <div class="quick-answer">
 <span class="qa-label">Quick answer</span>
-<p><strong>These are not two companies. tenso, inc. operates both tenso.com and <a href="https://i0c.xyz/dpl/6a7e5186a55c4?p1=vs-tenso-answerbox&amp;url=https%3A%2F%2Fbuyee.jp%2F%3Flang%3Den" rel="sponsored noopener" target="_blank">Buyee</a></strong> — it's listed on their own company profile. You are choosing between two products from one operator, not shopping around.</p>
+<p><strong>These are not two companies. tenso, inc. operates both tenso.com and Buyee</strong> — it's listed on their own company profile. You are choosing between two products from one operator, not shopping around.</p>
 <ul>
 <li><strong>We priced the same 1.5kg box to the US through both.</strong> Tenso: <strong>¥5,419</strong>. Buyee: <strong>¥5,019</strong>. The service that also does your buying is the cheaper one.</li>
 <li><strong>The fees are measured differently.</strong> Tenso charges by <em>weight</em> (¥900 on that box). Buyee charges ¥500 per <em>order</em>, whatever it weighs.</li>
@@ -190,7 +191,6 @@ Four things we'd rather flag than fill in.
 <span class="cta-box-label">If nothing about your purchase requires your own account</span>
 <h4>Buyee</h4>
 <p>On the box we priced, it came out ¥400 cheaper than forwarding the same parcel through tenso — while also doing the buying, dealing with the seller in Japanese, and consolidating for free where tenso charges ¥200 plus ¥300 a package. It's also Mercari Japan's official proxy partner. <strong>Two things it isn't the answer for:</strong> a quarter made up of many separate small purchases, where its ¥500 per order stacks against tenso's cheaper consolidation, and anything that has to happen under your own name — store points, member windows, lotteries. Use tenso for those and don't think about it again.</p>
-<p class="cta-row"><a class="cta-button" href="https://i0c.xyz/dpl/6a7e5186a55c4?p1=vs-tenso-cta&amp;url=https%3A%2F%2Fbuyee.jp%2Fmercari%2F%3Flang%3Den" rel="sponsored noopener" target="_blank">Search Mercari on Buyee →</a><span class="cta-sub">Switch the guarantee plan down to the free Lite tier at checkout unless you want the cover — it isn't the default</span></p>
 </div>
 
 ## FAQ

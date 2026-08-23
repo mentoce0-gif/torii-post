@@ -1,25 +1,41 @@
 ---
 layout: layouts/base.njk
 title: Affiliate Disclosure
-description: How Torii Post makes money, in plain language.
+description: Torii Post carried affiliate links until 23 August 2026. They have been removed. This is the record.
 permalink: /affiliate-disclosure/
 date: 2026-07-27
+updated: 2026-08-23
 ---
 <div class="page"><div class="container page-container">
 <h1>Affiliate Disclosure</h1>
 <div class="page-body">
 
-Torii Post is reader-supported. Some links on this site are affiliate links: if you click one and make a purchase or sign up for a service, we may earn a commission. This never costs you anything extra, and it never affects the price you pay.
+**This site no longer carries affiliate links.** Torii Post stopped publishing on 23 August 2026, and
+every affiliate link was removed from every guide on that date. Nothing on these pages earns us a
+commission, and no referral cookie is set by anything here.
 
-## What this does and doesn't change
+This page stays online because the guides were written while those links existed, and you're entitled
+to know what the arrangement was when you read them.
 
-- We only link to services and products we have genuinely used or thoroughly researched.
-- Rankings and verdicts are decided before monetization, not because of it. When a service we can't earn from is the best choice for a situation, we say so.
-- Criticism stays in. If a recommended service has a real weakness, you'll find it in the article.
+## What it was
 
-## The legal bit
+Until 23 August 2026, some outbound links to shops and services were affiliate links: if you clicked
+one and bought something, we could earn a commission. It never cost you anything extra and never
+changed the price you paid. Articles carrying such links said so in a notice near the top of the page.
 
-In accordance with the FTC's endorsement guidelines, assume that any outbound link to a shop or service on this site may be an affiliate link. Articles containing affiliate links carry a notice near the top of the page.
+## What it did and didn't change
+
+- We only linked to services we had researched against the operator's own published terms.
+- Rankings and verdicts were decided before monetization, not because of it. Where the best answer for
+  a situation was a service we couldn't earn from, that's what we printed — the guides still say so in
+  several places, and those passages are unchanged.
+- Criticism stayed in. If a recommended service had a real weakness, it's in the article.
+
+## Now
+
+The guides are archived as written, minus the links. Fees, prices and policies described in them were
+checked when each guide was published and are **not** being updated. Verify anything that matters on
+the operator's own site.
 
 Questions? [Email us](mailto:hello@toriipost.com).
 

@@ -2,7 +2,7 @@
 title: "ZenMarket vs Buyee vs FROM JAPAN: Japan's Top 5 Proxy Shopping Services, Compared Honestly (2026)"
 description: "An independent, hands-on comparison of Japan's five biggest proxy shopping services — real fees, the hidden costs nobody mentions, and which one fits how you actually shop."
 date: 2026-07-27
-updated: 2026-08-16
+updated: 2026-08-23
 image: /assets/img/hero-proxy-services.png
 imageAlt: "Minimal illustration of a torii gate and parcels traveling overseas"
 category: "Buying from Japan"
@@ -11,7 +11,7 @@ category: "Buying from Japan"
 <span class="qa-label">Quick answer</span>
 <p><strong>There is no single cheapest proxy, and anyone who tells you otherwise hasn't checked recently.</strong> What decides it is where you're buying and from how many sellers — not what your items cost.</p>
 <ul>
-<li><strong>Auctions or Mercari:</strong> <a href="https://i0c.xyz/dpl/6a7e5186a55c4?p1=proxy-pillar-answerbox&amp;url=https%3A%2F%2Fbuyee.jp%2Fmercari%2F%3Flang%3Den" rel="sponsored noopener" target="_blank">Buyee</a>, at ¥500 per order however many items are in it. ZenMarket charges ¥800 <em>per item</em> on these two platforms.</li>
+<li><strong>Auctions or Mercari:</strong> Buyee, at ¥500 per order however many items are in it. ZenMarket charges ¥800 <em>per item</em> on these two platforms.</li>
 <li><strong>Amazon, Rakuten and ordinary shops:</strong> <a href="https://zenmarket.jp/en/">ZenMarket</a> at ¥500 per item — ¥300 at its Recommended Stores — with free consolidation and 60 days of storage.</li>
 <li><strong>One item you'd like checked before it ships:</strong> One Map (FROM JAPAN), at ¥500 per item — that one fee includes inspection and 60 days of storage.</li>
 <li><strong>Rare finds and proxy-blocking stores:</strong> Japan Rabbit's human concierge.</li>
@@ -31,7 +31,7 @@ We priced the same carts through all five of the services below, using their own
 | Service | Service Fee | Consolidation | Best Marketplace Access | Payment Options | Best For |
 |---|---|---|---|---|---|
 | **[ZenMarket](https://zenmarket.jp/en/)** | **¥300–800 per item**, by platform (+1% deposit fee) | **Free** | Auctions, Rakuten, Mercari + 1,000s of shops | PayPal, cards, crypto, bank transfer | Ordinary shops; long waits (60-day storage) |
-| **<a href="https://i0c.xyz/dpl/6a7e5186a55c4?p1=proxy-pillar-table&amp;url=https%3A%2F%2Fbuyee.jp%2F%3Flang%3Den" rel="sponsored noopener" target="_blank">Buyee</a>** | **¥500 flat per order** (any number of items) | **Free** | **Official Mercari partner** | Cards, PayPal, Apple Pay | Several items from one shop; Mercari |
+| **Buyee** | **¥500 flat per order** (any number of items) | **Free** | **Official Mercari partner** | Cards, PayPal, Apple Pay | Several items from one shop; Mercari |
 | **[One Map by FROM JAPAN](https://www.fromjapan.co.jp/en/)** | **¥500 per item** (same item ×N counts once) | **Included in the ¥500** | Wide — Mandarake, Surugaya and Lashinban natively | Cards, PayPal, Alipay, deposit | Single items; inspection and 60-day storage are included |
 | **[Neokyo](https://neokyo.com/en)** | ¥350 per item (incl. domestic shipping) | Free (+¥500 packing under 2kg) | Solid coverage, simple interface | Cards, PayPal | Predictable flat-fee budgeting |
 | **[Japan Rabbit](https://japanrabbit.com/)** (formerly White Rabbit Express) | Quote-based, concierge pricing | Included in quote | **Anywhere — even stores that block proxies** | Cards | Rare finds, negotiations, hard-to-buy items |
@@ -112,7 +112,6 @@ We could not confirm Buyee's package consolidation fee. Their FAQ says the servi
 <span class="cta-box-label">If Mercari is where you shop</span>
 <h4>Buyee</h4>
 <p>The official proxy partner of Mercari Japan, at ¥500 per order no matter how many items are in it. From the second item onwards it's the cheapest option on this page; for a single item spread across several sellers it's the most expensive. If you're buying one thing from one seller, use ZenMarket instead — the difference is real money.</p>
-<p class="cta-row"><a class="cta-button" href="https://i0c.xyz/dpl/6a7e5186a55c4?p1=proxy-pillar-cta&amp;url=https%3A%2F%2Fbuyee.jp%2Fmercari%2F%3Flang%3Den" rel="sponsored noopener" target="_blank">Search Mercari on Buyee →</a><span class="cta-sub">Switch the guarantee plan down to the free Lite tier at checkout unless you want the cover — it isn't the default</span></p>
 </div>
 
 ## FROM JAPAN — Flat per Item, Whatever the Item Costs
@@ -224,7 +223,6 @@ So: match the service to the cart.
 <span class="cta-box-label">If you want one name and no more reading</span>
 <h4>ZenMarket</h4>
 <p>We stopped ranking these services because the cheapest one genuinely depends on your cart — that's what the calculator above is for. But if you're buying a few items from one shop and want to stop researching, this is the least surprising default: per-item pricing that's published plainly, free consolidation, and 60 days of storage while you decide what else to add.</p>
-<p class="cta-row"><a class="cta-button" href="https://zenmarket.jp/en/" rel="sponsored noopener" target="_blank">Visit ZenMarket →</a><span class="cta-sub">¥300–800/item by platform · free consolidation · 60-day storage</span></p>
 </div>
 
 Most people will end up using two of these, not one. That's not indecision — it's what the pricing actually rewards.

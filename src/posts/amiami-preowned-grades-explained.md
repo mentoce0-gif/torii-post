@@ -144,7 +144,7 @@ How to shop comfortably inside this policy:
 
 There is a third route, sitting between AmiAmi's inspected-but-unphotographed stock and the buyer-beware proxy market, and it's worth knowing before you settle for either.
 
-<a href="https://solarisjapan.com?aff=1151" rel="sponsored noopener" target="_blank">Solaris Japan</a> is a Tokyo shop trading since 2008 that sells new and pre-owned figures internationally and prices in USD. Two of its stated policies are the direct inverse of the AmiAmi frictions above:
+Solaris Japan is a Tokyo shop trading since 2008 that sells new and pre-owned figures internationally and prices in USD. Two of its stated policies are the direct inverse of the AmiAmi frictions above:
 
 - **They will photograph the actual item for you.** Write *"send pictures"* in the order notes and they send photos before the item ships — and if you don't like what you see, you can decline it. That is precisely the request AmiAmi turns down.
 - **Pre-owned items are stated to arrive complete, with accessories and in box.** There is no separate box grade to trip over, because the packaging isn't rated separately at all.
@@ -167,7 +167,6 @@ There's a larger caveat, and it's ours rather than theirs. **Everything above is
 <span class="cta-box-label">When the grade alone isn't enough</span>
 <h4>Solaris Japan</h4>
 <p>Tokyo shop, new and pre-owned, ships worldwide with USD pricing. Pre-owned stock is star-rated and stated to arrive complete and boxed — and unlike AmiAmi, you can ask for photos of the actual item before it ships and decline it if it isn't what you expected. Worth checking when the figure you're after is a listing you'd rather see first.</p>
-<p class="cta-row"><a class="cta-button" href="https://solarisjapan.com/collections/figures?aff=1151" rel="sponsored noopener" target="_blank">Browse figures at Solaris →</a><span class="cta-sub">Write "send pictures" in the order notes</span></p>
 </div>
 
 ## Why AmiAmi Grades So Conservatively
@@ -229,7 +228,7 @@ Because the figure sold out years ago and the pre-owned market has repriced it. 
 Contact AmiAmi with photos promptly. They review internally (expect about a week) and, where they accept the error, have compensated collectors with store points in the several-hundred-yen range. There is no published policy setting that amount, so don't treat it as a guaranteed remedy. It's not a generous process, but you'll rarely need it — misgrades in the harsh direction are genuinely uncommon.
 
 **Can I see photos of the actual pre-owned figure before I buy it?**
-Not at AmiAmi. The listing images are stock promotional photos, and they decline individual photo requests as a matter of policy. If that's a dealbreaker, <a href="https://solarisjapan.com?aff=1151" rel="sponsored noopener" target="_blank">Solaris Japan</a> states it will send photos before shipment when you write "send pictures" in the order notes, and lets you decline the item. The domestic marketplaces via proxy also show real seller photos — but with no professional grading and no bootleg screening behind them.
+Not at AmiAmi. The listing images are stock promotional photos, and they decline individual photo requests as a matter of policy. If that's a dealbreaker, Solaris Japan states it will send photos before shipment when you write "send pictures" in the order notes, and lets you decline the item. The domestic marketplaces via proxy also show real seller photos — but with no professional grading and no bootleg screening behind them.
 
 **Do pre-owned purchases earn points or count toward shipping like new items?**
 They ship from the same warehouse and combine with in-stock new items in one box, which is a quiet bonus: pad a pre-owned bargain order with supplies or small in-stock items and save on shipping per item.

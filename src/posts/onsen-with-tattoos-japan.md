@@ -2,7 +2,7 @@
 title: "Onsen With Tattoos in Japan: Where You Can Actually Bathe (2026)"
 description: "Eleven hot springs and bathhouses that admit tattooed guests — sorted by how well each policy is actually documented, plus how to verify any facility yourself before you go."
 date: 2026-08-02
-updated: 2026-08-13
+updated: 2026-08-23
 image: /assets/img/hero-tattoo-onsen.png
 imageAlt: "Minimal illustration of a bathhouse curtain and steam, with a torii in the corner"
 category: "Japan Travel"
@@ -77,7 +77,7 @@ All seven *soto-yu* — Sato-no-yu, Jizo-yu, Yanagi-yu, Ichino-yu, Gosho-no-yu, 
 
 The experience is the reason to go rather than the policy. You stay at a ryokan, you change into a yukata and wooden sandals, and you spend the evening walking between bathhouses along a willow-lined canal with a pass that gets you into all of them. It is the closest thing Japan has to a hot-spring pub crawl, and doing it without calculating who can see what is the entire point.
 
-Two practical notes on getting there and paying. The bath pass — the *Yumepa*, around ¥1,300 for a day of unlimited entry — is bought locally, at any of the bathhouses or through your ryokan; there is no way to buy it abroad in advance, and anything sold online under a Kinosaki "pass" name is a sightseeing discount booklet for the ropeway and the temple museum, not the baths. Getting there is the opposite: the limited express runs direct from Kyoto in about two and a half hours and <a href="https://www.klook.com/en-US/activity/146996-kinosaki-train-kyoto-to-kinosaki-onsen/?aid=129411" rel="sponsored noopener" target="_blank">the seat can be reserved in English online</a>, which is the one piece of this trip that is genuinely awkward to arrange at a Japanese ticket window.
+Two practical notes on getting there and paying. The bath pass — the *Yumepa*, around ¥1,300 for a day of unlimited entry — is bought locally, at any of the bathhouses or through your ryokan; there is no way to buy it abroad in advance, and anything sold online under a Kinosaki "pass" name is a sightseeing discount booklet for the ropeway and the temple museum, not the baths. Getting there is the opposite: the limited express runs direct from Kyoto in about two and a half hours and the seat can be reserved in English online, which is the one piece of this trip that is genuinely awkward to arrange at a Japanese ticket window.
 
 **One caveat, and it matters:** the town-wide policy covers the seven public baths, not the baths inside individual ryokan. Accommodations set their own rules for their own tubs. If your inn's private bath matters to you, ask when you book — and since Kinosaki ryokan almost all offer bookable private baths anyway, the fix is usually a single email.
 
@@ -115,7 +115,7 @@ Two well-known places belong in a category most guides refuse to admit exists: n
 
 **Dogo Onsen Honkan** in Matsuyama is one of Japan's oldest and most famous bathhouses, the wooden labyrinth that helped inspire the bathhouse in *Spirited Away*. Its official site does not publish a tattoo policy either way. Visitor accounts through mid-2026 consistently describe tattooed bathers using it without incident, including people with full back pieces, and at least one traveler describes confirming by phone beforehand and being told it was fine.
 
-There is one more piece of evidence here that we haven't found anywhere else, and it's worth being precise about what it is and isn't. <a href="https://www.klook.com/en-US/activity/137498-dogo-onsen/?aid=129411" rel="sponsored noopener" target="_blank">The admission ticket sold on Klook</a> — the same bath, bought in advance with English checkout — states in its own listing that people with tattoos are welcome to use the facility. That is a written policy from the company that sells entry to the building, which is more than "someone on Reddit said so." It is still not Dogo's own site saying it, which is why this stays in Tier 3 rather than moving up. Take it as a reasonable basis for going, not as a guarantee anyone at the door has signed.
+There is one more piece of evidence here that we haven't found anywhere else, and it's worth being precise about what it is and isn't. The admission ticket sold on Klook — the same bath, bought in advance with English checkout — states in its own listing that people with tattoos are welcome to use the facility. That is a written policy from the company that sells entry to the building, which is more than "someone on Reddit said so." It is still not Dogo's own site saying it, which is why this stays in Tier 3 rather than moving up. Take it as a reasonable basis for going, not as a guarantee anyone at the door has signed.
 
 **Kosugiyu** in Koenji is a beloved Tokyo sento with a strong local following. Same situation: no published policy, and consistent recent reports of visibly tattooed guests bathing normally, including traditional Japanese work.
 
@@ -204,7 +204,6 @@ Start with **Kinosaki** if you want the full onsen-town experience without think
 <span class="cta-box-label">The one you can book before you fly</span>
 <h4>Dogo Onsen Honkan, Matsuyama</h4>
 <p>Most places on this page are pay-at-the-door and can't be bought in advance from outside Japan — that's the honest state of the market, not an oversight. Dogo Honkan is the exception in this guide: advance admission with English checkout, from a listing that states tattooed guests are welcome. It's the only tattoo-relevant facility here we could verify as sold online.</p>
-<p class="cta-row"><a class="cta-button" href="https://www.klook.com/en-US/activity/137498-dogo-onsen/?aid=129411" rel="sponsored noopener" target="_blank">Check dates on Klook →</a><span class="cta-sub">Japan's oldest bathhouse · Matsuyama, Ehime · we earn a commission at no cost to you</span></p>
 </div>
 
 Policies published on this page were checked against the facilities' own sites in August 2026, and cross-checked against recent visitor accounts. Where the two disagreed or one was missing, we said so above rather than rounding it up to a yes.
