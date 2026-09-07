@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 
 import { computeInformationConfidence } from '../src/server/domain/confidence.ts';
-import { fitScore, toGrade } from '../src/server/domain/fit.ts';
+import { fitScore, gradeFor, toGrade } from '../src/server/domain/fit.ts';
 import { emptyEquipment } from '../src/server/domain/equipment.ts';
 import { buildRecommendations, type CandidateInput } from '../src/server/domain/recommend.ts';
 import { evaluate } from '../src/server/domain/rules.ts';
@@ -142,6 +142,41 @@ describe('fit grades', () => {
     assert.equal(toGrade(0.9), '◎');
     assert.equal(toGrade(0.6), '○');
     assert.equal(toGrade(0.2), '△');
+  });
+
+  it('withholds ◎ when nothing at all has been confirmed', () => {
+    assert.equal(gradeFor(0.9, 0), '○');
+    assert.equal(gradeFor(0.9, 17), '◎');
+    assert.equal(gradeFor(0.9, 100), '◎');
+  });
+
+  it('caps at ○ and never pushes an unsurveyed place down to △', () => {
+    // Otherwise `？` would become the penalty the two axes exist to avoid.
+    assert.equal(gradeFor(0.9, 0), '○');
+    assert.equal(gradeFor(0.6, 0), '○');
+    assert.equal(gradeFor(0.2, 0), '△');
+  });
+
+  it('leaves a confirmed-poor place worse than an unsurveyed one', () => {
+    const unsurveyed = evaluateWith(emptyEquipment());
+    const confirmedBare = evaluateWith({
+      sandbox: '×',
+      shade: '×',
+      water: '×',
+      toilet: '×',
+      diaper: '×',
+      stroller: '×',
+    });
+    assert.ok(fitScore(unsurveyed.signals) > fitScore(confirmedBare.signals));
+    assert.equal(gradeFor(fitScore(unsurveyed.signals), 0), '○');
+  });
+
+  it('does not change the score, so ordering is untouched', () => {
+    const outcome = evaluateWith(emptyEquipment());
+    const score = fitScore(outcome.signals);
+    assert.equal(gradeFor(score, 0) === toGrade(score), toGrade(score) !== '◎');
+    // The cap is a display rule; the number the ranker sees is the same one.
+    assert.equal(fitScore(outcome.signals), score);
   });
 
   it('ignores information confidence entirely', () => {
