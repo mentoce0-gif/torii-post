@@ -2,7 +2,8 @@ import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 
 import { DEMO_OBSERVATIONS } from '../src/server/data/seed/demoObservations.ts';
-import { SEED_PLACES } from '../src/server/data/seed/places.ts';
+import { validateSeed } from '../src/server/data/seed/index.ts';
+import { SEED_PLACES, type SeedPlace } from '../src/server/data/seed/places.ts';
 import { startServer } from './helpers.ts';
 
 /**
@@ -117,6 +118,45 @@ describe('candidate sources stay candidates', () => {
         assert.ok(source.url, `${place.name} lists an unread source with no URL`);
       }
     }
+  });
+});
+
+describe('a citation points at exactly one page', () => {
+  it('gives every source in a place a distinct key', () => {
+    // Source keys used to be derived from the source's kind alone, so a park
+    // listing two official pages gave both `<id>:official`. `sourceKey` then
+    // named a page ambiguously, and the lookup that resolves a value to its
+    // evidence would answer with whichever row happened to win.
+    for (const place of SEED_PLACES) {
+      const keys = place.sources.map((source) => source.key);
+      assert.equal(
+        new Set(keys).size,
+        keys.length,
+        `${place.name} declares two sources under one key: ${keys.join(', ')}`,
+      );
+    }
+  });
+
+  it('refuses a seed whose sources collide, rather than silently picking one', () => {
+    const base = SEED_PLACES.find((place) => place.id === 'home');
+    assert.ok(base, 'the home fallback is the fixture this test builds on');
+
+    const collided: SeedPlace = {
+      ...base,
+      sources: [
+        { key: 'dup', kind: 'official_site', label: 'A', url: 'https://a.example', checkedAt: '2026-09-07' },
+        { key: 'dup', kind: 'municipal_page', label: 'B', url: 'https://b.example', checkedAt: '2026-09-07' },
+      ],
+      equipment: {
+        toilet: { value: '○', sourceKey: 'dup', verifiedAt: '2026-09-07', confidence: 1 },
+      },
+    };
+
+    const violations = validateSeed([collided]);
+    assert.ok(
+      violations.some((violation) => violation.reason === 'duplicate source key'),
+      'a duplicate source key must be a boot-time violation',
+    );
   });
 });
 
