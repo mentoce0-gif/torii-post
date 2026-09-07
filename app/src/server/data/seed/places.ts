@@ -63,7 +63,17 @@ function park(input: {
   lng: number;
   category?: string;
   minAgeMonths?: number | null;
-  candidateSources?: { kind: 'official_site' | 'municipal_page'; label: string; url: string }[];
+  candidateSources?: {
+    kind: 'official_site' | 'municipal_page';
+    /**
+     * Distinguishes two candidates of the same kind. Without it the key is
+     * derived from the kind alone, so a park listing two official pages would
+     * give both the same key and the second would shadow the first.
+     */
+    slug?: string;
+    label: string;
+    url: string;
+  }[];
 }): SeedPlace {
   return {
     id: input.id,
@@ -84,7 +94,7 @@ function park(input: {
     category: input.category ?? 'park',
     notes: null,
     sources: (input.candidateSources ?? []).map((candidate) => ({
-      key: `${input.id}:${candidate.kind === 'municipal_page' ? 'municipal' : 'official'}`,
+      key: `${input.id}:${candidate.slug ?? (candidate.kind === 'municipal_page' ? 'municipal' : 'official')}`,
       kind: candidate.kind,
       label: candidate.label,
       url: candidate.url,
@@ -108,6 +118,12 @@ export const SEED_PLACES: SeedPlace[] = [
     category: 'large_park',
     candidateSources: [
       { kind: 'official_site', label: '矢橋帰帆島公園 公式サイト', url: 'https://hikari-g.com/kihan/' },
+      {
+        kind: 'official_site',
+        slug: 'official-facility',
+        label: '矢橋帰帆島公園 無料施設案内',
+        url: 'https://hikari-g.com/kihan/facility/',
+      },
     ],
   }),
   park({
@@ -120,6 +136,18 @@ export const SEED_PLACES: SeedPlace[] = [
     category: 'large_park',
     candidateSources: [
       { kind: 'official_site', label: 'ロクハ公園 公式サイト', url: 'https://www.park-698.net/' },
+      {
+        kind: 'official_site',
+        slug: 'official-baby',
+        label: 'ロクハ公園 赤ちゃんの駅',
+        url: 'https://www.park-698.net/akacyan/',
+      },
+      {
+        kind: 'official_site',
+        slug: 'official-faq',
+        label: 'ロクハ公園 よくあるご質問',
+        url: 'https://www.park-698.net/situmon/',
+      },
       {
         kind: 'municipal_page',
         label: '草津市 ロクハ公園',
@@ -140,6 +168,12 @@ export const SEED_PLACES: SeedPlace[] = [
         kind: 'official_site',
         label: '草津川跡地公園 de愛ひろば 公式サイト',
         url: 'https://www.kusatsugawaatochi-park.com/de_top',
+      },
+      {
+        kind: 'official_site',
+        slug: 'official-section5',
+        label: '草津川跡地公園 de愛ひろば（区間5）施設',
+        url: 'https://www.kusatsugawaatochi-park.com/6-1',
       },
       {
         kind: 'municipal_page',
@@ -166,6 +200,12 @@ export const SEED_PLACES: SeedPlace[] = [
         label: '守山市 公園一覧',
         url: 'https://www.city.moriyama.lg.jp/shisetsu/kouen/index.html',
       },
+      {
+        kind: 'municipal_page',
+        slug: 'municipal-baby',
+        label: '守山市 赤ちゃんの駅',
+        url: 'https://www.city.moriyama.lg.jp/kodomoseisaku/kosodateshien_3.html',
+      },
     ],
   }),
   park({
@@ -187,6 +227,12 @@ export const SEED_PLACES: SeedPlace[] = [
         label: '守山市 守山市民運動公園',
         url: 'https://www.city.moriyama.lg.jp/shisetsu/kouen/1006761.html',
       },
+      {
+        kind: 'municipal_page',
+        slug: 'municipal-baby',
+        label: '守山市 赤ちゃんの駅',
+        url: 'https://www.city.moriyama.lg.jp/kodomoseisaku/kosodateshien_3.html',
+      },
     ],
   }),
   park({
@@ -202,6 +248,12 @@ export const SEED_PLACES: SeedPlace[] = [
         kind: 'municipal_page',
         label: '守山市 公園一覧',
         url: 'https://www.city.moriyama.lg.jp/shisetsu/kouen/index.html',
+      },
+      {
+        kind: 'municipal_page',
+        slug: 'municipal-baby',
+        label: '守山市 赤ちゃんの駅',
+        url: 'https://www.city.moriyama.lg.jp/kodomoseisaku/kosodateshien_3.html',
       },
     ],
   }),
@@ -221,6 +273,18 @@ export const SEED_PLACES: SeedPlace[] = [
         label: '大津市 皇子が丘公園',
         url: 'https://www.city.otsu.lg.jp/shisei/c/s/f/ps/park/1387954889254.html',
       },
+      {
+        kind: 'municipal_page',
+        slug: 'municipal-park',
+        label: '大津市 皇子が丘公園（公園緑地課）',
+        url: 'https://www.city.otsu.lg.jp/soshiki/035/1809/g/koen/koen/1387446057398.html',
+      },
+      {
+        kind: 'municipal_page',
+        slug: 'municipal-baby',
+        label: '大津市 赤ちゃんの駅 登録施設',
+        url: 'https://www.city.otsu.lg.jp/soshiki/015/1488/g/ks/40844.html',
+      },
     ],
   }),
   park({
@@ -236,6 +300,12 @@ export const SEED_PLACES: SeedPlace[] = [
         kind: 'municipal_page',
         label: '大津市 大津湖岸なぎさ公園（市民プラザ）',
         url: 'https://www.city.otsu.lg.jp/soshiki/035/1809/g/koen/n/index.html',
+      },
+      {
+        kind: 'municipal_page',
+        slug: 'municipal-baby',
+        label: '大津市 赤ちゃんの駅 登録施設',
+        url: 'https://www.city.otsu.lg.jp/soshiki/015/1488/g/ks/40844.html',
       },
     ],
   }),
@@ -254,6 +324,12 @@ export const SEED_PLACES: SeedPlace[] = [
         kind: 'official_site',
         label: 'ブランチ大津京 近江神宮外苑公園',
         url: 'https://www.branch-sc.com/otsukyo/shop/page.jsp?id=25',
+      },
+      {
+        kind: 'municipal_page',
+        slug: 'municipal-baby',
+        label: '大津市 赤ちゃんの駅 登録施設',
+        url: 'https://www.city.otsu.lg.jp/soshiki/015/1488/g/ks/40844.html',
       },
     ],
   }),
@@ -293,6 +369,18 @@ export const SEED_PLACES: SeedPlace[] = [
         kind: 'official_site',
         label: '京都市都市緑化協会 宝が池公園 子どもの楽園',
         url: 'https://www.kyoto-ga.jp/kodomonorakuen/',
+      },
+      {
+        kind: 'official_site',
+        slug: 'official-facility',
+        label: '子どもの楽園 園内マップと施設',
+        url: 'https://www.kyoto-ga.jp/kodomonorakuen/facilities/index.html',
+      },
+      {
+        kind: 'official_site',
+        slug: 'official-guide',
+        label: '子どもの楽園 ご利用案内（開園時間・休園日）',
+        url: 'https://www.kyoto-ga.jp/kodomonorakuen/guide/',
       },
       {
         kind: 'municipal_page',

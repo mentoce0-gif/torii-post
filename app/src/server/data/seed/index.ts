@@ -25,6 +25,21 @@ export function validateSeed(places: SeedPlace[]): SeedViolation[] {
   const violations: SeedViolation[] = [];
   for (const place of places) {
     const sourceKeys = new Set(place.sources.map((s) => s.key));
+
+    // Two sources sharing a key make `sourceKey` ambiguous: the value would
+    // name one page while pointing at whichever row happened to win. Since a
+    // stated value is only as good as the page it cites, an ambiguous citation
+    // is not a stated value at all.
+    if (sourceKeys.size !== place.sources.length) {
+      const seen = new Set<string>();
+      for (const source of place.sources) {
+        if (seen.has(source.key)) {
+          violations.push({ placeId: place.id, key: source.key, reason: 'duplicate source key' });
+        }
+        seen.add(source.key);
+      }
+    }
+
     for (const [key, entry] of Object.entries(place.equipment)) {
       if (!isEquipmentKey(key)) {
         violations.push({ placeId: place.id, key, reason: 'unknown equipment key' });
