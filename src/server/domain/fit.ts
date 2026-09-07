@@ -28,10 +28,30 @@ export function fitScore(signals: Signals): number {
   return total / weight;
 }
 
+/** The raw grade the conditions alone earn, before any evidence check. */
 export function toGrade(score: number): FitGrade {
   if (score >= 0.78) return '◎';
   if (score >= 0.55) return '○';
   return '△';
+}
+
+/**
+ * The grade actually shown.
+ *
+ * ◎ is a claim — "this suits today particularly well" — and a claim needs
+ * something behind it. With nothing at all confirmed about a place, the honest
+ * reading is "nothing rules it out", which is ○, not ◎.
+ *
+ * The cap deliberately stops at ○ rather than pushing the card down to △: an
+ * unsurveyed place is not a worse place than one confirmed to have none of the
+ * six, and demoting it further would turn `？` back into the penalty the two
+ * axes exist to avoid. The score itself is untouched, so this never reorders
+ * or removes a candidate — it only stops the card overstating what we know.
+ */
+export function gradeFor(score: number, confidencePct: number): FitGrade {
+  const grade = toGrade(score);
+  if (grade === '◎' && confidencePct === 0) return '○';
+  return grade;
 }
 
 /**

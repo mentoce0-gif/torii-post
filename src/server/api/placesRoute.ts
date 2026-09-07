@@ -1,5 +1,5 @@
 import { computeInformationConfidence } from '../domain/confidence.ts';
-import { fitScore, toGrade } from '../domain/fit.ts';
+import { fitScore, gradeFor } from '../domain/fit.ts';
 import { evaluate } from '../domain/rules.ts';
 import { defaultPrepMinutes, estimateTravel } from '../domain/travel.ts';
 import { EQUIPMENT_LABELS, type Mobility, type RecommendContext, type Weather } from '../domain/types.ts';
@@ -69,7 +69,7 @@ export function handleGetPlace(deps: Deps) {
       reasons = outcome.reasons.map((reason) => ({ tone: reason.tone, text: reason.text }));
       travelMinutes = travel.minutes;
       travelPrecision = travel.precision;
-      fitGrade = toGrade(fitScore(outcome.signals));
+      fitGrade = gradeFor(fitScore(outcome.signals), confidence.pct);
     }
 
     const householdId = session?.householdId ?? ctx.householdId;

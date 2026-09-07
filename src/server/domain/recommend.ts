@@ -1,5 +1,5 @@
 import { computeInformationConfidence, type ConfidenceResult } from './confidence.ts';
-import { FIT_RULE_VERSION, fitScore, rankingScore, toGrade } from './fit.ts';
+import { FIT_RULE_VERSION, fitScore, gradeFor, rankingScore } from './fit.ts';
 import { RULE_SET_VERSION, evaluate } from './rules.ts';
 import { defaultPrepMinutes, estimateTravel, type TravelEstimate } from './travel.ts';
 import type {
@@ -120,7 +120,7 @@ function present(scored: Scored, rank: number): RankedCandidate {
     equipment: scored.candidate.equipment,
     role: scored.role,
     rank,
-    fitGrade: toGrade(scored.fit),
+    fitGrade: gradeFor(scored.fit, scored.confidence.pct),
     confidence: scored.confidence,
     travel: scored.travel,
     playMinutes: scored.playMinutes,

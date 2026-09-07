@@ -88,6 +88,48 @@ describe('POST /api/recommend', () => {
     }
   });
 
+  it('never shows ◎ on a card where nothing has been confirmed', async () => {
+    // The PoC profile is the honest one: every unsurveyed field is ？.
+    const strict = await startServer('poc');
+    try {
+      const body = (await strict.json('/api/recommend', {
+        method: 'POST',
+        body: JSON.stringify(CONTEXT),
+      })) as RecommendBody;
+
+      const blank = body.candidates.filter((c) => c.confidence.pct === 0);
+      assert.ok(blank.length > 0, 'the poc seed should still have unsurveyed places');
+      for (const candidate of blank) {
+        assert.notEqual(candidate.fitGrade, '◎', `${candidate.name} claims ◎ on no evidence`);
+      }
+
+      // Still on the list, and still not the bottom grade.
+      for (const candidate of blank) assert.equal(candidate.fitGrade, '○');
+    } finally {
+      await strict.stop();
+    }
+  });
+
+  it('applies the same cap on the detail screen', async () => {
+    const strict = await startServer('poc');
+    try {
+      const body = (await strict.json('/api/recommend', {
+        method: 'POST',
+        body: JSON.stringify(CONTEXT),
+      })) as RecommendBody;
+      const blank = body.candidates.find((c) => c.confidence.pct === 0) as Candidate;
+
+      const detail = (await strict.json(
+        `/api/places/${blank.placeId}?sessionId=${body.sessionId}`,
+      )) as { fitGrade: string | null; confidence: { pct: number } };
+
+      assert.equal(detail.confidence.pct, 0);
+      assert.notEqual(detail.fitGrade, '◎');
+    } finally {
+      await strict.stop();
+    }
+  });
+
   it('asks for an area instead of guessing when there is no location', async () => {
     const response = await server.fetch('/api/recommend', {
       method: 'POST',
