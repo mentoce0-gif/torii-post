@@ -57,7 +57,39 @@ function locate(): Promise<{ lat: number; lng: number } | null> {
   });
 }
 
-function conditionBar(conditions: Conditions, areaLabel: string | null, onEdit: () => void): HTMLElement {
+/**
+ * "Can I kill an hour there?" — the one number that question turns on.
+ *
+ * It is arithmetic on the household's own time budget minus the round trip, not
+ * a claim about the place, so it is safe to state plainly even when all six
+ * facility fields are `？`. On a screen where most cards are unverified, this is
+ * often the only concrete thing on the card, which is exactly why it is here
+ * and not buried in the detail view's reason list.
+ */
+function stayLine(candidate: Candidate): HTMLElement | null {
+  if (candidate.onSiteMinutes === null) {
+    return h('p', { class: 'stay-line stay-unknown', text: '滞在できる時間は未確認です' });
+  }
+  if (candidate.onSiteMinutes <= 0) {
+    return h('p', { class: 'stay-line stay-none', text: '往復で時間を使い切ります' });
+  }
+  const label =
+    candidate.role === 'home'
+      ? `すぐ始めて約${candidate.onSiteMinutes}分`
+      : `着いて約${candidate.onSiteMinutes}分あそべる`;
+  return h(
+    'p',
+    { class: `stay-line${candidate.onSiteMinutes < 30 ? ' stay-short' : ''}` },
+    h('strong', { text: label }),
+  );
+}
+
+function conditionBar(
+  conditions: Conditions,
+  areaLabel: string | null,
+  isDefaultArea: boolean,
+  onEdit: () => void,
+): HTMLElement {
   const summary = [
     ageLabel(conditions.childAgeMonths),
     MOBILITY_LABELS[conditions.mobility] ?? conditions.mobility,
@@ -72,7 +104,14 @@ function conditionBar(conditions: Conditions, areaLabel: string | null, onEdit: 
       { class: 'condition-main' },
       h('span', { class: 'weather-icon', 'aria-hidden': 'true', text: WEATHER_ICONS[conditions.weather] ?? '☁' }),
       h('span', { text: WEATHER_LABELS[conditions.weather] ?? conditions.weather }),
-      areaLabel ? h('span', { class: 'condition-area', text: areaLabel }) : null,
+      areaLabel
+        ? h('span', {
+            class: 'condition-area',
+            // A default is labelled as one. The app may start somewhere, but it
+            // never tells a household it knows where they are.
+            text: isDefaultArea ? `${areaLabel}（既定）` : areaLabel,
+          })
+        : null,
     ),
     h('span', { class: 'condition-sub', text: summary }),
     h('span', { class: 'condition-edit', 'aria-hidden': 'true', text: '変更' }),
@@ -189,6 +228,7 @@ function candidateCard(candidate: Candidate, sessionId: string, mobility: string
       ),
       h('span', { class: 'role-tag', text: roleTag }),
     ),
+    stayLine(candidate),
     fitAndConfidence(candidate.fitGrade, candidate.confidence),
     equipmentGrid(candidate.equipment),
     h('p', { class: 'headline', text: candidate.headline }),
@@ -224,13 +264,17 @@ function candidateCard(candidate: Candidate, sessionId: string, mobility: string
 export async function renderHome(root: HTMLElement): Promise<void> {
   let editorOpen = false;
 
-  const draw = (content: HTMLElement, areaLabel: string | null): void => {
+  const draw = (
+    content: HTMLElement,
+    areaLabel: string | null,
+    isDefaultArea = false,
+  ): void => {
     mount(
       root,
       h(
         'div',
         { class: 'home' },
-        conditionBar(store.conditions, areaLabel, () => {
+        conditionBar(store.conditions, areaLabel, isDefaultArea, () => {
           editorOpen = !editorOpen;
           void run(editorOpen);
         }),
@@ -326,7 +370,7 @@ export async function renderHome(root: HTMLElement): Promise<void> {
         ),
       );
 
-      draw(list, response.context.areaLabel);
+      draw(list, response.context.areaLabel, response.context.originSource === 'default');
     } catch (error) {
       if (error instanceof ApiError && error.code === 'origin_required') {
         // Location refused and no town chosen yet: ask for the town rather than

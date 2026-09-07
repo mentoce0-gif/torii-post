@@ -5,6 +5,13 @@ const SECURITY_HEADERS: Record<string, string> = {
   'Referrer-Policy': 'no-referrer',
   'X-Frame-Options': 'DENY',
   'Cross-Origin-Opener-Policy': 'same-origin',
+  // The install requirement is HTTPS anyway, so once a terminator is in front
+  // there is no reason to let a first request downgrade. Harmless over plain
+  // HTTP: browsers ignore it on an insecure origin.
+  'Strict-Transport-Security': 'max-age=15552000; includeSubDomains',
+  // Geolocation is the one capability the app asks for, and only to reduce a
+  // fix to a town name. Nothing here wants a camera, a microphone, or a wallet.
+  'Permissions-Policy': 'geolocation=(self), camera=(), microphone=(), payment=(), usb=()',
   // Everything the app needs is served from this origin. No third-party script,
   // no analytics beacon, no tile server reaching out from the page.
   'Content-Security-Policy': [

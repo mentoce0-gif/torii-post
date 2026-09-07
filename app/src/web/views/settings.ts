@@ -224,6 +224,39 @@ export async function renderSettings(root: HTMLElement): Promise<void> {
         h('button', { class: 'btn btn-primary', type: 'button', text: '保存する', onClick: () => void save() }),
         status,
       ),
+      // A free service that collects anything from families with small children
+      // owes them a plain list of what it holds. The design already avoids the
+      // sensitive fields; until now it said so only in the repository's README,
+      // where no parent will ever read it.
+      h(
+        'section',
+        { class: 'section' },
+        h('h2', { class: 'section-title', text: 'このアプリが持つ情報' }),
+        h('p', { class: 'body-text', text: '持つもの' }),
+        h(
+          'ul',
+          { class: 'plain-list' },
+          h('li', { text: '子どもの生まれ年と月（年齢の判定だけに使います）' }),
+          h('li', { text: '市区町村までの起点エリア' }),
+          h('li', { text: '移動手段と支度時間' }),
+          h('li', { text: '行く / 見送る の判断と、その後の記録' }),
+          h('li', { text: '画面の操作ログ（決めるまでの時間の計測用）' }),
+        ),
+        h('p', { class: 'body-text', text: '持たないもの' }),
+        h(
+          'ul',
+          { class: 'plain-list' },
+          h('li', { text: '氏名・生年月日・メールアドレス・電話番号' }),
+          h('li', { text: '自宅の住所と、正確な現在地' }),
+          h('li', { text: '写真と顔画像' }),
+        ),
+        h('p', {
+          class: 'body-text muted',
+          text:
+            '現在地を使う場合も、受け取った緯度経度はその場で丸めて、保存するのは市区町村だけです。' +
+            '広告も外部への送信もありません。下のボタンでいつでも全部消せます。',
+        }),
+      ),
       h(
         'section',
         { class: 'section section-danger' },

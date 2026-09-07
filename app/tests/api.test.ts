@@ -130,14 +130,81 @@ describe('POST /api/recommend', () => {
     }
   });
 
-  it('asks for an area instead of guessing when there is no location', async () => {
+  it('falls back to the configured town without claiming it is where you are', async () => {
+    // This used to be a 400. Blocking stranded every visitor who declined the
+    // location prompt, which is most of them, so the PoC now starts from its
+    // configured town instead. The rule it must not break is the original one:
+    // never present a fallback as the household's actual location. The answer
+    // is labelled `default`, and the screen renders it as changeable.
     const response = await server.fetch('/api/recommend', {
       method: 'POST',
       body: JSON.stringify({ ...CONTEXT, origin: {} }),
     });
-    assert.equal(response.status, 400);
-    const body = (await response.json()) as { error: string };
-    assert.equal(body.error, 'origin_required');
+    assert.equal(response.status, 201);
+    const body = (await response.json()) as {
+      context: { originSource: string; areaCode: string; areaLabel: string };
+    };
+    assert.equal(body.context.originSource, 'default');
+    assert.equal(body.context.areaCode, 'shiga-otsu');
+    assert.equal(body.context.areaLabel, '大津市');
+  });
+
+  it('reports a chosen area as chosen, so the default cannot mask a real answer', async () => {
+    const response = await server.fetch('/api/recommend', {
+      method: 'POST',
+      body: JSON.stringify({ ...CONTEXT, origin: { areaCode: 'shiga-kusatsu' } }),
+    });
+    assert.equal(response.status, 201);
+    const body = (await response.json()) as { context: { originSource: string; areaCode: string } };
+    assert.equal(body.context.originSource, 'chosen');
+    assert.equal(body.context.areaCode, 'shiga-kusatsu');
+  });
+
+  it('still refuses to invent an area when the configured default is not real', async () => {
+    // A typo in DEFAULT_AREA_CODE must fail loudly rather than quietly picking
+    // whichever town happens to sort first.
+    const broken = await startServer('demo', { defaultAreaCode: 'atlantis' });
+    try {
+      const response = await broken.fetch('/api/recommend', {
+        method: 'POST',
+        body: JSON.stringify({ ...CONTEXT, origin: {} }),
+      });
+      assert.equal(response.status, 400);
+      const body = (await response.json()) as { error: string };
+      assert.equal(body.error, 'origin_required');
+    } finally {
+      await broken.stop();
+    }
+  });
+
+  it('says how long the household could actually stay', async () => {
+    // The card leads with this number, so it has to be the real remainder and
+    // not a restatement of the time budget: remaining minus the round trip.
+    const body = await server.json<{
+      context: { remainingMinutes: number };
+      candidates: {
+        role: string;
+        travelMinutes: number | null;
+        onSiteMinutes: number | null;
+      }[];
+    }>('/api/recommend', { method: 'POST', body: JSON.stringify(CONTEXT) });
+
+    for (const candidate of body.candidates) {
+      if (candidate.travelMinutes === null) {
+        assert.equal(candidate.onSiteMinutes, null, 'no travel time means no claim about the clock');
+        continue;
+      }
+      assert.equal(
+        candidate.onSiteMinutes,
+        body.context.remainingMinutes - candidate.travelMinutes * 2,
+        'on-site minutes must be the remainder after the round trip',
+      );
+    }
+
+    const home = body.candidates.find((candidate) => candidate.role === 'home');
+    assert.ok(home, 'the home fallback should always be offered');
+    // Nothing to travel, so the whole window is on-site.
+    assert.equal(home?.onSiteMinutes, body.context.remainingMinutes);
   });
 
   it('rejects nonsense input', async () => {
