@@ -1,0 +1,23 @@
+{
+  "name": "kosodate-nani-suru-poc",
+  "version": "0.1.0",
+  "private": true,
+  "description": "90-day PoC: decide in under 60 seconds whether to take the kid somewhere new.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.web.json",
+    "start": "npm run build && node src/server/main.ts",
+    "dev": "npm run build && SEED_PROFILE=demo node --watch src/server/main.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.web.json --noEmit",
+    "test": "node --test tests/*.test.ts",
+    "icons": "node tools/gen-icons.mjs",
+    "metrics": "node tools/metrics.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.0"
+  }
+}
