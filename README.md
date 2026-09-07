@@ -28,7 +28,7 @@ npm run dev          # http://127.0.0.1:8787  デモデータ付き
 | `npm run dev` | フロントをビルドし、`SEED_PROFILE=demo` で `--watch` 起動 |
 | `npm start` | フロントをビルドし、`SEED_PROFILE` の既定（`poc`）で起動 |
 | `npm run build` | ブラウザ用 TypeScript を `public/build/` へ |
-| `npm test` | `node:test` によるテスト（68件） |
+| `npm test` | `node:test` によるテスト（82件） |
 | `npm run typecheck` | サーバ・ブラウザ両方の型チェック |
 | `npm run metrics` | Time to Decision の簡易集計（`-- --json` でJSON） |
 | `npm run icons` | PWAアイコンPNGの再生成 |
@@ -322,3 +322,13 @@ npm test
 `recommend` API / 情報確度 / 判定理由 / Decision保存 / Feedback保存 /
 Time to Decision計測 / プライバシー / シードの出典検証 をカバーしています。
 とくに **`？` を `○` としても `×` としても扱わない**ことを明示的にテストしています。
+
+シード側（`tests/seed.test.ts`）が固定しているのは、値そのものではなく**裏付けの有無**です。
+
+- `poc` プロファイルにデモ値もデモバナーも出ない
+- `demoObservations.ts` の値が `places.ts` へ昇格していない
+- まだ誰も読んでいない候補URL（`checkedAt: null`）を根拠に値を書いていない
+
+「全項目が `？` であること」はテストしていません。それを固定すると、
+`CURATION.md` の手順どおりに出典付きで値を埋めた瞬間にテストが落ち、
+キュレーション作業そのものが妨げられるためです。
