@@ -10,9 +10,10 @@ import type { CoordPrecision, EquipmentValue, HoursStatus, PlaceKind } from '../
  *
  * Nothing here was confirmed against a facility's own page, so every park ships
  * with six `？` and `hoursStatus: 'unverified'`. `candidateSources` records the
- * pages a curator should open; CURATION.md turns that into a checklist. The
- * screens are still complete with `？` everywhere — that is the whole point of
- * separating "fit" from "confidence".
+ * pages a curator should open — located by search, read by nobody, and carrying
+ * `checkedAt: null` so they render as 未確認 and unlock no value. CURATION.md
+ * turns that into a checklist. The screens are still complete with `？`
+ * everywhere — that is the whole point of separating "fit" from "confidence".
  *
  * Coordinates are locality centroids, marked as such, so travel time is shown
  * as an estimate rather than a routed time.
@@ -52,7 +53,7 @@ export interface SeedPlace {
 
 const UNVERIFIED_HOURS = '利用可能時間 未確認';
 
-/** A park nobody has surveyed yet: six `？`, honest hours, a source to go read. */
+/** A park nobody has surveyed yet: six `？`, honest hours, sources to go read. */
 function park(input: {
   id: string;
   name: string;
@@ -62,7 +63,7 @@ function park(input: {
   lng: number;
   category?: string;
   minAgeMonths?: number | null;
-  candidateSource?: { label: string; url: string };
+  candidateSources?: { kind: 'official_site' | 'municipal_page'; label: string; url: string }[];
 }): SeedPlace {
   return {
     id: input.id,
@@ -82,17 +83,15 @@ function park(input: {
     maxAgeMonths: null,
     category: input.category ?? 'park',
     notes: null,
-    sources: input.candidateSource
-      ? [
-          {
-            key: `${input.id}:candidate`,
-            kind: 'official_site',
-            label: input.candidateSource.label,
-            url: input.candidateSource.url,
-            checkedAt: null,
-          },
-        ]
-      : [],
+    sources: (input.candidateSources ?? []).map((candidate) => ({
+      key: `${input.id}:${candidate.kind === 'municipal_page' ? 'municipal' : 'official'}`,
+      kind: candidate.kind,
+      label: candidate.label,
+      url: candidate.url,
+      // Located by search, never opened from here. `checkedAt: null` renders as
+      // 未確認 and unlocks no value: it only saves the curator the hunt.
+      checkedAt: null,
+    })),
     equipment: {},
   };
 }
@@ -107,7 +106,9 @@ export const SEED_PLACES: SeedPlace[] = [
     lat: 35.0047,
     lng: 135.9255,
     category: 'large_park',
-    candidateSource: { label: '矢橋帰帆島公園 公式サイト', url: 'https://hikari-g.com/kihan/' },
+    candidateSources: [
+      { kind: 'official_site', label: '矢橋帰帆島公園 公式サイト', url: 'https://hikari-g.com/kihan/' },
+    ],
   }),
   park({
     id: 'rokuha-park',
@@ -117,6 +118,14 @@ export const SEED_PLACES: SeedPlace[] = [
     lat: 34.9852,
     lng: 135.9821,
     category: 'large_park',
+    candidateSources: [
+      { kind: 'official_site', label: 'ロクハ公園 公式サイト', url: 'https://www.park-698.net/' },
+      {
+        kind: 'municipal_page',
+        label: '草津市 ロクハ公園',
+        url: 'https://www.city.kusatsu.shiga.jp/citysales/koen/rokuhakoen/index.html',
+      },
+    ],
   }),
   park({
     id: 'kusatsugawa-deai',
@@ -126,6 +135,18 @@ export const SEED_PLACES: SeedPlace[] = [
     lat: 35.0176,
     lng: 135.9604,
     category: 'park',
+    candidateSources: [
+      {
+        kind: 'official_site',
+        label: '草津川跡地公園 de愛ひろば 公式サイト',
+        url: 'https://www.kusatsugawaatochi-park.com/de_top',
+      },
+      {
+        kind: 'municipal_page',
+        label: '草津市 de愛ひろば（区間5）',
+        url: 'https://www.city.kusatsu.shiga.jp/kurashi/toshikeikaku/kusatsugawaatochi/kusatsu_river.html',
+      },
+    ],
   }),
 
   // --- 守山市 ---------------------------------------------------------------
@@ -137,6 +158,15 @@ export const SEED_PLACES: SeedPlace[] = [
     lat: 35.0585,
     lng: 135.9975,
     category: 'park',
+    // No page of its own turned up in search; the city's park index is the
+    // place to start looking.
+    candidateSources: [
+      {
+        kind: 'municipal_page',
+        label: '守山市 公園一覧',
+        url: 'https://www.city.moriyama.lg.jp/shisetsu/kouen/index.html',
+      },
+    ],
   }),
   park({
     id: 'moriyama-sports-park',
@@ -146,6 +176,18 @@ export const SEED_PLACES: SeedPlace[] = [
     lat: 35.0602,
     lng: 135.9902,
     category: 'large_park',
+    candidateSources: [
+      {
+        kind: 'official_site',
+        label: '守山市民運動公園 公式サイト',
+        url: 'https://www.moriyama-s-p.com/',
+      },
+      {
+        kind: 'municipal_page',
+        label: '守山市 守山市民運動公園',
+        url: 'https://www.city.moriyama.lg.jp/shisetsu/kouen/1006761.html',
+      },
+    ],
   }),
   park({
     id: 'dai2-nagisa',
@@ -155,6 +197,13 @@ export const SEED_PLACES: SeedPlace[] = [
     lat: 35.0902,
     lng: 135.9498,
     category: 'lakeside_park',
+    candidateSources: [
+      {
+        kind: 'municipal_page',
+        label: '守山市 公園一覧',
+        url: 'https://www.city.moriyama.lg.jp/shisetsu/kouen/index.html',
+      },
+    ],
   }),
 
   // --- 大津市 ---------------------------------------------------------------
@@ -166,6 +215,13 @@ export const SEED_PLACES: SeedPlace[] = [
     lat: 35.0323,
     lng: 135.8651,
     category: 'large_park',
+    candidateSources: [
+      {
+        kind: 'municipal_page',
+        label: '大津市 皇子が丘公園',
+        url: 'https://www.city.otsu.lg.jp/shisei/c/s/f/ps/park/1387954889254.html',
+      },
+    ],
   }),
   park({
     id: 'otsu-kogan-nagisa',
@@ -175,6 +231,13 @@ export const SEED_PLACES: SeedPlace[] = [
     lat: 35.0053,
     lng: 135.8764,
     category: 'lakeside_park',
+    candidateSources: [
+      {
+        kind: 'municipal_page',
+        label: '大津市 大津湖岸なぎさ公園（市民プラザ）',
+        url: 'https://www.city.otsu.lg.jp/soshiki/035/1809/g/koen/n/index.html',
+      },
+    ],
   }),
   park({
     id: 'omijingu-gaien',
@@ -184,6 +247,15 @@ export const SEED_PLACES: SeedPlace[] = [
     lat: 35.0451,
     lng: 135.8557,
     category: 'park',
+    // The park sits inside a commercial development that runs its own page;
+    // treat it as the operator's page, not the city's.
+    candidateSources: [
+      {
+        kind: 'official_site',
+        label: 'ブランチ大津京 近江神宮外苑公園',
+        url: 'https://www.branch-sc.com/otsukyo/shop/page.jsp?id=25',
+      },
+    ],
   }),
 
   // --- 京都市 ---------------------------------------------------------------
@@ -195,6 +267,18 @@ export const SEED_PLACES: SeedPlace[] = [
     lat: 34.9878,
     lng: 135.748,
     category: 'large_park',
+    candidateSources: [
+      {
+        kind: 'official_site',
+        label: '京都市都市緑化協会 梅小路公園 園内マップと施設の紹介',
+        url: 'https://www.kyoto-ga.jp/umekouji/facilities/',
+      },
+      {
+        kind: 'municipal_page',
+        label: '京都市 梅小路公園',
+        url: 'https://www.city.kyoto.lg.jp/kensetu/page/0000257046.html',
+      },
+    ],
   }),
   park({
     id: 'takaragaike-kodomo',
@@ -204,6 +288,18 @@ export const SEED_PLACES: SeedPlace[] = [
     lat: 35.0546,
     lng: 135.792,
     category: 'large_park',
+    candidateSources: [
+      {
+        kind: 'official_site',
+        label: '京都市都市緑化協会 宝が池公園 子どもの楽園',
+        url: 'https://www.kyoto-ga.jp/kodomonorakuen/',
+      },
+      {
+        kind: 'municipal_page',
+        label: '京都市 宝が池公園 子どもの楽園',
+        url: 'https://www.city.kyoto.lg.jp/kensetu/page/0000043529.html',
+      },
+    ],
   }),
   park({
     id: 'okazaki-park',
@@ -213,6 +309,13 @@ export const SEED_PLACES: SeedPlace[] = [
     lat: 35.0142,
     lng: 135.7825,
     category: 'park',
+    candidateSources: [
+      {
+        kind: 'municipal_page',
+        label: '京都市 岡崎公園',
+        url: 'https://www.city.kyoto.lg.jp/kensetu/page/0000082743.html',
+      },
+    ],
   }),
 
   // --- fallback ---------------------------------------------------------------

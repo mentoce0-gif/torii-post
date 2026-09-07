@@ -136,20 +136,40 @@ describe('seed provenance', () => {
     assert.deepEqual(validateSeed(SEED_PLACES), []);
   });
 
-  it('leaves every unsurveyed facility as ？ in the PoC profile', async () => {
+  it('states a facility value in the PoC profile only with provenance behind it', async () => {
+    // Deliberately not "every value is ？". That would freeze the seed at zero
+    // and fail the moment a curator does what CURATION.md step 3 asks. What has
+    // to hold is the rule itself: a value is stated only when someone read a
+    // named, non-demo source and wrote down when. Curating a place is supposed
+    // to make this test pass with more values, never to make it fail.
     const strict = await startServer('poc');
     try {
       for (const entry of strict.repo.listPlaces()) {
         if (entry.place.kind === 'home') continue;
-        for (const [key, value] of Object.entries(entry.equipment)) {
-          assert.equal(
-            value,
-            '？',
-            `${entry.place.name}.${key} claims ${value} without a survey behind it`,
+        const sourceById = new Map(entry.sources.map((source) => [source.id, source]));
+
+        for (const row of entry.equipmentRows) {
+          if (row.value === '？') continue;
+          const source = row.sourceId === null ? undefined : sourceById.get(row.sourceId);
+          assert.ok(
+            source !== undefined,
+            `${entry.place.name}.${row.key} claims ${row.value} without naming a source`,
+          );
+          assert.notEqual(
+            source?.kind,
+            'demo_placeholder',
+            `${entry.place.name}.${row.key} claims ${row.value} on demo data`,
+          );
+          assert.ok(
+            row.verifiedAt,
+            `${entry.place.name}.${row.key} claims ${row.value} without a date`,
           );
         }
-        assert.equal(entry.place.hoursStatus, 'unverified');
-        assert.match(entry.place.hoursLabel, /未確認/);
+
+        // Hours are never guessed: unverified has to read as unverified.
+        if (entry.place.hoursStatus === 'unverified') {
+          assert.match(entry.place.hoursLabel, /未確認/);
+        }
       }
     } finally {
       await strict.stop();
