@@ -13,6 +13,9 @@ import {
   requireWeather,
 } from './validate.ts';
 
+/** How we came to believe the household is where we think they are. */
+export type OriginSource = 'gps' | 'chosen' | 'default';
+
 export interface RecommendResponse {
   householdId: string;
   sessionId: string;
@@ -24,6 +27,8 @@ export interface RecommendResponse {
     weather: string;
     areaCode: string;
     areaLabel: string;
+    /** 'default' means nobody said — the screen must show it as changeable. */
+    originSource: OriginSource;
   };
   candidates: CandidateDto[];
   shortlistNote: string | null;
@@ -40,7 +45,8 @@ export interface RecommendResponse {
 function resolveOrigin(
   raw: unknown,
   fallbackAreaCode: string | null,
-): { origin: Origin; areaCode: string; areaLabel: string } {
+  defaultAreaCode: string,
+): { origin: Origin; areaCode: string; areaLabel: string; source: OriginSource } {
   const value = raw && typeof raw === 'object' ? (raw as Record<string, unknown>) : {};
 
   const lat = typeof value['lat'] === 'number' ? coarsen(value['lat'] as number) : null;
@@ -48,24 +54,43 @@ function resolveOrigin(
 
   if (lat !== null && lng !== null && Math.abs(lat) <= 90 && Math.abs(lng) <= 180) {
     const area = nearestArea(lat, lng);
-    return { origin: { lat, lng, areaCode: area.code }, areaCode: area.code, areaLabel: area.label };
+    return {
+      origin: { lat, lng, areaCode: area.code },
+      areaCode: area.code,
+      areaLabel: area.label,
+      source: 'gps',
+    };
   }
 
-  const areaCode =
+  const chosen =
     (typeof value['areaCode'] === 'string' ? (value['areaCode'] as string) : null) ??
     fallbackAreaCode;
-  const area = areaCode ? AREA_BY_CODE.get(areaCode) : undefined;
+  const chosenArea = chosen ? AREA_BY_CODE.get(chosen) : undefined;
 
-  if (!area) {
-    // Location refused and no area chosen yet. The client turns this into the
-    // manual town picker rather than guessing a starting point.
+  if (chosenArea) {
+    return {
+      origin: { lat: chosenArea.lat, lng: chosenArea.lng, areaCode: chosenArea.code },
+      areaCode: chosenArea.code,
+      areaLabel: chosenArea.label,
+      source: 'chosen',
+    };
+  }
+
+  // Location refused and no area chosen yet. Falling back to the configured
+  // town is not a guess about where the household is standing — the response
+  // says `source: 'default'` and the screen labels it as a changeable default.
+  // Blocking here instead used to strand every first-time visitor who declined
+  // the location prompt, which is most of them.
+  const fallback = AREA_BY_CODE.get(defaultAreaCode);
+  if (!fallback) {
     throw badRequest('origin_required', '現在地または滞在エリアを選んでください');
   }
 
   return {
-    origin: { lat: area.lat, lng: area.lng, areaCode: area.code },
-    areaCode: area.code,
-    areaLabel: area.label,
+    origin: { lat: fallback.lat, lng: fallback.lng, areaCode: fallback.code },
+    areaCode: fallback.code,
+    areaLabel: fallback.label,
+    source: 'default',
   };
 }
 
@@ -85,7 +110,11 @@ export function handleRecommend(deps: Deps) {
       origin: {},
     };
 
-    const resolved = resolveOrigin(body['origin'], household.homeAreaCode);
+    const resolved = resolveOrigin(
+      body['origin'],
+      household.homeAreaCode,
+      deps.config.defaultAreaCode,
+    );
     context.origin = resolved.origin;
 
     const profile = deps.repo.getMobilityProfile(household.id);
@@ -164,6 +193,7 @@ export function handleRecommend(deps: Deps) {
         weather: context.weather,
         areaCode: resolved.areaCode,
         areaLabel: resolved.areaLabel,
+        originSource: resolved.source,
       },
       candidates: dtos,
       // Three is the target, not a quota. Saying so is better than padding.

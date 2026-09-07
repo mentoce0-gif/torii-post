@@ -98,7 +98,7 @@ npm run metrics # Time to Decision の集計
 ## 現状
 
 - 4画面（Home / Detail / Decision / After）+ 履歴 + 設定 + 地図 が通しで動作
-- テスト84件pass、サーバ・ブラウザ両方の型チェックpass
+- テスト97件pass、サーバ・ブラウザ両方の型チェックpass
 - PWA: manifest / service worker（**シェルのみキャッシュ、`/api/*` はネットワーク限定**）/
   アイコン / safe-area / タップ領域48px以上 / ダークモード / コントラストAA実測済み
 
@@ -126,6 +126,21 @@ npm run metrics # Time to Decision の集計
      **出典付きで値を埋めればテストは通ります。** 緩める必要はありません。
 2. `METRICS_TOKEN` を設定してから公開（未設定だと `/api/metrics` はループバック限定）。
 3. TLS終端（スマホのホーム画面追加には HTTPS が要ります）。
+   **立てたら `TRUST_PROXY=true` も設定**してください。TLS終端の裏では全員が同じ
+   ソケットから来るので、これが false のままだと1人の濫用で全世帯が429になります。
+   逆に、プロキシが無いのに true にすると `X-Forwarded-For` を偽装され放題です。
+4. **アプリの置き場所が未定です。** `.github/workflows/deploy.yml` は Eleventy の
+   ブログを GitHub Pages に出すだけで、このアプリとは無関係。Pages は静的なので
+   Node + SQLite のこれは載りません。Dockerfile も service 定義もありません。
+
+### 起点は大津
+
+`DEFAULT_AREA_CODE=shiga-otsu`。現在地が取れず世帯も未設定なら大津から始めます。
+以前はここで `400 origin_required` を返して止めていましたが、位置情報を許可しない
+利用者（大半）が初回に壁に当たるため、既定値から動くようにしました。
+**推測ではありません**: 応答は `originSource: 'default'`、画面は「大津市（既定）」。
+`tests/api.test.ts` が、既定は既定と名乗ること・選択は `chosen` と名乗ること・
+`DEFAULT_AREA_CODE` が不正なら400のままであることを固定しています。
 
 ### 保留中の選択肢
 

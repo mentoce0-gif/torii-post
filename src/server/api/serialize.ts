@@ -18,6 +18,13 @@ export interface CandidateDto {
   areaLabel: string;
   travelMinutes: number | null;
   travelPrecision: 'measured' | 'estimate' | 'unknown';
+  /**
+   * Minutes actually left on site once the round trip is paid for. This is the
+   * number the question "can I kill an hour there?" turns on, so it is a field
+   * rather than a sentence buried in `reasons`. Negative means the trip eats
+   * the whole window; null means no coordinate, so no claim about the clock.
+   */
+  onSiteMinutes: number | null;
   priceLabel: string;
   fitGrade: string;
   confidence: {
@@ -68,6 +75,7 @@ export function toCandidateDto(
     areaLabel: place.areaLabel,
     travelMinutes: candidate.travel.minutes,
     travelPrecision: candidate.travel.precision,
+    onSiteMinutes: candidate.travel.minutes === null ? null : candidate.playMinutes,
     priceLabel: place.priceLabel,
     fitGrade: candidate.fitGrade,
     confidence: {

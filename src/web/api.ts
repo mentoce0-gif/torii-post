@@ -20,6 +20,8 @@ export interface Candidate {
   areaLabel: string;
   travelMinutes: number | null;
   travelPrecision: 'measured' | 'estimate' | 'unknown';
+  /** Minutes left on site after the round trip. null when travel is unknown. */
+  onSiteMinutes: number | null;
   priceLabel: string;
   fitGrade: string;
   confidence: Confidence;
@@ -44,6 +46,7 @@ export interface RecommendResponse {
     weather: string;
     areaCode: string;
     areaLabel: string;
+    originSource: 'gps' | 'chosen' | 'default';
   };
   candidates: Candidate[];
   shortlistNote: string | null;

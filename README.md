@@ -28,7 +28,7 @@ npm run dev          # http://127.0.0.1:8787  デモデータ付き
 | `npm run dev` | フロントをビルドし、`SEED_PROFILE=demo` で `--watch` 起動 |
 | `npm start` | フロントをビルドし、`SEED_PROFILE` の既定（`poc`）で起動 |
 | `npm run build` | ブラウザ用 TypeScript を `public/build/` へ |
-| `npm test` | `node:test` によるテスト（82件） |
+| `npm test` | `node:test` によるテスト（97件） |
 | `npm run typecheck` | サーバ・ブラウザ両方の型チェック |
 | `npm run metrics` | Time to Decision の簡易集計（`-- --json` でJSON） |
 | `npm run icons` | PWAアイコンPNGの再生成 |
@@ -124,7 +124,15 @@ app/
 ```
 
 `origin` は `{ "areaCode": "shiga-kusatsu" }` でも可。どちらも無く、世帯の起点エリアも
-未設定なら `400 origin_required` を返します（推測せず、画面でエリアを選ばせるため）。
+未設定なら `DEFAULT_AREA_CODE`（既定: `shiga-otsu`）から始めます。このとき応答の
+`context.originSource` は `'default'` で、画面は「大津市（既定）」と表示します。
+**現在地を推測しているのではなく、既定値だと明示したうえで動く**という区別です。
+`DEFAULT_AREA_CODE` 自体が未知のエリアなら `400 origin_required` を返します
+（設定ミスを黙って別の街で埋めないため）。
+
+応答の各候補には `onSiteMinutes`（往復を引いた現地の滞在可能分）が入ります。
+6項目すべてが `？` のカードでも、これだけは根拠のある数字です
+（世帯自身の残り時間の引き算であって、施設についての主張ではないため）。
 
 出力は候補3件のみ。**選定ロジック・重み・スコア・全スポットDBは一切返しません。**
 
@@ -264,7 +272,17 @@ npm run metrics
 - CSPは `default-src 'self'`。外部スクリプト・外部ビーコン・タイルサーバへの
   リクエストはありません
 - APIキーはコードにありません。秘密は `.env`（gitignore済み）にのみ
-- 書き込み系エンドポイントに固定窓レートリミット（`RATE_LIMIT_PER_MIN`）
+- 固定窓レートリミット。書き込みは `RATE_LIMIT_PER_MIN`、読み取りは
+  `RATE_LIMIT_READ_PER_MIN`。**読み取りは以前は無制限でした** — 認証の無い無償公開で
+  GET だけ数え忘れると、アカウント不要で一番安く落とせる口になります
+- `X-Forwarded-For` は `TRUST_PROXY=true` のときだけ信用します。直に公開された
+  ポートではこのヘッダは発信者の自己申告なので、既定で信用するとリクエストごとに
+  別人を名乗れてしまい、レートリミットが飾りになります。逆にTLS終端の裏では
+  全員が同じソケットから来るので、これを立てないと1人の濫用で全員が止まります
+- `/api/metrics` のループバック判定は**ソケットのアドレスを直接**見ます。ここを
+  プロキシ対応のヘルパに変えると `X-Forwarded-For: 127.0.0.1` で計測が公開されます
+  （`tests/security.test.ts` で固定）
+- HSTS / `Permissions-Policy`（geolocation以外は全部拒否）/ `X-Frame-Options: DENY`
 - `/api/metrics` は `METRICS_TOKEN` 未設定ならループバックのみ
 - エラーの詳細はログにだけ出し、クライアントには一般化したメッセージを返します
 
@@ -276,6 +294,8 @@ npm run metrics
 - GPSはセッション利用。受け取った緯度経度は**受信時点で小数第2位に丸め**、
   保存するのはエリアコードだけです（`tests/privacy.test.ts` で検証）
 - 医療相談・発達相談・虐待相談のUIは作りません
+- 設定画面に「このアプリが持つ情報」を明示しています。持つもの／持たないものを
+  親が読める場所に置くのが目的で、以前はこのREADMEにしか書いてありませんでした
 - 設定画面から世帯データを完全削除できます（子ども・判断・訪問・記録・計測イベント）
 - 世帯IDは匿名の不透明なUUID。認証方式は後から差し替えられます
 
@@ -306,7 +326,9 @@ npm run build
 NODE_ENV=production DB_PATH=/var/lib/kns/poc.sqlite HOST=0.0.0.0 PORT=8787 node src/server/main.ts
 ```
 
-- TLS終端とHTTPリダイレクトはリバースプロキシ側で（PWAのinstall要件）
+- TLS終端とHTTPリダイレクトはリバースプロキシ側で（PWAのinstall要件）。
+  そのプロキシを立てたら `TRUST_PROXY=true` も一緒に設定してください。
+  立てていないうちは `false` のままにします（ヘッダを偽装されるため）
 - `METRICS_TOKEN` を設定してから公開してください
 - SQLiteファイルをバックアップ対象に含めてください
 - 別RDBに移す場合は `Repository` の実装を1つ足し、`main.ts` で分岐します

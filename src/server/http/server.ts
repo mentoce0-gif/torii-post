@@ -27,11 +27,31 @@ async function readBody(req: IncomingMessage): Promise<unknown> {
 }
 
 /**
+ * The address to hold responsible for a request.
+ *
+ * Behind a TLS terminator every connection arrives from the proxy, so
+ * `remoteAddress` is one value for the whole internet: without this the limiter
+ * would count all households as a single client and the first abuser would lock
+ * everyone out. The left-most `X-Forwarded-For` entry is the original client —
+ * but only where a proxy is actually rewriting that header, which is why this
+ * is opt-in. On a directly-exposed port the header is whatever the caller typed.
+ */
+export function peerAddress(req: IncomingMessage, trustProxy: boolean): string {
+  if (trustProxy) {
+    const header = req.headers['x-forwarded-for'];
+    const raw = Array.isArray(header) ? header[0] : header;
+    const first = raw?.split(',')[0]?.trim();
+    if (first) return first;
+  }
+  return req.socket.remoteAddress ?? 'unknown';
+}
+
+/**
  * A stable-enough key for the limiter without keeping an address around: the
  * household id when we have one, and the peer address otherwise.
  */
-function clientKey(req: IncomingMessage, householdId: string | null): string {
-  return householdId ?? req.socket.remoteAddress ?? 'unknown';
+function clientKey(req: IncomingMessage, householdId: string | null, trustProxy: boolean): string {
+  return householdId ?? peerAddress(req, trustProxy);
 }
 
 function readHouseholdId(req: IncomingMessage): string | null {
@@ -44,7 +64,12 @@ function readHouseholdId(req: IncomingMessage): string | null {
 export function createApp(deps: Deps): Server {
   const router = buildRouter(deps);
   const limiter = new RateLimiter(deps.config.rateLimitPerMin);
-  const sweep = setInterval(() => limiter.sweep(), 60_000);
+  // Reads are cheaper than writes but not free, and they were uncapped.
+  const readLimiter = new RateLimiter(deps.config.rateLimitReadPerMin);
+  const sweep = setInterval(() => {
+    limiter.sweep();
+    readLimiter.sweep();
+  }, 60_000);
   sweep.unref();
 
   return createServer(async (req: IncomingMessage, res: ServerResponse) => {
@@ -57,15 +82,13 @@ export function createApp(deps: Deps): Server {
     try {
       if (isApi) {
         const householdId = readHouseholdId(req);
-        const key = clientKey(req, householdId);
+        const key = clientKey(req, householdId, deps.config.trustProxy);
 
-        if (method !== 'GET') {
-          const verdict = limiter.check(key);
-          if (!verdict.allowed) {
-            res.setHeader('Retry-After', String(verdict.retryAfterSec));
-            sendJson(res, 429, { error: 'rate_limited', message: 'リクエストが多すぎます' });
-            return;
-          }
+        const verdict = (method === 'GET' ? readLimiter : limiter).check(key);
+        if (!verdict.allowed) {
+          res.setHeader('Retry-After', String(verdict.retryAfterSec));
+          sendJson(res, 429, { error: 'rate_limited', message: 'リクエストが多すぎます' });
+          return;
         }
 
         const match = router.match(method, url.pathname);
