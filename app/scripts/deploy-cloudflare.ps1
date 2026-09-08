@@ -6,7 +6,10 @@
 # 何度実行しても壊れません（済んだ工程は飛ばします）。
 # 途中でブラウザが開いたら Cloudflare にログインして「Allow」を押してください。
 
-$ErrorActionPreference = 'Stop'
+# 'Stop' にすると、外部コマンドが stderr に書いただけで（終了コード0でも）
+# スクリプトが止まります。wrangler は進捗を stderr に出すので、ここでは
+# 終了コードを自分で見ます。
+$ErrorActionPreference = 'Continue'
 
 function Say  ($m) { Write-Host "`n▶ $m" -ForegroundColor Cyan }
 function Die  ($m) { Write-Host "`n✘ $m" -ForegroundColor Red; exit 1 }
@@ -84,8 +87,21 @@ if ((Get-Content $config -Raw) -match $placeholder) {
   Say "D1 は設定済みです（wrangler.jsonc に database_id があります）"
 }
 
-# --- 4. METRICS_TOKEN --------------------------------------------------------
-# 未設定でも公開はできますが、指標が読めません。
+# --- 4. デプロイ -------------------------------------------------------------
+Say "ブラウザ用のJSをビルドしてデプロイします"
+npm run build
+if ($LASTEXITCODE -ne 0) { Die "ビルドが失敗しました。" }
+
+$deploy = (npx wrangler deploy 2>&1 | Out-String)
+Write-Host $deploy
+if ($LASTEXITCODE -ne 0) { Die "デプロイが失敗しました。上の出力を貼って相談してください。" }
+
+$url = $null
+if ($deploy -match 'https://[a-zA-Z0-9.\-]+\.workers\.dev') { $url = $Matches[0] }
+
+# --- 5. METRICS_TOKEN --------------------------------------------------------
+# デプロイの後でなければ設定できません（Worker が存在しないと
+# 'Worker not found' になります）。設定は即時反映され、再デプロイは不要です。
 $secrets = (npx wrangler secret list 2>&1 | Out-String)
 if ($secrets -match 'METRICS_TOKEN') {
   Say "METRICS_TOKEN は設定済みです"
@@ -98,17 +114,6 @@ if ($secrets -match 'METRICS_TOKEN') {
   Write-Host ""
   $token | npx wrangler secret put METRICS_TOKEN
 }
-
-# --- 5. デプロイ -------------------------------------------------------------
-Say "ブラウザ用のJSをビルドしてデプロイします"
-npm run build
-if ($LASTEXITCODE -ne 0) { Die "ビルドが失敗しました。" }
-
-$deploy = (npx wrangler deploy 2>&1 | Out-String)
-Write-Host $deploy
-
-$url = $null
-if ($deploy -match 'https://[a-zA-Z0-9.\-]+\.workers\.dev') { $url = $Matches[0] }
 
 # --- 6. 動作確認 -------------------------------------------------------------
 if ($url) {
