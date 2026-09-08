@@ -330,11 +330,38 @@ Adapterに渡るのは常にピン3本だけです。
 
 ### A. Cloudflare Workers + D1（推奨・無償枠）
 
+**前提**: Cloudflareアカウント（無料・クレジットカード不要）と Node 22.18以上。
+**この作業は開発マシンのターミナルで行います**（CIやコンテナからではなく）。
+
 ```bash
-npm run cf:db:create        # D1を作り、出力されたIDを wrangler.jsonc に貼る
-npm run cf:secret           # METRICS_TOKEN を設定（公開前に必須）
-npm run cf:deploy
+git clone https://github.com/mentoce0-gif/torii-post.git
+cd torii-post/app
+npm ci
+
+npx wrangler login          # ブラウザが開く。Cloudflareにログインして許可
+npm run cf:db:create        # → 出力された database_id を wrangler.jsonc に貼る
+npm run cf:secret           # METRICS_TOKEN を貼り付け（公開前に必須）
+npm run cf:deploy           # → https://kyou-dousuru.<account>.workers.dev
 ```
+
+`cf:db:create` は次のような出力を返します。`database_id` の値を
+`wrangler.jsonc` の `"REPLACE_WITH_D1_DATABASE_ID"` と差し替えてください。
+
+```
+[[d1_databases]]
+binding = "DB"
+database_name = "kyou-dousuru"
+database_id = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"   ← これ
+```
+
+`METRICS_TOKEN` の値は次で作れます:
+
+```bash
+node -e "console.log(require('crypto').randomBytes(24).toString('hex'))"
+```
+
+デプロイ前に手元で本番と同じ経路を確認したい場合は `npm run cf:dev`
+（ローカルD1。Cloudflareへの接続もログインも不要です）。
 
 - **TLSと独自ドメインが付いてきます。** PWAのホーム画面追加にはHTTPSが要るので、
   ここが自前運用との一番の差です
