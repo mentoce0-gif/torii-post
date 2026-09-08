@@ -3,6 +3,7 @@ import { track } from '../analytics.ts';
 import { fitAndConfidence, unknownNote } from '../components/confidence.ts';
 import { equipmentGrid, equipmentLegend } from '../components/equipment.ts';
 import { h, mount } from '../dom.ts';
+import { areaCodeToRemember } from '../origin.ts';
 import { navigate } from '../router.ts';
 import { saveConditions, store, type Conditions } from '../state.ts';
 import {
@@ -320,7 +321,14 @@ export async function renderHome(root: HTMLElement): Promise<void> {
 
       setHouseholdId(response.householdId);
       store.session = { response, shownAtLocal: performance.now() };
-      store.conditions = { ...current, areaCode: response.context.areaCode };
+      store.conditions = {
+        ...current,
+        areaCode: areaCodeToRemember(
+          response.context.originSource,
+          current.areaCode,
+          response.context.areaCode,
+        ),
+      };
       saveConditions(store.conditions);
 
       track({
