@@ -336,6 +336,16 @@ Adapterに渡るのは常にピン3本だけです。
 ```bash
 git clone https://github.com/mentoce0-gif/torii-post.git
 cd torii-post/app
+bash scripts/deploy-cloudflare.sh    # ログイン〜デプロイ〜疎通確認まで
+```
+
+スクリプトは何度実行しても壊れません（済んだ工程は飛ばします）。
+`database_id` の貼り替えも自動で行うので、手でコピペする必要はありません。
+中で何が起きているかを知りたい場合は、以下が同じ手順を手で追ったものです。
+
+```bash
+git clone https://github.com/mentoce0-gif/torii-post.git
+cd torii-post/app
 npm ci
 
 npx wrangler login          # ブラウザが開く。Cloudflareにログインして許可
