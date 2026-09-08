@@ -15,7 +15,13 @@ export interface TrackedEvent {
  * of these. Nothing outside this directory knows where events end up.
  */
 export interface AnalyticsProvider {
-  track(event: TrackedEvent): void;
+  /**
+   * Awaited by callers. Fire-and-forget was fine when the write landed in this
+   * process; against a database over a binding an un-awaited promise can be
+   * cancelled when the request ends, and the dropped row is a
+   * `recommendations_shown` — the start of the Time to Decision clock.
+   */
+  track(event: TrackedEvent): Promise<void>;
 }
 
 export class SqliteAnalyticsProvider implements AnalyticsProvider {
@@ -25,13 +31,13 @@ export class SqliteAnalyticsProvider implements AnalyticsProvider {
     this.#repo = repo;
   }
 
-  track(event: TrackedEvent): void {
-    this.#repo.recordEvent(event);
+  async track(event: TrackedEvent): Promise<void> {
+    await this.#repo.recordEvent(event);
   }
 }
 
 export class ConsoleAnalyticsProvider implements AnalyticsProvider {
-  track(event: TrackedEvent): void {
+  async track(event: TrackedEvent): Promise<void> {
     console.log(`[analytics] ${event.name}`, {
       household: event.householdId,
       session: event.sessionId,
@@ -42,7 +48,7 @@ export class ConsoleAnalyticsProvider implements AnalyticsProvider {
 }
 
 export class NullAnalyticsProvider implements AnalyticsProvider {
-  track(): void {}
+  async track(): Promise<void> {}
 }
 
 /** The full event list the PoC reports on. Anything else is rejected at the door. */

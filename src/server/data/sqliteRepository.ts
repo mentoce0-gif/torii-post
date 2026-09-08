@@ -129,14 +129,14 @@ export class SqliteRepository implements Repository {
 
   // --- households ----------------------------------------------------------
 
-  createHousehold(input: {
+  async createHousehold(input: {
     homeAreaCode?: string | null;
     homeAreaLabel?: string | null;
     parentRole?: ParentRole;
     childBirthYear?: number;
     childBirthMonth?: number;
     mobility?: Mobility;
-  }): Household {
+  }): Promise<Household> {
     const id = randomUUID();
     const createdAt = now();
     this.db
@@ -166,16 +166,16 @@ export class SqliteRepository implements Repository {
       )
       .run(randomUUID(), id, mode, defaultPrepMinutes(mode));
 
-    return this.getHousehold(id) as Household;
+    return (await this.getHousehold(id)) as Household;
   }
 
-  getHousehold(id: string): Household | null {
+  async getHousehold(id: string): Promise<Household | null> {
     const row = this.db.prepare('SELECT * FROM households WHERE id = ?').get(id) as Row | undefined;
     return row ? toHousehold(row) : null;
   }
 
-  updateHousehold(id: string, patch: Partial<Household>): Household | null {
-    const current = this.getHousehold(id);
+  async updateHousehold(id: string, patch: Partial<Household>): Promise<Household | null> {
+    const current = await this.getHousehold(id);
     if (!current) return null;
     const next = { ...current, ...patch };
     this.db
@@ -194,17 +194,17 @@ export class SqliteRepository implements Repository {
         next.returnMarks,
         id,
       );
-    return this.getHousehold(id);
+    return await this.getHousehold(id);
   }
 
   /** Hard delete. The cascades take the children, visits, decisions and events with it. */
-  deleteHousehold(id: string): boolean {
+  async deleteHousehold(id: string): Promise<boolean> {
     this.db.prepare('DELETE FROM analytics_events WHERE household_id = ?').run(id);
     const result = this.db.prepare('DELETE FROM households WHERE id = ?').run(id);
     return Number(result.changes) > 0;
   }
 
-  getParents(householdId: string): Parent[] {
+  async getParents(householdId: string): Promise<Parent[]> {
     const rows = this.db
       .prepare('SELECT * FROM parents WHERE household_id = ?')
       .all(householdId) as Row[];
@@ -216,7 +216,7 @@ export class SqliteRepository implements Repository {
     }));
   }
 
-  getChildren(householdId: string): Child[] {
+  async getChildren(householdId: string): Promise<Child[]> {
     const rows = this.db
       .prepare('SELECT * FROM children WHERE household_id = ? ORDER BY birth_year, birth_month')
       .all(householdId) as Row[];
@@ -229,7 +229,7 @@ export class SqliteRepository implements Repository {
     }));
   }
 
-  replaceChildren(householdId: string, children: Omit<Child, 'id' | 'householdId'>[]): Child[] {
+  async replaceChildren(householdId: string, children: Omit<Child, 'id' | 'householdId'>[]): Promise<Child[]> {
     this.db.prepare('DELETE FROM children WHERE household_id = ?').run(householdId);
     const insert = this.db.prepare(
       'INSERT INTO children (id, household_id, birth_year, birth_month, handle) VALUES (?, ?, ?, ?, ?)',
@@ -237,10 +237,10 @@ export class SqliteRepository implements Repository {
     for (const child of children) {
       insert.run(randomUUID(), householdId, child.birthYear, child.birthMonth, child.handle ?? null);
     }
-    return this.getChildren(householdId);
+    return await this.getChildren(householdId);
   }
 
-  getMobilityProfile(householdId: string): MobilityProfile | null {
+  async getMobilityProfile(householdId: string): Promise<MobilityProfile | null> {
     const row = this.db
       .prepare('SELECT * FROM mobility_profiles WHERE household_id = ? LIMIT 1')
       .get(householdId) as Row | undefined;
@@ -253,8 +253,8 @@ export class SqliteRepository implements Repository {
     };
   }
 
-  upsertMobilityProfile(householdId: string, mode: Mobility, prepMinutes: number): MobilityProfile {
-    const existing = this.getMobilityProfile(householdId);
+  async upsertMobilityProfile(householdId: string, mode: Mobility, prepMinutes: number): Promise<MobilityProfile> {
+    const existing = await this.getMobilityProfile(householdId);
     if (existing) {
       this.db
         .prepare('UPDATE mobility_profiles SET mode = ?, prep_minutes = ? WHERE id = ?')
@@ -266,7 +266,7 @@ export class SqliteRepository implements Repository {
         )
         .run(randomUUID(), householdId, mode, prepMinutes);
     }
-    return this.getMobilityProfile(householdId) as MobilityProfile;
+    return (await this.getMobilityProfile(householdId)) as MobilityProfile;
   }
 
   // --- places --------------------------------------------------------------
@@ -315,19 +315,19 @@ export class SqliteRepository implements Repository {
     return { place, equipment: map, equipmentRows: rows, sources: this.sourcesFor(place.id) };
   }
 
-  listPlaces(): PlaceWithEquipment[] {
+  async listPlaces(): Promise<PlaceWithEquipment[]> {
     const rows = this.db.prepare('SELECT * FROM places ORDER BY name').all() as Row[];
     return rows.map((row) => this.hydrate(row));
   }
 
-  getPlace(id: string): PlaceWithEquipment | null {
+  async getPlace(id: string): Promise<PlaceWithEquipment | null> {
     const row = this.db.prepare('SELECT * FROM places WHERE id = ?').get(id) as Row | undefined;
     return row ? this.hydrate(row) : null;
   }
 
   // --- sessions ------------------------------------------------------------
 
-  createSession(householdId: string, contextJson: string, shownAt: string): RecommendationSession {
+  async createSession(householdId: string, contextJson: string, shownAt: string): Promise<RecommendationSession> {
     const id = randomUUID();
     const createdAt = now();
     this.db
@@ -338,7 +338,7 @@ export class SqliteRepository implements Repository {
     return { id, householdId, createdAt, shownAt, contextJson };
   }
 
-  getSession(id: string): RecommendationSession | null {
+  async getSession(id: string): Promise<RecommendationSession | null> {
     const row = this.db
       .prepare('SELECT * FROM recommendation_sessions WHERE id = ?')
       .get(id) as Row | undefined;
@@ -352,7 +352,7 @@ export class SqliteRepository implements Repository {
     };
   }
 
-  saveRecommendations(rows: Omit<Recommendation, 'id'>[]): Recommendation[] {
+  async saveRecommendations(rows: Omit<Recommendation, 'id'>[]): Promise<Recommendation[]> {
     const insert = this.db.prepare(
       `INSERT INTO recommendations (id, session_id, place_id, rank, fit_grade, confidence_pct, travel_minutes, reasons_json)
        VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
@@ -375,7 +375,7 @@ export class SqliteRepository implements Repository {
     return saved;
   }
 
-  getRecommendation(id: string): Recommendation | null {
+  async getRecommendation(id: string): Promise<Recommendation | null> {
     const row = this.db.prepare('SELECT * FROM recommendations WHERE id = ?').get(id) as
       | Row
       | undefined;
@@ -392,23 +392,25 @@ export class SqliteRepository implements Repository {
     };
   }
 
-  getRecommendationsForSession(sessionId: string): Recommendation[] {
+  async getRecommendationsForSession(sessionId: string): Promise<Recommendation[]> {
     const rows = this.db
       .prepare('SELECT * FROM recommendations WHERE session_id = ? ORDER BY rank')
       .all(sessionId) as Row[];
-    return rows.map((row) => this.getRecommendation(str(row, 'id')) as Recommendation);
+    return (await Promise.all(
+      rows.map((row) => this.getRecommendation(str(row, 'id'))),
+    )) as Recommendation[];
   }
 
   // --- decisions -----------------------------------------------------------
 
-  createDecision(input: {
+  async createDecision(input: {
     sessionId: string;
     recommendationId: string | null;
     placeId: string | null;
     kind: DecisionKind;
     clientElapsedMs: number | null;
-  }): { decision: Decision; visit: Visit | null } {
-    const session = this.getSession(input.sessionId);
+  }): Promise<{ decision: Decision; visit: Visit | null }> {
+    const session = await this.getSession(input.sessionId);
     if (!session) throw new Error('unknown session');
 
     const decidedAt = now();
@@ -466,7 +468,7 @@ export class SqliteRepository implements Repository {
     return { decision, visit };
   }
 
-  getDecision(id: string): Decision | null {
+  async getDecision(id: string): Promise<Decision | null> {
     const row = this.db.prepare('SELECT * FROM decisions WHERE id = ?').get(id) as Row | undefined;
     if (!row) return null;
     return {
@@ -483,7 +485,7 @@ export class SqliteRepository implements Repository {
 
   // --- visits and feedback -------------------------------------------------
 
-  getVisit(id: string): Visit | null {
+  async getVisit(id: string): Promise<Visit | null> {
     const row = this.db.prepare('SELECT * FROM visits WHERE id = ?').get(id) as Row | undefined;
     if (!row) return null;
     return {
@@ -495,7 +497,7 @@ export class SqliteRepository implements Repository {
     };
   }
 
-  getOpenVisits(householdId: string): (Visit & { placeName: string })[] {
+  async getOpenVisits(householdId: string): Promise<(Visit & { placeName: string })[]> {
     const rows = this.db
       .prepare(
         `SELECT v.*, p.name AS place_name FROM visits v
@@ -515,10 +517,10 @@ export class SqliteRepository implements Repository {
     }));
   }
 
-  saveFeedback(input: NewFeedback): VisitFeedback {
-    const visit = this.getVisit(input.visitId);
+  async saveFeedback(input: NewFeedback): Promise<VisitFeedback> {
+    const visit = await this.getVisit(input.visitId);
     if (!visit) throw new Error('unknown visit');
-    const place = this.getPlace(visit.placeId);
+    const place = await this.getPlace(visit.placeId);
 
     const id = randomUUID();
     const createdAt = now();
@@ -599,14 +601,14 @@ export class SqliteRepository implements Repository {
       .run(samples, avg, input.reaction, now(), str(row, 'id'));
   }
 
-  countVisits(householdId: string, placeId: string): number {
+  async countVisits(householdId: string, placeId: string): Promise<number> {
     const row = this.db
       .prepare('SELECT COUNT(*) AS n FROM visits WHERE household_id = ? AND place_id = ?')
       .get(householdId, placeId) as Row;
     return num(row, 'n');
   }
 
-  lastRevisitAnswer(householdId: string, placeId: string): Revisit | null {
+  async lastRevisitAnswer(householdId: string, placeId: string): Promise<Revisit | null> {
     const row = this.db
       .prepare(
         `SELECT f.revisit AS revisit FROM visit_feedback f
@@ -618,7 +620,7 @@ export class SqliteRepository implements Repository {
     return row ? (str(row, 'revisit') as Revisit) : null;
   }
 
-  getPreferenceHistory(householdId: string): PreferenceHistory[] {
+  async getPreferenceHistory(householdId: string): Promise<PreferenceHistory[]> {
     const rows = this.db
       .prepare('SELECT * FROM preference_history WHERE household_id = ?')
       .all(householdId) as Row[];
@@ -633,7 +635,7 @@ export class SqliteRepository implements Repository {
     }));
   }
 
-  listHistory(householdId: string, limit: number): HistoryRow[] {
+  async listHistory(householdId: string, limit: number): Promise<HistoryRow[]> {
     const rows = this.db
       .prepare(
         `SELECT d.id AS decision_id, d.decided_at, d.kind, d.place_id, d.time_to_decision_ms,
@@ -667,7 +669,7 @@ export class SqliteRepository implements Repository {
 
   // --- analytics -----------------------------------------------------------
 
-  recordEvent(event: Omit<AnalyticsEventRow, 'id' | 'createdAt'> & { createdAt?: string }): void {
+  async recordEvent(event: Omit<AnalyticsEventRow, 'id' | 'createdAt'> & { createdAt?: string }): Promise<void> {
     this.db
       .prepare(
         `INSERT INTO analytics_events (id, name, household_id, session_id, place_id, recommendation_rank, created_at, props_json)
@@ -685,14 +687,14 @@ export class SqliteRepository implements Repository {
       );
   }
 
-  hasEvent(householdId: string, name: string): boolean {
+  async hasEvent(householdId: string, name: string): Promise<boolean> {
     const row = this.db
       .prepare('SELECT COUNT(*) AS n FROM analytics_events WHERE household_id = ? AND name = ?')
       .get(householdId, name) as Row;
     return num(row, 'n') > 0;
   }
 
-  recordSubjective(householdId: string, decisionId: string | null, answer: SubjectiveAnswer): void {
+  async recordSubjective(householdId: string, decisionId: string | null, answer: SubjectiveAnswer): Promise<void> {
     this.db
       .prepare(
         'INSERT INTO subjective_ratings (id, household_id, decision_id, answer, created_at) VALUES (?, ?, ?, ?, ?)',
@@ -700,7 +702,7 @@ export class SqliteRepository implements Repository {
       .run(randomUUID(), householdId, decisionId, answer, now());
   }
 
-  metrics(): MetricsSummary {
+  async metrics(): Promise<MetricsSummary> {
     const ttdRows = this.db
       .prepare('SELECT time_to_decision_ms AS ms FROM decisions WHERE time_to_decision_ms IS NOT NULL')
       .all() as Row[];

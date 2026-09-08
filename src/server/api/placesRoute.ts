@@ -10,11 +10,11 @@ import type { Deps } from './deps.ts';
 import { equipmentList, hasPlaceholderData } from './serialize.ts';
 
 export function handleGetPlace(deps: Deps) {
-  return (ctx: RequestContext) => {
+  return async (ctx: RequestContext)  => {
     const id = ctx.params['id'];
     if (!id) throw notFound('place id required');
 
-    const entry = deps.repo.getPlace(id);
+    const entry = await deps.repo.getPlace(id);
     if (!entry) throw notFound('その場所は見つかりませんでした');
 
     const { place, equipment } = entry;
@@ -23,7 +23,7 @@ export function handleGetPlace(deps: Deps) {
     // Reasons are context-dependent, so the detail view re-derives them from the
     // stored session rather than trusting anything the client sends back.
     const sessionId = ctx.query.get('sessionId');
-    const session = sessionId ? deps.repo.getSession(sessionId) : null;
+    const session = sessionId ? await deps.repo.getSession(sessionId) : null;
 
     let reasons: { tone: string; text: string }[] = [];
     let travelMinutes: number | null = null;
@@ -46,7 +46,7 @@ export function handleGetPlace(deps: Deps) {
         weather: stored.weather,
         origin: area ? { lat: area.lat, lng: area.lng, areaCode: area.code } : {},
       };
-      const profile = deps.repo.getMobilityProfile(session.householdId);
+      const profile = await deps.repo.getMobilityProfile(session.householdId);
       const travel = estimateTravel(
         context.origin,
         place,
@@ -60,11 +60,11 @@ export function handleGetPlace(deps: Deps) {
         travel,
         confidence,
         history:
-          deps.repo
-            .getPreferenceHistory(session.householdId)
-            .find((row) => row.category === place.category) ?? null,
-        visitCount: deps.repo.countVisits(session.householdId, place.id),
-        lastRevisitAnswer: deps.repo.lastRevisitAnswer(session.householdId, place.id),
+          (await deps.repo.getPreferenceHistory(session.householdId)).find(
+            (row) => row.category === place.category,
+          ) ?? null,
+        visitCount: await deps.repo.countVisits(session.householdId, place.id),
+        lastRevisitAnswer: await deps.repo.lastRevisitAnswer(session.householdId, place.id),
       });
       reasons = outcome.reasons.map((reason) => ({ tone: reason.tone, text: reason.text }));
       travelMinutes = travel.minutes;
@@ -73,8 +73,8 @@ export function handleGetPlace(deps: Deps) {
     }
 
     const householdId = session?.householdId ?? ctx.householdId;
-    const pastVisits = householdId ? deps.repo.countVisits(householdId, place.id) : 0;
-    const lastRevisit = householdId ? deps.repo.lastRevisitAnswer(householdId, place.id) : null;
+    const pastVisits = householdId ? await deps.repo.countVisits(householdId, place.id) : 0;
+    const lastRevisit = householdId ? await deps.repo.lastRevisitAnswer(householdId, place.id) : null;
 
     return {
       placeId: place.id,
