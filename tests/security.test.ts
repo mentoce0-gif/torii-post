@@ -5,6 +5,7 @@ import type { IncomingMessage } from 'node:http';
 import { splitStatements } from '../src/server/data/d1Driver.ts';
 import { SCHEMA_SQL } from '../src/server/data/schema.ts';
 import { peerAddress } from '../src/server/http/server.ts';
+import { areaCodeToRemember } from '../src/web/origin.ts';
 import { startServer } from './helpers.ts';
 
 /**
@@ -190,5 +191,29 @@ describe('the D1 schema split', () => {
       CREATE TABLE b (id TEXT);
     `);
     assert.deepEqual(statements, ['CREATE TABLE a (id TEXT)', 'CREATE TABLE b (id TEXT)']);
+  });
+});
+
+describe('a default never becomes a choice', () => {
+  it('does not remember a town nobody picked', () => {
+    // The bug this replaces: the client saved whatever area the server
+    // answered with, including the configured default. One reload later the
+    // request carried an areaCode, the server correctly called it 'chosen',
+    // 「（既定）」 vanished, and the screen showed Otsu as the household's own
+    // answer. Observed live before the fix — the label appeared on the first
+    // load and never again.
+    assert.equal(areaCodeToRemember('default', null, 'shiga-otsu'), null);
+  });
+
+  it('leaves an earlier real choice alone when it falls back', () => {
+    assert.equal(areaCodeToRemember('default', 'shiga-kusatsu', 'shiga-otsu'), 'shiga-kusatsu');
+  });
+
+  it('remembers a town the household actually chose', () => {
+    assert.equal(areaCodeToRemember('chosen', null, 'shiga-kusatsu'), 'shiga-kusatsu');
+  });
+
+  it('remembers where a location fix put them', () => {
+    assert.equal(areaCodeToRemember('gps', 'shiga-otsu', 'kyoto-sakyo'), 'kyoto-sakyo');
   });
 });
