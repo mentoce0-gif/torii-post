@@ -21,7 +21,7 @@ function shouldAskSubjective(
 }
 
 export function handleCreateDecision(deps: Deps) {
-  return (ctx: RequestContext) => {
+  return async (ctx: RequestContext)  => {
     const body = asObject(ctx.body);
     const sessionId = requireString(body, 'sessionId', 64);
     const kind = body['kind'];
@@ -29,11 +29,11 @@ export function handleCreateDecision(deps: Deps) {
       throw badRequest('invalid_field', 'kind must be go, skip or usual');
     }
 
-    const session = deps.repo.getSession(sessionId);
+    const session = await deps.repo.getSession(sessionId);
     if (!session) throw notFound('その提案は見つかりませんでした');
 
     const recommendationId = optionalString(body, 'recommendationId', 64);
-    const recommendation = recommendationId ? deps.repo.getRecommendation(recommendationId) : null;
+    const recommendation = recommendationId ? await deps.repo.getRecommendation(recommendationId) : null;
     if (recommendationId && (!recommendation || recommendation.sessionId !== sessionId)) {
       throw badRequest('invalid_field', 'recommendationId does not belong to this session');
     }
@@ -44,7 +44,7 @@ export function handleCreateDecision(deps: Deps) {
         ? Math.max(0, Math.round(clientElapsedRaw))
         : null;
 
-    const { decision, visit } = deps.repo.createDecision({
+    const { decision, visit } = await deps.repo.createDecision({
       sessionId,
       recommendationId: recommendation?.id ?? null,
       placeId: recommendation?.placeId ?? optionalString(body, 'placeId', 64),
@@ -52,7 +52,7 @@ export function handleCreateDecision(deps: Deps) {
       clientElapsedMs,
     });
 
-    deps.analytics.track({
+    await deps.analytics.track({
       name: `decision_${decision.kind}`,
       householdId: session.householdId,
       sessionId,
@@ -65,7 +65,7 @@ export function handleCreateDecision(deps: Deps) {
       createdAt: decision.decidedAt,
     });
 
-    const household = deps.repo.getHousehold(session.householdId);
+    const household = await deps.repo.getHousehold(session.householdId);
     const ask =
       household !== null &&
       shouldAskSubjective(
@@ -75,7 +75,7 @@ export function handleCreateDecision(deps: Deps) {
       );
 
     if (ask && household) {
-      deps.repo.updateHousehold(household.id, {
+      await deps.repo.updateHousehold(household.id, {
         subjectivePromptCount: household.subjectivePromptCount + 1,
         subjectivePromptLastAt: decision.decidedAt,
       });
@@ -92,17 +92,17 @@ export function handleCreateDecision(deps: Deps) {
 }
 
 export function handleSubjective(deps: Deps) {
-  return (ctx: RequestContext) => {
+  return async (ctx: RequestContext)  => {
     const body = asObject(ctx.body);
     const decisionId = optionalString(body, 'decisionId', 64);
     const answer = body['answer'];
     if (answer !== 'faster' && answer !== 'same' && answer !== 'slower') {
       throw badRequest('invalid_field', 'answer must be faster, same or slower');
     }
-    if (!ctx.householdId || !deps.repo.getHousehold(ctx.householdId)) {
+    if (!ctx.householdId || !await deps.repo.getHousehold(ctx.householdId)) {
       throw notFound('household not found');
     }
-    deps.repo.recordSubjective(ctx.householdId, decisionId, answer);
+    await deps.repo.recordSubjective(ctx.householdId, decisionId, answer);
     return { ok: true };
   };
 }

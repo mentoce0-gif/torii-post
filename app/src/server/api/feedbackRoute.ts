@@ -20,11 +20,11 @@ const BUCKET_MINUTES: Record<Exclude<StayBucket, 'custom'>, number> = {
 };
 
 export function handleCreateFeedback(deps: Deps) {
-  return (ctx: RequestContext) => {
+  return async (ctx: RequestContext)  => {
     const body = asObject(ctx.body);
     const visitId = requireString(body, 'visitId', 64);
 
-    const visit = deps.repo.getVisit(visitId);
+    const visit = await deps.repo.getVisit(visitId);
     if (!visit) throw notFound('その記録対象が見つかりませんでした');
     if (ctx.householdId && visit.householdId !== ctx.householdId) {
       throw notFound('その記録対象が見つかりませんでした');
@@ -57,7 +57,7 @@ export function handleCreateFeedback(deps: Deps) {
       }
     }
 
-    const feedback = deps.repo.saveFeedback({
+    const feedback = await deps.repo.saveFeedback({
       visitId,
       reaction: requireReaction(body['reaction']),
       stayMinutes,
@@ -67,7 +67,7 @@ export function handleCreateFeedback(deps: Deps) {
       equipmentReports: reports,
     });
 
-    deps.analytics.track({
+    await deps.analytics.track({
       name: 'visit_feedback_completed',
       householdId: visit.householdId,
       sessionId: null,

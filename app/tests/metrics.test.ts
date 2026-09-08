@@ -22,11 +22,14 @@ after(async () => {
 });
 
 /** Fakes a decision that took a known number of milliseconds. */
-function seedDecision(elapsedMs: number, kind: 'go' | 'skip' | 'usual' = 'skip'): void {
-  const household = server.repo.createHousehold({});
+async function seedDecision(
+  elapsedMs: number,
+  kind: 'go' | 'skip' | 'usual' = 'skip',
+): Promise<void> {
+  const household = await server.repo.createHousehold({});
   const shownAt = new Date(Date.now() - elapsedMs).toISOString();
-  const session = server.repo.createSession(household.id, JSON.stringify(CONTEXT), shownAt);
-  server.repo.createDecision({
+  const session = await server.repo.createSession(household.id, JSON.stringify(CONTEXT), shownAt);
+  await server.repo.createDecision({
     sessionId: session.id,
     recommendationId: null,
     placeId: null,
@@ -72,18 +75,18 @@ describe('Time to Decision', () => {
       }),
     })) as { decisionId: string; timeToDecisionMs: number };
 
-    const stored = server.repo.getDecision(decision.decisionId);
+    const stored = await server.repo.getDecision(decision.decisionId);
     assert.equal(stored?.clientElapsedMs, 999_999);
     assert.ok((stored?.timeToDecisionMs ?? 0) < 30_000, 'the client cannot rewrite the metric');
   });
 
-  it('summarises count, median, mean and p90', () => {
-    const fresh = server.repo.metrics();
+  it('summarises count, median, mean and p90', async () => {
+    const fresh = await server.repo.metrics();
     const before = fresh.timeToDecision.count;
 
-    for (const ms of [10_000, 20_000, 30_000, 40_000, 120_000]) seedDecision(ms);
+    for (const ms of [10_000, 20_000, 30_000, 40_000, 120_000]) await seedDecision(ms);
 
-    const metrics = server.repo.metrics();
+    const metrics = await server.repo.metrics();
     assert.equal(metrics.timeToDecision.count, before + 5);
     assert.ok(metrics.timeToDecision.medianMs !== null);
     assert.ok(metrics.timeToDecision.meanMs !== null);
@@ -100,13 +103,13 @@ describe('Time to Decision', () => {
     try {
       const values = [5_000, 15_000, 25_000, 35_000, 95_000];
       for (const ms of values) {
-        const household = isolated.repo.createHousehold({});
-        const session = isolated.repo.createSession(
+        const household = await isolated.repo.createHousehold({});
+        const session = await isolated.repo.createSession(
           household.id,
           '{}',
           new Date(Date.now() - ms).toISOString(),
         );
-        isolated.repo.createDecision({
+        await isolated.repo.createDecision({
           sessionId: session.id,
           recommendationId: null,
           placeId: null,
@@ -114,7 +117,7 @@ describe('Time to Decision', () => {
           clientElapsedMs: null,
         });
       }
-      const metrics = isolated.repo.metrics();
+      const metrics = await isolated.repo.metrics();
       assert.equal(metrics.timeToDecision.count, 5);
       // Timing jitter of a few ms is fine; the median must be the third value.
       assert.ok(Math.abs((metrics.timeToDecision.medianMs ?? 0) - 25_000) < 2_000);

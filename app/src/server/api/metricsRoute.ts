@@ -17,7 +17,7 @@ function tokenMatches(expected: string, given: string): boolean {
  * loopback only unless METRICS_TOKEN is set and presented.
  */
 export function handleGetMetrics(deps: Deps) {
-  return (ctx: RequestContext) => {
+  return async (ctx: RequestContext)  => {
     const token = deps.config.metricsToken;
     const header = ctx.req.headers['authorization'];
     const presented = typeof header === 'string' ? header.replace(/^Bearer\s+/i, '') : '';
@@ -29,7 +29,7 @@ export function handleGetMetrics(deps: Deps) {
       throw unauthorized('metrics are loopback-only until METRICS_TOKEN is set');
     }
 
-    const summary = deps.repo.metrics();
+    const summary = await deps.repo.metrics();
     const ttd = summary.timeToDecision;
 
     return {

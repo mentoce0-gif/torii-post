@@ -95,12 +95,12 @@ function resolveOrigin(
 }
 
 export function handleRecommend(deps: Deps) {
-  return (ctx: RequestContext): RecommendResponse => {
+  return async (ctx: RequestContext): Promise<RecommendResponse> => {
     const body = asObject(ctx.body);
 
     const household =
-      (ctx.householdId ? deps.repo.getHousehold(ctx.householdId) : null) ??
-      deps.repo.createHousehold({});
+      (ctx.householdId ? await deps.repo.getHousehold(ctx.householdId) : null) ??
+      await deps.repo.createHousehold({});
 
     const context: RecommendContext = {
       childAgeMonths: requireInt(body, 'childAgeMonths', 0, 216),
@@ -117,19 +117,24 @@ export function handleRecommend(deps: Deps) {
     );
     context.origin = resolved.origin;
 
-    const profile = deps.repo.getMobilityProfile(household.id);
-    const places = deps.repo.listPlaces();
+    const profile = await deps.repo.getMobilityProfile(household.id);
+    const places = await deps.repo.listPlaces();
     const historyByCategory = new Map(
-      deps.repo.getPreferenceHistory(household.id).map((row) => [row.category, row]),
+      (await deps.repo.getPreferenceHistory(household.id)).map((row) => [row.category, row]),
     );
 
-    const candidates: CandidateInput[] = places.map((entry) => ({
-      place: entry.place,
-      equipment: entry.equipment,
-      visitCount: deps.repo.countVisits(household.id, entry.place.id),
-      history: historyByCategory.get(entry.place.category) ?? null,
-      lastRevisitAnswer: deps.repo.lastRevisitAnswer(household.id, entry.place.id),
-    }));
+    // One round trip per place per field would be 26 sequential queries against
+    // a database that is no longer in this process. They do not depend on each
+    // other, so they go out together.
+    const candidates: CandidateInput[] = await Promise.all(
+      places.map(async (entry) => ({
+        place: entry.place,
+        equipment: entry.equipment,
+        visitCount: await deps.repo.countVisits(household.id, entry.place.id),
+        history: historyByCategory.get(entry.place.category) ?? null,
+        lastRevisitAnswer: await deps.repo.lastRevisitAnswer(household.id, entry.place.id),
+      })),
+    );
 
     const ranked = buildRecommendations(candidates, context, {
       usualPlaceId: household.usualPlaceId,
@@ -138,7 +143,7 @@ export function handleRecommend(deps: Deps) {
 
     const shownAt = new Date().toISOString();
     // The clock for Time to Decision starts the moment these leave the server.
-    const session = deps.repo.createSession(
+    const session = await deps.repo.createSession(
       household.id,
       JSON.stringify({
         childAgeMonths: context.childAgeMonths,
@@ -150,7 +155,7 @@ export function handleRecommend(deps: Deps) {
       shownAt,
     );
 
-    const saved = deps.repo.saveRecommendations(
+    const saved = await deps.repo.saveRecommendations(
       ranked.map((candidate) => ({
         sessionId: session.id,
         placeId: candidate.place.id,
@@ -172,7 +177,7 @@ export function handleRecommend(deps: Deps) {
       );
     });
 
-    deps.analytics.track({
+    await deps.analytics.track({
       name: 'recommendations_shown',
       householdId: household.id,
       sessionId: session.id,

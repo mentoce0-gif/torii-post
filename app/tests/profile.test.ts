@@ -48,7 +48,7 @@ describe('PUT /api/profile', () => {
       body: JSON.stringify({ homeAreaCode: 'shiga-kusatsu' }),
     })) as ProfileBody;
 
-    const usual = (server.repo.listPlaces().find((p) => p.place.kind === 'outdoor') as {
+    const usual = ((await server.repo.listPlaces()).find((p) => p.place.kind === 'outdoor') as {
       place: { id: string };
     }).place.id;
 

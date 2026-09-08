@@ -11,13 +11,13 @@ const FOUR_WEEKS_MS = 28 * 24 * 60 * 60 * 1000;
  * Retention markers are derived, not reported: the client cannot know it is a
  * two-week return, and asking it to would make the number a client-side claim.
  */
-function markReturns(deps: Deps, householdId: string): void {
-  const household = deps.repo.getHousehold(householdId);
+async function markReturns(deps: Deps, householdId: string): Promise<void> {
+  const household = await deps.repo.getHousehold(householdId);
   if (!household) return;
   const age = Date.now() - Date.parse(household.createdAt);
 
-  if (age >= TWO_WEEKS_MS && !deps.repo.hasEvent(householdId, 'return_2w')) {
-    deps.analytics.track({
+  if (age >= TWO_WEEKS_MS && !await deps.repo.hasEvent(householdId, 'return_2w')) {
+    await deps.analytics.track({
       name: 'return_2w',
       householdId,
       sessionId: null,
@@ -26,8 +26,8 @@ function markReturns(deps: Deps, householdId: string): void {
       props: null,
     });
   }
-  if (age >= FOUR_WEEKS_MS && !deps.repo.hasEvent(householdId, 'return_4w')) {
-    deps.analytics.track({
+  if (age >= FOUR_WEEKS_MS && !await deps.repo.hasEvent(householdId, 'return_4w')) {
+    await deps.analytics.track({
       name: 'return_4w',
       householdId,
       sessionId: null,
@@ -39,7 +39,7 @@ function markReturns(deps: Deps, householdId: string): void {
 }
 
 export function handlePostEvents(deps: Deps) {
-  return (ctx: RequestContext) => {
+  return async (ctx: RequestContext)  => {
     const body = asObject(ctx.body);
     const raw = body['events'];
     if (!Array.isArray(raw)) throw badRequest('invalid_field', 'events must be an array');
@@ -53,7 +53,7 @@ export function handlePostEvents(deps: Deps) {
       if (!isKnownEvent(event['name'])) continue;
 
       const rank = event['recommendationRank'];
-      deps.analytics.track({
+      await deps.analytics.track({
         name: event['name'],
         householdId: ctx.householdId,
         sessionId: typeof event['sessionId'] === 'string' ? event['sessionId'] : null,

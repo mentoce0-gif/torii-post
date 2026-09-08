@@ -9,12 +9,12 @@ function monthsSince(year: number, month: number, now = new Date()): number {
   return Math.max(0, (now.getFullYear() - year) * 12 + (now.getMonth() + 1 - month));
 }
 
-function serialize(deps: Deps, householdId: string) {
-  const household = deps.repo.getHousehold(householdId);
+async function serialize(deps: Deps, householdId: string) {
+  const household = await deps.repo.getHousehold(householdId);
   if (!household) return null;
-  const children = deps.repo.getChildren(householdId);
-  const parents = deps.repo.getParents(householdId);
-  const mobility = deps.repo.getMobilityProfile(householdId);
+  const children = await deps.repo.getChildren(householdId);
+  const parents = await deps.repo.getParents(householdId);
+  const mobility = await deps.repo.getMobilityProfile(householdId);
 
   return {
     householdId: household.id,
@@ -34,15 +34,14 @@ function serialize(deps: Deps, householdId: string) {
     mobility: mobility?.mode ?? 'car',
     prepMinutes: mobility?.prepMinutes ?? defaultPrepMinutes('car'),
     areas: AREAS.map((area) => ({ code: area.code, label: area.label })),
-    usualPlaceOptions: deps.repo
-      .listPlaces()
+    usualPlaceOptions: (await deps.repo.listPlaces())
       .filter((entry) => entry.place.kind !== 'home')
       .map((entry) => ({ id: entry.place.id, name: entry.place.name, areaLabel: entry.place.areaLabel })),
   };
 }
 
 export function handleGetProfile(deps: Deps) {
-  return (ctx: RequestContext) => {
+  return async (ctx: RequestContext)  => {
     if (!ctx.householdId) throw notFound('household not found');
     const profile = serialize(deps, ctx.householdId);
     if (!profile) throw notFound('household not found');
@@ -51,12 +50,12 @@ export function handleGetProfile(deps: Deps) {
 }
 
 export function handlePutProfile(deps: Deps) {
-  return (ctx: RequestContext) => {
+  return async (ctx: RequestContext)  => {
     const body = asObject(ctx.body);
 
     const household =
-      (ctx.householdId ? deps.repo.getHousehold(ctx.householdId) : null) ??
-      deps.repo.createHousehold({});
+      (ctx.householdId ? await deps.repo.getHousehold(ctx.householdId) : null) ??
+      await deps.repo.createHousehold({});
 
     const areaCode = optionalString(body, 'homeAreaCode', 64);
     if (areaCode !== null && !AREA_BY_CODE.has(areaCode)) {
@@ -64,7 +63,7 @@ export function handlePutProfile(deps: Deps) {
     }
 
     const usualPlaceId = optionalString(body, 'usualPlaceId', 64);
-    if (usualPlaceId !== null && !deps.repo.getPlace(usualPlaceId)) {
+    if (usualPlaceId !== null && !await deps.repo.getPlace(usualPlaceId)) {
       throw badRequest('invalid_field', 'usualPlaceId is not a known place');
     }
 
@@ -75,7 +74,7 @@ export function handlePutProfile(deps: Deps) {
         typeof prepRaw === 'number' && Number.isFinite(prepRaw)
           ? Math.min(60, Math.max(0, Math.round(prepRaw)))
           : defaultPrepMinutes(mode);
-      deps.repo.upsertMobilityProfile(household.id, mode, prepMinutes);
+      await deps.repo.upsertMobilityProfile(household.id, mode, prepMinutes);
     }
 
     if (Array.isArray(body['children'])) {
@@ -89,7 +88,7 @@ export function handlePutProfile(deps: Deps) {
           handle: optionalString(child, 'handle', 12),
         };
       });
-      deps.repo.replaceChildren(household.id, children);
+      await deps.repo.replaceChildren(household.id, children);
     }
 
     if (Array.isArray(body['parentRoles'])) {
@@ -97,7 +96,7 @@ export function handlePutProfile(deps: Deps) {
     }
 
     const area = areaCode ? AREA_BY_CODE.get(areaCode) : undefined;
-    deps.repo.updateHousehold(household.id, {
+    await deps.repo.updateHousehold(household.id, {
       homeAreaCode: areaCode,
       homeAreaLabel: area?.label ?? null,
       usualPlaceId,
@@ -109,10 +108,10 @@ export function handlePutProfile(deps: Deps) {
 }
 
 export function handleDeleteProfile(deps: Deps) {
-  return (ctx: RequestContext) => {
+  return async (ctx: RequestContext)  => {
     if (!ctx.householdId) throw notFound('household not found');
     // Everything: children, decisions, visits, feedback, events. No tombstone.
-    const removed = deps.repo.deleteHousehold(ctx.householdId);
+    const removed = await deps.repo.deleteHousehold(ctx.householdId);
     if (!removed) throw notFound('household not found');
     return { deleted: true };
   };

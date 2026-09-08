@@ -237,7 +237,7 @@ describe('the client never receives the recommender', () => {
 
   it('ships only the three places, not the catalogue', async () => {
     const body = await recommend();
-    const placeCount = server.repo.listPlaces().length;
+    const placeCount = (await server.repo.listPlaces()).length;
     assert.ok(placeCount > body.candidates.length, 'the seed should hold more than three places');
     const returned = new Set(body.candidates.map((c) => c.placeId));
     assert.equal(returned.size, body.candidates.length);
@@ -272,7 +272,7 @@ describe('POST /api/decisions', () => {
     assert.ok(decision.visitId, 'a go must produce something to write up later');
     assert.ok(decision.timeToDecisionMs !== null);
 
-    const stored = server.repo.getDecision(decision.decisionId);
+    const stored = await server.repo.getDecision(decision.decisionId);
     assert.equal(stored?.kind, 'go');
     assert.equal(stored?.placeId, first.placeId);
     assert.equal(stored?.clientElapsedMs, 21_000);
@@ -304,7 +304,7 @@ describe('POST /api/decisions', () => {
         clientElapsedMs: 9000,
       }),
     })) as { decisionId: string };
-    assert.equal(server.repo.getDecision(decision.decisionId)?.placeId, last.placeId);
+    assert.equal((await server.repo.getDecision(decision.decisionId))?.placeId, last.placeId);
   });
 
   it('refuses a recommendation from another session', async () => {
@@ -356,9 +356,9 @@ describe('POST /api/feedback', () => {
     assert.equal(saved.stayMinutes, 15);
     assert.equal(saved.corrections, 1);
 
-    const history = server.repo.getPreferenceHistory(body.householdId);
+    const history = await server.repo.getPreferenceHistory(body.householdId);
     assert.ok(history.length > 0, 'feedback must feed the next set of three');
-    assert.equal(server.repo.lastRevisitAnswer(body.householdId, first.placeId), 'no');
+    assert.equal(await server.repo.lastRevisitAnswer(body.householdId, first.placeId), 'no');
   });
 
   it('rejects a note longer than the sticky-note limit', async () => {

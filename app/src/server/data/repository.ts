@@ -77,6 +77,12 @@ export interface NewFeedback {
 /**
  * Everything the API layer is allowed to know about storage.
  *
+ * Every read and write is async. The local SQLite implementation resolves
+ * immediately — nothing about it needs a promise — but a database that lives
+ * anywhere other than this process cannot be synchronous, and the interface has
+ * to admit that or it can only ever describe an on-disk file. D1 reaches the
+ * Worker over a binding; Postgres would be a socket. Both are awaited.
+ *
  * Swapping SQLite for Postgres means writing one more implementation of this;
  * no route, and nothing in domain/, touches a driver directly.
  */
@@ -88,25 +94,25 @@ export interface Repository {
     childBirthYear?: number;
     childBirthMonth?: number;
     mobility?: Mobility;
-  }): Household;
-  getHousehold(id: string): Household | null;
-  updateHousehold(id: string, patch: Partial<Household>): Household | null;
-  deleteHousehold(id: string): boolean;
+  }): Promise<Household>;
+  getHousehold(id: string): Promise<Household | null>;
+  updateHousehold(id: string, patch: Partial<Household>): Promise<Household | null>;
+  deleteHousehold(id: string): Promise<boolean>;
 
-  getParents(householdId: string): Parent[];
-  getChildren(householdId: string): Child[];
-  replaceChildren(householdId: string, children: Omit<Child, 'id' | 'householdId'>[]): Child[];
-  getMobilityProfile(householdId: string): MobilityProfile | null;
-  upsertMobilityProfile(householdId: string, mode: Mobility, prepMinutes: number): MobilityProfile;
+  getParents(householdId: string): Promise<Parent[]>;
+  getChildren(householdId: string): Promise<Child[]>;
+  replaceChildren(householdId: string, children: Omit<Child, 'id' | 'householdId'>[]): Promise<Child[]>;
+  getMobilityProfile(householdId: string): Promise<MobilityProfile | null>;
+  upsertMobilityProfile(householdId: string, mode: Mobility, prepMinutes: number): Promise<MobilityProfile>;
 
-  listPlaces(): PlaceWithEquipment[];
-  getPlace(id: string): PlaceWithEquipment | null;
+  listPlaces(): Promise<PlaceWithEquipment[]>;
+  getPlace(id: string): Promise<PlaceWithEquipment | null>;
 
-  createSession(householdId: string, contextJson: string, shownAt: string): RecommendationSession;
-  getSession(id: string): RecommendationSession | null;
-  saveRecommendations(rows: Omit<Recommendation, 'id'>[]): Recommendation[];
-  getRecommendation(id: string): Recommendation | null;
-  getRecommendationsForSession(sessionId: string): Recommendation[];
+  createSession(householdId: string, contextJson: string, shownAt: string): Promise<RecommendationSession>;
+  getSession(id: string): Promise<RecommendationSession | null>;
+  saveRecommendations(rows: Omit<Recommendation, 'id'>[]): Promise<Recommendation[]>;
+  getRecommendation(id: string): Promise<Recommendation | null>;
+  getRecommendationsForSession(sessionId: string): Promise<Recommendation[]>;
 
   createDecision(input: {
     sessionId: string;
@@ -114,24 +120,24 @@ export interface Repository {
     placeId: string | null;
     kind: DecisionKind;
     clientElapsedMs: number | null;
-  }): { decision: Decision; visit: Visit | null };
-  getDecision(id: string): Decision | null;
+  }): Promise<{ decision: Decision; visit: Visit | null }>;
+  getDecision(id: string): Promise<Decision | null>;
 
-  getVisit(id: string): Visit | null;
-  getOpenVisits(householdId: string): (Visit & { placeName: string })[];
-  saveFeedback(input: NewFeedback): VisitFeedback;
+  getVisit(id: string): Promise<Visit | null>;
+  getOpenVisits(householdId: string): Promise<(Visit & { placeName: string })[]>;
+  saveFeedback(input: NewFeedback): Promise<VisitFeedback>;
 
-  countVisits(householdId: string, placeId: string): number;
-  lastRevisitAnswer(householdId: string, placeId: string): Revisit | null;
-  getPreferenceHistory(householdId: string): PreferenceHistory[];
-  listHistory(householdId: string, limit: number): HistoryRow[];
+  countVisits(householdId: string, placeId: string): Promise<number>;
+  lastRevisitAnswer(householdId: string, placeId: string): Promise<Revisit | null>;
+  getPreferenceHistory(householdId: string): Promise<PreferenceHistory[]>;
+  listHistory(householdId: string, limit: number): Promise<HistoryRow[]>;
 
-  recordEvent(event: Omit<AnalyticsEventRow, 'id' | 'createdAt'> & { createdAt?: string }): void;
-  hasEvent(householdId: string, name: string): boolean;
+  recordEvent(event: Omit<AnalyticsEventRow, 'id' | 'createdAt'> & { createdAt?: string }): Promise<void>;
+  hasEvent(householdId: string, name: string): Promise<boolean>;
 
-  recordSubjective(householdId: string, decisionId: string | null, answer: SubjectiveAnswer): void;
+  recordSubjective(householdId: string, decisionId: string | null, answer: SubjectiveAnswer): Promise<void>;
 
-  metrics(): MetricsSummary;
+  metrics(): Promise<MetricsSummary>;
 
   close(): void;
 }

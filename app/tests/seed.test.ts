@@ -46,7 +46,7 @@ describe('demo data never reaches the PoC profile', () => {
   it('serves no placeholder value and no banner under SEED_PROFILE=poc', async () => {
     const strict = await startServer('poc');
     try {
-      for (const entry of strict.repo.listPlaces()) {
+      for (const entry of await strict.repo.listPlaces()) {
         for (const source of entry.sources) {
           assert.notEqual(
             source.kind,

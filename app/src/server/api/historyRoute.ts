@@ -20,16 +20,16 @@ const KIND_LABELS: Record<string, string> = {
 };
 
 export function handleGetHistory(deps: Deps) {
-  return (ctx: RequestContext) => {
+  return async (ctx: RequestContext)  => {
     if (!ctx.householdId) return { entries: [], openVisits: [] };
-    const household = deps.repo.getHousehold(ctx.householdId);
+    const household = await deps.repo.getHousehold(ctx.householdId);
     if (!household) return { entries: [], openVisits: [] };
 
     const limitParam = Number.parseInt(ctx.query.get('limit') ?? '30', 10);
     const limit = Number.isFinite(limitParam) ? Math.min(Math.max(limitParam, 1), 100) : 30;
 
     return {
-      entries: deps.repo.listHistory(household.id, limit).map((row) => ({
+      entries: (await deps.repo.listHistory(household.id, limit)).map((row) => ({
         decisionId: row.decisionId,
         decidedAt: row.decidedAt,
         kind: row.kind,
@@ -48,7 +48,7 @@ export function handleGetHistory(deps: Deps) {
         timeToDecisionMs: row.timeToDecisionMs,
       })),
       // Anything the household said "go" to but has not written up yet.
-      openVisits: deps.repo.getOpenVisits(household.id).map((visit) => ({
+      openVisits: (await deps.repo.getOpenVisits(household.id)).map((visit) => ({
         visitId: visit.id,
         placeId: visit.placeId,
         placeName: visit.placeName,
