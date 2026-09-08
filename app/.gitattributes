@@ -1,0 +1,2 @@
+# PowerShell はBOM無しUTF-8の.ps1をShift-JISとして読むため、gitに触らせない。
+*.ps1 -text
