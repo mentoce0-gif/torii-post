@@ -19,9 +19,12 @@ function tokenMatches(expected: string, given: string): boolean {
 export function handleGetMetrics(deps: Deps) {
   return async (ctx: RequestContext)  => {
     const token = deps.config.metricsToken;
-    const header = ctx.req.headers['authorization'];
-    const presented = typeof header === 'string' ? header.replace(/^Bearer\s+/i, '') : '';
-    const remote = ctx.req.socket.remoteAddress ?? '';
+    const header = ctx.header('authorization');
+    const presented = header ? header.replace(/^Bearer\s+/i, '') : '';
+    // Deliberately the peer address and never a forwarded header: trusting
+    // X-Forwarded-For here would publish this endpoint to anyone willing to
+    // claim 127.0.0.1. tests/security.test.ts fails if that changes.
+    const remote = ctx.peerAddress;
 
     if (token) {
       if (!presented || !tokenMatches(token, presented)) throw unauthorized('metrics token required');

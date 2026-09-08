@@ -1,5 +1,6 @@
 import { randomUUID } from 'node:crypto';
-import type { DatabaseSync } from 'node:sqlite';
+
+import type { SqlDriver } from '../driver.ts';
 
 import { isEquipmentKey, isEquipmentValue } from '../../domain/equipment.ts';
 import { EQUIPMENT_KEYS, UNKNOWN } from '../../domain/types.ts';
@@ -7,6 +8,9 @@ import { DEMO_OBSERVATIONS } from './demoObservations.ts';
 import { SEED_PLACES, type SeedPlace } from './places.ts';
 
 export type SeedProfile = 'poc' | 'demo';
+
+const INSERT_SOURCE =
+  'INSERT INTO place_sources (id, place_id, kind, label, url, checked_at) VALUES (?, ?, ?, ?, ?, ?)';
 
 export interface SeedViolation {
   placeId: string;
@@ -71,14 +75,14 @@ export interface SeedResult {
  * Idempotent. Curated rows are rewritten on every boot so the seed file is the
  * source of truth; households, decisions and visits are never touched.
  */
-export function seedDatabase(db: DatabaseSync, profile: SeedProfile): SeedResult {
+export async function seedDatabase(db: SqlDriver, profile: SeedProfile): Promise<SeedResult> {
   const violations = validateSeed(SEED_PLACES);
   if (violations.length > 0) {
     const detail = violations.map((v) => `${v.placeId}.${v.key}: ${v.reason}`).join('\n  ');
     throw new Error(`Seed data violates the provenance rule:\n  ${detail}`);
   }
 
-  const upsertPlace = db.prepare(
+  const upsertPlace =
     `INSERT INTO places (id, name, area_code, area_label, kind, lat, lng, coord_precision, price_label,
         indoor_shelter, escape_route, hours_status, hours_label, min_age_months, max_age_months,
         category, notes, updated_at)
@@ -90,16 +94,14 @@ export function seedDatabase(db: DatabaseSync, profile: SeedProfile): SeedResult
        indoor_shelter = excluded.indoor_shelter, escape_route = excluded.escape_route,
        hours_status = excluded.hours_status, hours_label = excluded.hours_label,
        min_age_months = excluded.min_age_months, max_age_months = excluded.max_age_months,
-       category = excluded.category, notes = excluded.notes, updated_at = excluded.updated_at`,
-  );
+       category = excluded.category, notes = excluded.notes, updated_at = excluded.updated_at`;
 
-  const upsertEquipment = db.prepare(
+  const upsertEquipment =
     `INSERT INTO place_equipment (id, place_id, key, value, source_id, verified_at, confidence)
      VALUES (?, ?, ?, ?, ?, ?, ?)
      ON CONFLICT(place_id, key) DO UPDATE SET
        value = excluded.value, source_id = excluded.source_id,
-       verified_at = excluded.verified_at, confidence = excluded.confidence`,
-  );
+       verified_at = excluded.verified_at, confidence = excluded.confidence`;
 
   const demoById = new Map(DEMO_OBSERVATIONS.map((o) => [o.placeId, o]));
   const updatedAt = new Date().toISOString();
@@ -108,7 +110,7 @@ export function seedDatabase(db: DatabaseSync, profile: SeedProfile): SeedResult
   for (const place of SEED_PLACES) {
     const demo = profile === 'demo' ? demoById.get(place.id) : undefined;
 
-    upsertPlace.run(
+    await db.run(upsertPlace, [
       place.id,
       place.name,
       place.areaCode,
@@ -127,31 +129,34 @@ export function seedDatabase(db: DatabaseSync, profile: SeedProfile): SeedResult
       place.category,
       place.notes,
       updatedAt,
-    );
+    ]);
 
-    db.prepare('DELETE FROM place_sources WHERE place_id = ?').run(place.id);
+    await db.run('DELETE FROM place_sources WHERE place_id = ?', [place.id]);
     const sourceIds = new Map<string, string>();
     for (const source of place.sources) {
       const id = randomUUID();
       sourceIds.set(source.key, id);
-      db.prepare(
-        'INSERT INTO place_sources (id, place_id, kind, label, url, checked_at) VALUES (?, ?, ?, ?, ?, ?)',
-      ).run(id, place.id, source.kind, source.label, source.url, source.checkedAt);
+      await db.run(INSERT_SOURCE, [
+        id,
+        place.id,
+        source.kind,
+        source.label,
+        source.url,
+        source.checkedAt,
+      ]);
     }
 
     let demoSourceId: string | null = null;
     if (demo) {
       demoSourceId = randomUUID();
-      db.prepare(
-        'INSERT INTO place_sources (id, place_id, kind, label, url, checked_at) VALUES (?, ?, ?, ?, ?, ?)',
-      ).run(
+      await db.run(INSERT_SOURCE, [
         demoSourceId,
         place.id,
         'demo_placeholder',
         'デモ用の仮データ（未検証）',
         null,
         null,
-      );
+      ]);
     }
 
     for (const key of EQUIPMENT_KEYS) {
@@ -159,7 +164,7 @@ export function seedDatabase(db: DatabaseSync, profile: SeedProfile): SeedResult
       const demoValue = demo?.equipment?.[key];
 
       if (curated && curated.value !== UNKNOWN) {
-        upsertEquipment.run(
+        await db.run(upsertEquipment, [
           randomUUID(),
           place.id,
           key,
@@ -167,13 +172,13 @@ export function seedDatabase(db: DatabaseSync, profile: SeedProfile): SeedResult
           sourceIds.get(curated.sourceKey) ?? null,
           curated.verifiedAt,
           curated.confidence,
-        );
+        ]);
       } else if (demoValue && isEquipmentValue(demoValue) && demoValue !== UNKNOWN) {
         placeholderValues += 1;
-        upsertEquipment.run(randomUUID(), place.id, key, demoValue, demoSourceId, null, 0);
+        await db.run(upsertEquipment, [randomUUID(), place.id, key, demoValue, demoSourceId, null, 0]);
       } else {
         // No source, no claim.
-        upsertEquipment.run(randomUUID(), place.id, key, UNKNOWN, null, null, 0);
+        await db.run(upsertEquipment, [randomUUID(), place.id, key, UNKNOWN, null, null, 0]);
       }
     }
   }

@@ -2,6 +2,8 @@ import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 import type { IncomingMessage } from 'node:http';
 
+import { splitStatements } from '../src/server/data/d1Driver.ts';
+import { SCHEMA_SQL } from '../src/server/data/schema.ts';
 import { peerAddress } from '../src/server/http/server.ts';
 import { startServer } from './helpers.ts';
 
@@ -159,5 +161,34 @@ describe('responses carry the headers a public deployment needs', () => {
     } finally {
       await server.stop();
     }
+  });
+});
+
+describe('the D1 schema split', () => {
+  it('drops the PRAGMAs D1 refuses', () => {
+    // D1 answers PRAGMA with SQLITE_AUTH, which took down the whole Worker on
+    // its first request. Both PRAGMAs in schema.ts are questions for a local
+    // file — how one process journals to a disk, and a foreign-key default D1
+    // already applies — so they are dropped here rather than forking the schema.
+    const statements = splitStatements(SCHEMA_SQL);
+    assert.ok(statements.length > 0, 'the schema should still produce statements');
+    for (const statement of statements) {
+      assert.ok(!/^pragma\b/i.test(statement), `PRAGMA survived: ${statement.slice(0, 40)}`);
+    }
+    assert.ok(
+      statements.some((s) => /CREATE TABLE/i.test(s)),
+      'the tables must survive the filter',
+    );
+  });
+
+  it('drops comments and blank lines, keeping statements whole', () => {
+    const statements = splitStatements(`
+      -- a comment
+      CREATE TABLE a (id TEXT);
+
+      PRAGMA foreign_keys = ON;
+      CREATE TABLE b (id TEXT);
+    `);
+    assert.deepEqual(statements, ['CREATE TABLE a (id TEXT)', 'CREATE TABLE b (id TEXT)']);
   });
 });

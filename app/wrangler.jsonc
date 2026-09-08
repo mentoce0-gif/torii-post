@@ -1,0 +1,45 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "kyou-dousuru",
+  "main": "src/worker/index.ts",
+  // node:crypto (randomUUID) is the only Node built-in the shared code needs.
+  "compatibility_date": "2026-09-01",
+  "compatibility_flags": ["nodejs_compat"],
+
+  // The PWA shell. Served by the platform, not by the Worker, so the app's
+  // static files never occupy Worker CPU time.
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    // Hash routes are client-side; a deep link or refresh must still get the
+    // shell rather than a 404.
+    "not_found_handling": "single-page-application",
+    // /api/* must reach the Worker even though it is not a file in public/.
+    "run_worker_first": ["/api/*"]
+  },
+
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "kyou-dousuru",
+      // Replaced by the real id from `wrangler d1 create kyou-dousuru`.
+      // Local development ignores it and uses a file under .wrangler/.
+      "database_id": "REPLACE_WITH_D1_DATABASE_ID"
+    }
+  ],
+
+  "vars": {
+    // Honest data only. `demo` loads clearly-labelled placeholders and is never
+    // what a real household should be pointed at.
+    "SEED_PROFILE": "poc",
+    "DEFAULT_AREA_CODE": "shiga-otsu",
+    "RATE_LIMIT_PER_MIN": "60",
+    "RATE_LIMIT_READ_PER_MIN": "240"
+  },
+
+  // METRICS_TOKEN is a secret, not a var: `wrangler secret put METRICS_TOKEN`.
+  // Unset, /api/metrics is unreachable in this runtime — there is no loopback
+  // to fall back to, which is the correct default for a public deployment.
+
+  "observability": { "enabled": true }
+}

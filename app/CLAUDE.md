@@ -87,7 +87,7 @@ npm run metrics # Time to Decision の集計
 
 | 対象 | 抽象 | 既定 |
 | --- | --- | --- |
-| DB | `src/server/data/repository.ts` | `SqliteRepository` |
+| DB | `src/server/data/driver.ts` | `NodeSqliteDriver` / `D1Driver` |
 | 地図 | `src/web/map/adapter.ts` | `SchematicMapProvider`（現在地＋候補3件のみ、タイル無し） |
 | 計測 | `src/server/analytics/provider.ts` | `SqliteAnalyticsProvider` |
 
@@ -98,7 +98,7 @@ npm run metrics # Time to Decision の集計
 ## 現状
 
 - 4画面（Home / Detail / Decision / After）+ 履歴 + 設定 + 地図 が通しで動作
-- テスト97件pass、サーバ・ブラウザ両方の型チェックpass
+- テスト99件pass、サーバ・ブラウザ・Workerの3つとも型チェックpass
 - PWA: manifest / service worker（**シェルのみキャッシュ、`/api/*` はネットワーク限定**）/
   アイコン / safe-area / タップ領域48px以上 / ダークモード / コントラストAA実測済み
 
@@ -129,9 +129,35 @@ npm run metrics # Time to Decision の集計
    **立てたら `TRUST_PROXY=true` も設定**してください。TLS終端の裏では全員が同じ
    ソケットから来るので、これが false のままだと1人の濫用で全世帯が429になります。
    逆に、プロキシが無いのに true にすると `X-Forwarded-For` を偽装され放題です。
-4. **アプリの置き場所が未定です。** `.github/workflows/deploy.yml` は Eleventy の
-   ブログを GitHub Pages に出すだけで、このアプリとは無関係。Pages は静的なので
-   Node + SQLite のこれは載りません。Dockerfile も service 定義もありません。
+4. Cloudflareへの初回デプロイ（`npm run cf:db:create` → IDを `wrangler.jsonc` に貼る
+   → `npm run cf:secret` → `npm run cf:deploy`）。この環境からは実行できません
+   （egressが塞がっているため）。ローカルの `npm run cf:dev` までは検証済みです。
+
+## 2つのランタイム
+
+同じコードが Node と Cloudflare Workers の両方で動きます。
+
+| | Node | Workers |
+| --- | --- | --- |
+| 入口 | `src/server/http/server.ts` | `src/worker/index.ts` |
+| DB | `NodeSqliteDriver`（`node:sqlite`） | `D1Driver`（D1バインディング） |
+| 静的配信 | `http/static.ts` | Workers Assets |
+| 起点IP | `remoteAddress` / `TRUST_PROXY` 時のみ XFF | `CF-Connecting-IP`（偽装不可） |
+| `/api/metrics` | ループバックか トークン | **トークンのみ**（ループバックが無いため） |
+
+共通なのは `domain/`（判定ロジック）、`api/`（ルート）、`SqlRepository`。
+**リポジトリ実装は1つだけ**です。2つ書くとSQLが少しずつ食い違い、
+その差はずっと後になって「間違ったデータ」としてしか現れないためです。
+
+`src/server/data/sqlRepository.ts` が本体、`sqliteRepository.ts` はNode専用の
+薄い派生（`node:sqlite` をWorkerのバンドルに引き込まないための分離）。
+
+### D1で踏んだこと
+
+- **`PRAGMA` は `SQLITE_AUTH` で拒否されます。** 最初のリクエストでWorkerごと落ちました。
+  `schema.ts` の2つ（`journal_mode`・`foreign_keys`）はどちらもローカルファイル用の
+  設定なので、`d1Driver.ts` の `splitStatements` が落としています（テストで固定）。
+- D1は非同期です。そのために `Repository` 全体を `Promise` 化しました。
 
 ### 起点は大津
 
