@@ -207,8 +207,10 @@ function candidateCard(candidate: Candidate, sessionId: string, mobility: string
     navigate(`#/place/${candidate.placeId}`);
   };
 
-  const roleTag =
-    candidate.role === 'home' ? '家' : candidate.role === 'usual' ? 'いつもの場' : '知らない場所';
+  // Only shown when it says something. With no home card and no seeded usual
+  // spot, every card carried 「知らない場所」 — six characters of nothing, taking
+  // enough width to break the place name onto two lines.
+  const roleTag = candidate.role === 'usual' ? 'いつもの場' : candidate.role === 'home' ? '家' : null;
 
   return h(
     'article',
@@ -224,10 +226,21 @@ function candidateCard(candidate: Candidate, sessionId: string, mobility: string
         h(
           'p',
           { class: 'place-meta' },
-          `${candidate.areaLabel}・${travelLabel(candidate.travelMinutes, candidate.travelPrecision, MOBILITY_LABELS[mobility] ?? '')}・${candidate.priceLabel}`,
+          // Each fact in its own span so a line break lands between them and
+          // never inside 「車13分（目安）」.
+          h('span', { class: 'meta-part', text: candidate.areaLabel }),
+          h('span', {
+            class: 'meta-part',
+            text: travelLabel(
+              candidate.travelMinutes,
+              candidate.travelPrecision,
+              MOBILITY_LABELS[mobility] ?? '',
+            ),
+          }),
+          h('span', { class: 'meta-part', text: candidate.priceLabel }),
         ),
       ),
-      h('span', { class: 'role-tag', text: roleTag }),
+      roleTag ? h('span', { class: 'role-tag', text: roleTag }) : null,
     ),
     stayLine(candidate),
     fitAndConfidence(candidate.fitGrade, candidate.confidence),

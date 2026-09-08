@@ -138,8 +138,8 @@ describe('a citation points at exactly one page', () => {
   });
 
   it('refuses a seed whose sources collide, rather than silently picking one', () => {
-    const base = SEED_PLACES.find((place) => place.id === 'home');
-    assert.ok(base, 'the home fallback is the fixture this test builds on');
+    const base = SEED_PLACES[0];
+    assert.ok(base, 'the seed should not be empty');
 
     const collided: SeedPlace = {
       ...base,
@@ -170,14 +170,6 @@ describe('the demo file stays wired to real places', () => {
         known.has(observation.placeId),
         `demoObservations references unknown place ${observation.placeId}`,
       );
-    }
-  });
-
-  it('never observes the home fallback', () => {
-    // 家・室内 is the one record the household already knows first-hand. A
-    // placeholder there would put a demo banner on every result list.
-    for (const observation of DEMO_OBSERVATIONS) {
-      assert.notEqual(observation.placeId, 'home');
     }
   });
 });

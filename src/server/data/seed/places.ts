@@ -497,45 +497,11 @@ export const SEED_PLACES: SeedPlace[] = [
     ],
   }),
 
-  // --- fallback ---------------------------------------------------------------
-  // There is no seeded "usual spot": which place counts as the household's
-  // default is theirs to name in Settings, and inventing one would put a card
-  // nobody asked for into a list of three.
-  {
-    id: 'home',
-    name: '家・室内',
-    areaCode: 'household',
-    areaLabel: '自宅',
-    kind: 'home',
-    lat: null,
-    lng: null,
-    coordPrecision: 'locality',
-    priceLabel: '0円',
-    indoorShelter: '○',
-    escapeRoute: 'いつでも中断できる',
-    hoursStatus: 'always_open',
-    hoursLabel: 'いつでも',
-    minAgeMonths: null,
-    maxAgeMonths: null,
-    category: 'home',
-    notes: '準備2分 / 汚れ少 / 移動ゼロ',
-    sources: [
-      {
-        key: 'home:self',
-        kind: 'curator_field_note',
-        label: '自宅のため世帯が既知',
-        url: null,
-        checkedAt: '2026-09-07',
-      },
-    ],
-    // The one record whose facilities the household does not need us to verify.
-    equipment: {
-      sandbox: { value: '×', sourceKey: 'home:self', verifiedAt: '2026-09-07', confidence: 1 },
-      shade: { value: '○', sourceKey: 'home:self', verifiedAt: '2026-09-07', confidence: 1 },
-      water: { value: '○', sourceKey: 'home:self', verifiedAt: '2026-09-07', confidence: 1 },
-      toilet: { value: '○', sourceKey: 'home:self', verifiedAt: '2026-09-07', confidence: 1 },
-      diaper: { value: '○', sourceKey: 'home:self', verifiedAt: '2026-09-07', confidence: 1 },
-      stroller: { value: '○', sourceKey: 'home:self', verifiedAt: '2026-09-07', confidence: 1 },
-    },
-  },
+  // No 家・室内 fallback, and no seeded "usual spot".
+  //
+  // Both were padding to guarantee three cards. Neither is why a parent opens
+  // this: they already know staying in is an option, and the card cost a slot
+  // that a real place could use. buildRecommendations promotes a third outdoor
+  // candidate when there is no home record, which is the answer the question
+  // actually wants.
 ];

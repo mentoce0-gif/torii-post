@@ -201,10 +201,12 @@ describe('POST /api/recommend', () => {
       );
     }
 
-    const home = body.candidates.find((candidate) => candidate.role === 'home');
-    assert.ok(home, 'the home fallback should always be offered');
-    // Nothing to travel, so the whole window is on-site.
-    assert.equal(home?.onSiteMinutes, body.context.remainingMinutes);
+    // There is no 家・室内 card any more, so every candidate is somewhere the
+    // household would travel to and none may claim the whole window.
+    assert.ok(body.candidates.length > 0, 'the list should not be empty');
+    for (const candidate of body.candidates) {
+      assert.notEqual(candidate.role, 'home', '家・室内 was removed from the seed');
+    }
   });
 
   it('rejects nonsense input', async () => {
