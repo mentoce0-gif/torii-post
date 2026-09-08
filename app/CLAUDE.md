@@ -129,9 +129,12 @@ npm run metrics # Time to Decision の集計
    **立てたら `TRUST_PROXY=true` も設定**してください。TLS終端の裏では全員が同じ
    ソケットから来るので、これが false のままだと1人の濫用で全世帯が429になります。
    逆に、プロキシが無いのに true にすると `X-Forwarded-For` を偽装され放題です。
-4. Cloudflareへの初回デプロイ（`npm run cf:db:create` → IDを `wrangler.jsonc` に貼る
-   → `npm run cf:secret` → `npm run cf:deploy`）。この環境からは実行できません
-   （egressが塞がっているため）。ローカルの `npm run cf:dev` までは検証済みです。
+4. ~~Cloudflareへの初回デプロイ~~ **完了（2026-09-08）**。
+   公開URL: https://kyou-dousuru.mentoce0.workers.dev
+   D1 `kyou-dousuru`（APAC）/ `SEED_PROFILE=poc` / `METRICS_TOKEN` 設定済み。
+   トップ200・候補API201・`/api/metrics` はトークン無しで401を確認。
+   以後の更新は `npm run cf:deploy`（`wrangler.jsonc` の `database_id` は
+   コミット済みなので、2回目以降はこれだけです）。
 
 ## 2つのランタイム
 
@@ -167,6 +170,14 @@ npm run metrics # Time to Decision の集計
 **推測ではありません**: 応答は `originSource: 'default'`、画面は「大津市（既定）」。
 `tests/api.test.ts` が、既定は既定と名乗ること・選択は `chosen` と名乗ること・
 `DEFAULT_AREA_CODE` が不正なら400のままであることを固定しています。
+
+### 公開後にやること
+
+1. **WAFレートリミットルール**を1本入れる（無償枠に1つ）。Worker内のリミッタは
+   アイソレートごとなので保険であって主たる制御点ではありません。
+2. **データ。** 確定しているのは3値だけです（皇子が丘=砂場・トイレ、なぎさ=トイレ）。
+   残りは `？` のまま。`CURATION_LEADS.md` を参照。
+3. スマホでホーム画面に追加して、PWAとして動くか実機確認。
 
 ### 保留中の選択肢
 
