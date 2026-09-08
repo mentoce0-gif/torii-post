@@ -74,6 +74,21 @@ function park(input: {
     label: string;
     url: string;
   }[];
+  /**
+   * Pages a curator has actually opened, with the date they read them. Only
+   * these may back a stated value — `candidateSources` stay at `checkedAt:
+   * null` and unlock nothing.
+   */
+  readSources?: {
+    kind: 'official_site' | 'municipal_page';
+    slug: string;
+    label: string;
+    url: string;
+    checkedAt: string;
+  }[];
+  equipment?: SeedPlace['equipment'];
+  notes?: string;
+  escapeRoute?: string;
 }): SeedPlace {
   return {
     id: input.id,
@@ -86,23 +101,32 @@ function park(input: {
     coordPrecision: 'locality',
     priceLabel: '未確認',
     indoorShelter: '？',
-    escapeRoute: null,
+    escapeRoute: input.escapeRoute ?? null,
     hoursStatus: 'unverified',
     hoursLabel: UNVERIFIED_HOURS,
     minAgeMonths: input.minAgeMonths === undefined ? 12 : input.minAgeMonths,
     maxAgeMonths: null,
     category: input.category ?? 'park',
-    notes: null,
-    sources: (input.candidateSources ?? []).map((candidate) => ({
-      key: `${input.id}:${candidate.slug ?? (candidate.kind === 'municipal_page' ? 'municipal' : 'official')}`,
-      kind: candidate.kind,
-      label: candidate.label,
-      url: candidate.url,
-      // Located by search, never opened from here. `checkedAt: null` renders as
-      // 未確認 and unlocks no value: it only saves the curator the hunt.
-      checkedAt: null,
-    })),
-    equipment: {},
+    notes: input.notes ?? null,
+    sources: [
+      ...(input.candidateSources ?? []).map((candidate) => ({
+        key: `${input.id}:${candidate.slug ?? (candidate.kind === 'municipal_page' ? 'municipal' : 'official')}`,
+        kind: candidate.kind,
+        label: candidate.label,
+        url: candidate.url,
+        // Located by search, never opened from here. `checkedAt: null` renders
+        // as 未確認 and unlocks no value: it only saves the curator the hunt.
+        checkedAt: null,
+      })),
+      ...(input.readSources ?? []).map((source) => ({
+        key: `${input.id}:${source.slug}`,
+        kind: source.kind,
+        label: source.label,
+        url: source.url,
+        checkedAt: source.checkedAt,
+      })),
+    ],
+    equipment: input.equipment ?? {},
   };
 }
 
@@ -259,14 +283,54 @@ export const SEED_PLACES: SeedPlace[] = [
   }),
 
   // --- 大津市 ---------------------------------------------------------------
+  // First place surveyed for the PoC. Two independent audits of the same
+  // research agreed on every value below except the ones left at `？`.
   park({
     id: 'ojigaoka-park',
     name: '皇子が丘公園',
     areaCode: 'shiga-otsu',
+    // The city's own map centres the park here. The previous pair was ~1.5km
+    // north-east, which matters now that the card leads with travel time.
+    // Still a centroid, so `coordPrecision` stays 'locality' and the estimate
+    // keeps its 「（目安）」.
+    lat: 35.0204,
+    lng: 135.8544,
     areaLabel: '大津市',
-    lat: 35.0323,
-    lng: 135.8651,
     category: 'large_park',
+    notes: 'トイレは屋外5か所。遊具からの距離は未確認。体育館・プールは別施設で、その中の設備は数えていません',
+    readSources: [
+      {
+        kind: 'municipal_page',
+        slug: 'opendata-yugu',
+        label: '大津市 都市公園遊具一覧（公園緑地課所管）',
+        url: 'https://www.city.otsu.lg.jp/soshiki/035/1809/od/68228.html',
+        checkedAt: '2026-09-08',
+      },
+      {
+        kind: 'municipal_page',
+        slug: 'opendata-toilet',
+        label: '大津市 公衆トイレ一覧（公園緑地課所管）',
+        url: 'https://www.city.otsu.lg.jp/soshiki/035/1809/od/61538.html',
+        checkedAt: '2026-09-08',
+      },
+    ],
+    equipment: {
+      // 遊具一覧の皇子が丘公園の行に「砂場」1。
+      sandbox: {
+        value: '○',
+        sourceKey: 'ojigaoka-park:opendata-yugu',
+        verifiedAt: '2026-09-08',
+        confidence: 1,
+      },
+      // 公衆トイレ一覧に屋外トイレ5か所（グラウンド / 旧憩いの村前 / 旧ユース前 /
+      // プール上 / テニスコート上）。体育館内のものではありません。
+      toilet: {
+        value: '○',
+        sourceKey: 'ojigaoka-park:opendata-toilet',
+        verifiedAt: '2026-09-08',
+        confidence: 1,
+      },
+    },
     candidateSources: [
       {
         kind: 'municipal_page',
@@ -295,6 +359,33 @@ export const SEED_PLACES: SeedPlace[] = [
     lat: 35.0053,
     lng: 135.8764,
     category: 'lakeside_park',
+    notes: '浜大津〜近江大橋の約4.5kmの帯状公園。区域ごとに設備が違います。ここは市民プラザ側の値です',
+    escapeRoute: 'LAGO（市民プラザ内）に屋内退避先。ただし営業時間内のみ',
+    readSources: [
+      {
+        kind: 'municipal_page',
+        slug: 'opendata-toilet',
+        label: '大津市 公衆トイレ一覧（公園緑地課所管）',
+        url: 'https://www.city.otsu.lg.jp/soshiki/035/1809/od/61538.html',
+        checkedAt: '2026-09-08',
+      },
+      {
+        kind: 'municipal_page',
+        slug: 'municipal-saiseibi',
+        label: '大津市 大津湖岸なぎさ公園（市民プラザ）の再整備について',
+        url: 'https://www.city.otsu.lg.jp/soshiki/035/1809/g/keikaku/43995.html',
+        checkedAt: '2026-09-08',
+      },
+    ],
+    equipment: {
+      // 公衆トイレ一覧に設置位置「市民プラザ」。膳所晴嵐1・2も同区域帯。
+      toilet: {
+        value: '○',
+        sourceKey: 'otsu-kogan-nagisa:opendata-toilet',
+        verifiedAt: '2026-09-08',
+        confidence: 1,
+      },
+    },
     candidateSources: [
       {
         kind: 'municipal_page',
