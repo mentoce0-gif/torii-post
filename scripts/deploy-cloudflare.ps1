@@ -1,4 +1,4 @@
-# 「今日どうする？」を Cloudflare Workers + D1 に配置する（Windows / PowerShell 版）。
+﻿# 「今日どうする？」を Cloudflare Workers + D1 に配置する（Windows / PowerShell 版）。
 #
 #   cd torii-post\app
 #   powershell -ExecutionPolicy Bypass -File scripts\deploy-cloudflare.ps1
@@ -125,8 +125,7 @@ if ($url) {
 
   try {
     $body = '{"childAgeMonths":18,"remainingMinutes":90,"mobility":"car","weather":"cloudy","origin":{}}'
-    $rec = Invoke-WebRequest -Uri "$url/api/recommend" -Method Post -Body $body `
-      -ContentType 'application/json' -UseBasicParsing -TimeoutSec 30
+    $rec = Invoke-WebRequest -Uri "$url/api/recommend" -Method Post -Body $body -ContentType 'application/json' -UseBasicParsing -TimeoutSec 30
     Note "候補API: HTTP $($rec.StatusCode)"
     Write-Host ("  " + $rec.Content.Substring(0, [Math]::Min(300, $rec.Content.Length)))
   } catch {
@@ -138,7 +137,9 @@ if ($url) {
     Invoke-WebRequest -Uri "$url/api/metrics" -UseBasicParsing -TimeoutSec 30 | Out-Null
     Note "/api/metrics: 200 — 想定外です（トークン無しで開いています）"
   } catch {
-    Note "/api/metrics（トークン無し・401が正常）: $($_.Exception.Response.StatusCode.value__)"
+    $code = 'unknown'
+    if ($_.Exception.Response) { $code = [int]$_.Exception.Response.StatusCode }
+    Note "/api/metrics（トークン無し・401が正常）: $code"
   }
 
   Say "完了しました"
