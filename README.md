@@ -330,6 +330,9 @@ Adapterに渡るのは常にピン3本だけです。
 
 ### A. Cloudflare Workers + D1（推奨・無償枠）
 
+**稼働中**: https://kyou-dousuru.mentoce0.workers.dev （2026-09-08〜）
+2回目以降の更新は `npm run cf:deploy` だけで済みます。
+
 **前提**: Cloudflareアカウント（無料・クレジットカード不要）と Node 22.18以上。
 **この作業は開発マシンのターミナルで行います**（CIやコンテナからではなく）。
 
