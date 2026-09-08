@@ -1,33 +1,46 @@
 /*
- * A tool a father opens one-handed in a car park, not a parenting app.
+ * A tool a parent opens one-handed in a car park.
  *
- * Neutral paper, large type, high contrast, chips instead of prose for the six
- * facts that matter. No pastels, no stars, no ranking furniture.
+ * Warm paper, large type, high contrast, chips instead of prose for the six
+ * facts that matter. Softened deliberately — the first build read as clinical,
+ * and a screen you meet on a tired Saturday should not feel like a form.
+ *
+ * The original rule stands and is the reason this is warm rather than merely
+ * decorated: no stars, no scores out of five, no ranking furniture. Warmth
+ * comes from colour, space and roundness, never from a graphic that implies a
+ * judgement the data cannot support. Every pair below is measured against WCAG
+ * AA in both themes.
  */
 
 :root {
-  --paper: #ffffff;
-  --paper-2: #f5f6f8;
-  --ink: #14181d;
-  --ink-2: #454d58;
-  --muted: #5f6874;
-  --line: #d5dae1;
-  --line-strong: #b7bfc9;
+  --paper: #fcfbf9;           /* warm, not clinical white */
+  --paper-2: #f4f2ee;
+  --ink: #191c1e;             /* 16.6:1 */
+  --ink-2: #4a5157;           /* 7.8:1 */
+  --muted: #646c73;           /* 5.2:1 on paper, 4.8:1 on paper-2 */
+  --line: #e2ded7;
+  --line-strong: #c8c2b8;
 
-  --accent: #0b4fb0;          /* 8.0:1 on paper */
-  --accent-ink: #ffffff;
+  /* Deep green rather than corporate blue: this is about going outside. */
+  --accent: #0b6157;          /* 7.1:1 */
+  --accent-ink: #ffffff;      /* 7.3:1 on accent */
+  --accent-soft: #e3f2ee;     /* accent reads 6.4:1 on it */
 
-  --yes: #0a6b3d;             /* 5.3:1 */
-  --yes-bg: #e6f4ec;
-  --partial: #7a4c00;         /* 6.4:1 */
+  --yes: #0a6b3d;             /* 5.8:1 */
+  --yes-bg: #e4f4ea;
+  --partial: #7a4c00;         /* 6.5:1 */
   --partial-bg: #fbf0dd;
-  --no: #a1232a;              /* 6.1:1 */
+  --no: #a1232a;              /* 6.5:1 */
   --no-bg: #fbeaea;
-  --unknown: #3d4a5c;         /* 9.1:1 — legible, not alarming */
+  --unknown: #3d4a5c;         /* 8.0:1 — legible, not alarming */
   --unknown-bg: #eef1f6;
 
-  --radius: 14px;
-  --radius-sm: 10px;
+  /* Depth instead of hairlines. A card should feel liftable. */
+  --shadow: 0 1px 2px rgba(25, 28, 30, 0.05), 0 4px 14px rgba(25, 28, 30, 0.06);
+  --shadow-lift: 0 2px 6px rgba(25, 28, 30, 0.08), 0 10px 28px rgba(25, 28, 30, 0.10);
+
+  --radius: 20px;
+  --radius-sm: 13px;
   --tap: 48px;
 
   --safe-bottom: env(safe-area-inset-bottom, 0px);
@@ -36,16 +49,17 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --paper: #14171b;
-    --paper-2: #1c2026;
-    --ink: #f2f4f7;
-    --ink-2: #c7ced7;
-    --muted: #9aa4b1;
-    --line: #313841;
-    --line-strong: #454e59;
+    --paper: #15181a;
+    --paper-2: #1e2225;
+    --ink: #f3f2ef;
+    --ink-2: #c9cdd1;
+    --muted: #99a0a6;
+    --line: #2f3438;
+    --line-strong: #454b50;
 
-    --accent: #7fb4ff;
-    --accent-ink: #0d1117;
+    --accent: #5fd3bd;
+    --accent-ink: #0b1f1c;
+    --accent-soft: #16302c;
 
     --yes: #6ddba0;
     --yes-bg: #17301f;
@@ -55,6 +69,10 @@
     --no-bg: #351b1c;
     --unknown: #b9c6d8;
     --unknown-bg: #232a33;
+
+    /* A glow reads as depth on a dark ground where a drop shadow does not. */
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 4px 14px rgba(0, 0, 0, 0.3);
+    --shadow-lift: 0 2px 6px rgba(0, 0, 0, 0.5), 0 10px 28px rgba(0, 0, 0, 0.4);
   }
 }
 
@@ -121,10 +139,10 @@ body {
   gap: 2px 12px;
   align-items: center;
   min-height: var(--tap);
-  padding: 10px 14px;
+  padding: 12px 16px;
   background: var(--paper-2);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
+  border: 1px solid transparent;
+  border-radius: 999px;
   color: var(--ink);
   font: inherit;
   text-align: left;
@@ -165,11 +183,11 @@ body {
 /* --- headline ------------------------------------------------------------ */
 
 .headline-question {
-  font-size: 30px;
-  line-height: 1.25;
+  font-size: 32px;
+  line-height: 1.22;
   font-weight: 800;
-  margin: 18px 0 12px;
-  letter-spacing: -0.01em;
+  margin: 22px 0 14px;
+  letter-spacing: -0.02em;
 }
 
 .page-title {
@@ -183,14 +201,17 @@ body {
 .cards {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 18px;
 }
 
 .card {
-  border: 1px solid var(--line-strong);
+  /* Depth rather than a hard rule: three bordered rectangles in a column read
+     as a table, which is what made the first build feel like a form. */
+  border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 14px;
+  padding: 18px 16px;
   background: var(--paper);
+  box-shadow: var(--shadow);
 }
 
 .card-home,
@@ -218,10 +239,11 @@ body {
 }
 
 .place-name {
-  font-size: 20px;
+  font-size: 21px;
   font-weight: 800;
   margin: 0;
   line-height: 1.3;
+  letter-spacing: -0.02em;
 }
 
 .place-meta {
@@ -329,11 +351,11 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 4px;
-  padding: 7px 8px;
-  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  border-radius: 999px;
   border: 1px solid transparent;
   font-size: 14px;
-  min-height: 38px;
+  min-height: 40px;
 }
 
 .chip-label {
@@ -420,7 +442,7 @@ body {
 .btn {
   min-height: var(--tap);
   padding: 0 16px;
-  border-radius: var(--radius-sm);
+  border-radius: 999px;
   border: 1.5px solid transparent;
   font: inherit;
   font-weight: 700;
@@ -430,11 +452,27 @@ body {
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  transition: transform 120ms ease, box-shadow 120ms ease, background-color 120ms ease;
+}
+
+/* The one press this whole app exists for should feel like a press. */
+.btn:active {
+  transform: translateY(1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+  .btn:active {
+    transform: none;
+  }
 }
 
 .btn-primary {
   background: var(--accent);
   color: var(--accent-ink);
+  box-shadow: var(--shadow);
 }
 
 .btn-secondary {
@@ -1081,4 +1119,20 @@ body {
   color: var(--ink-2);
   font-size: 15px;
   line-height: 1.7;
+}
+
+/* Facts separated by a dot that the browser may break at, never inside one. */
+.place-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 4px;
+}
+
+.meta-part {
+  white-space: nowrap;
+}
+
+.meta-part + .meta-part::before {
+  content: '・';
+  color: var(--muted);
 }
