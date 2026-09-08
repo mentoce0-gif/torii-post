@@ -17,10 +17,10 @@ export interface TestServer {
   json<T>(path: string, init?: RequestInit & { householdId?: string }): Promise<T>;
 }
 
-export function makeRepo(profile: SeedProfile = 'demo'): SqliteRepository {
+export async function makeRepo(profile: SeedProfile = 'demo'): Promise<SqliteRepository> {
   const dir = mkdtempSync(path.join(tmpdir(), 'kns-test-'));
   const repo = new SqliteRepository(path.join(dir, 'test.sqlite'));
-  seedDatabase(repo.handle, profile);
+  await seedDatabase(repo.driver, profile);
   return repo;
 }
 
@@ -50,7 +50,7 @@ export async function startServer(
   const dir = mkdtempSync(path.join(tmpdir(), 'kns-test-'));
   const dbPath = path.join(dir, 'test.sqlite');
   const repo = new SqliteRepository(dbPath);
-  seedDatabase(repo.handle, profile);
+  await seedDatabase(repo.driver, profile);
 
   const config = testConfig({ dbPath, seedProfile: profile, ...overrides });
   const server = createApp({

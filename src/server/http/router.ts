@@ -1,13 +1,26 @@
-import type { IncomingMessage, ServerResponse } from 'node:http';
-
+/**
+ * What a handler is given, with nothing in it that names a runtime.
+ *
+ * This used to carry Node's IncomingMessage and ServerResponse, which meant a
+ * handler could only ever run on a Node server. The two things anything
+ * actually reached into them for — a request header and the peer address — are
+ * named here instead, so the same handlers serve a `node:http` server and a
+ * Worker's fetch event.
+ */
 export interface RequestContext {
-  req: IncomingMessage;
-  res: ServerResponse;
   params: Record<string, string>;
   query: URLSearchParams;
   body: unknown;
   householdId: string | null;
   clientKey: string;
+  /** Case-insensitive; null when absent. */
+  header(name: string): string | null;
+  /**
+   * The address the request actually arrived from, never a forwarded header.
+   * Empty where the runtime has no such notion (a Worker), which correctly
+   * fails any loopback-only check rather than passing it.
+   */
+  peerAddress: string;
 }
 
 export type Handler = (ctx: RequestContext) => Promise<unknown> | unknown;

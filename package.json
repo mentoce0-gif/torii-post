@@ -11,12 +11,18 @@
     "build": "tsc -p tsconfig.web.json",
     "start": "npm run build && node src/server/main.ts",
     "dev": "npm run build && SEED_PROFILE=demo node --watch src/server/main.ts",
-    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.web.json --noEmit",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.web.json --noEmit && tsc -p tsconfig.worker.json --noEmit",
     "test": "node --test tests/*.test.ts",
     "icons": "node tools/gen-icons.mjs",
-    "metrics": "node tools/metrics.mjs"
+    "metrics": "node tools/metrics.mjs",
+    "cf:dev": "npm run build && wrangler dev",
+    "cf:deploy": "npm run build && wrangler deploy",
+    "cf:db:create": "wrangler d1 create kyou-dousuru",
+    "cf:secret": "wrangler secret put METRICS_TOKEN",
+    "cf:db:export": "wrangler d1 export kyou-dousuru --remote --output=backup.sql"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260907.1",
     "@types/node": "^22.10.0",
     "typescript": "^5.7.0",
     "wrangler": "^4.129.1"

@@ -28,12 +28,19 @@ npm run dev          # http://127.0.0.1:8787  デモデータ付き
 | `npm run dev` | フロントをビルドし、`SEED_PROFILE=demo` で `--watch` 起動 |
 | `npm start` | フロントをビルドし、`SEED_PROFILE` の既定（`poc`）で起動 |
 | `npm run build` | ブラウザ用 TypeScript を `public/build/` へ |
-| `npm test` | `node:test` によるテスト（97件） |
+| `npm test` | `node:test` によるテスト（99件） |
 | `npm run typecheck` | サーバ・ブラウザ両方の型チェック |
 | `npm run metrics` | Time to Decision の簡易集計（`-- --json` でJSON） |
 | `npm run icons` | PWAアイコンPNGの再生成 |
 
 実行時依存パッケージはゼロです。HTTPサーバは `node:http`、DBは `node:sqlite`。
+Cloudflareへ出す場合は `wrangler`（devDependency）を使いますが、
+**アプリ自身の実行時依存は増えません**。
+
+| コマンド | 内容 |
+| --- | --- |
+| `npm run cf:dev` | Workers + D1 をローカルで起動（ネットワーク不要） |
+| `npm run cf:deploy` | Cloudflareへデプロイ |
 
 ### スマートフォンで開く
 
@@ -305,7 +312,7 @@ npm run metrics
 
 | 対象 | 抽象 | 既定 |
 | --- | --- | --- |
-| DB | `src/server/data/repository.ts` | `SqliteRepository`（`node:sqlite`） |
+| DB | `src/server/data/driver.ts` | `NodeSqliteDriver` / `D1Driver` |
 | 地図 | `src/web/map/adapter.ts` | `SchematicMapProvider`（現在地＋候補3件のみ、タイル無し） |
 | 計測 | `src/server/analytics/provider.ts` | `SqliteAnalyticsProvider` |
 
@@ -318,11 +325,38 @@ Adapterに渡るのは常にピン3本だけです。
 
 ## デプロイ
 
-必要なのは Node 22.18+ と書き込み可能なディスク1つだけです。
+2通りの配置ができます。**同じコードが両方で動きます** — 判定ロジックも
+`Repository` も共通で、違うのは「HTTPの入口」と「DBのドライバ」だけです。
+
+### A. Cloudflare Workers + D1（推奨・無償枠）
 
 ```bash
-npm ci
-npm run build
+npm run cf:db:create        # D1を作り、出力されたIDを wrangler.jsonc に貼る
+npm run cf:secret           # METRICS_TOKEN を設定（公開前に必須）
+npm run cf:deploy
+```
+
+- **TLSと独自ドメインが付いてきます。** PWAのホーム画面追加にはHTTPSが要るので、
+  ここが自前運用との一番の差です
+- スキーマ投入とシードは**最初のリクエストで1回だけ**走ります。どちらも冪等で、
+  シードは世帯データに触れません
+- 静的ファイルは Workers Assets がWorkerを起こさずに配ります
+- `wrangler dev` はネットワーク無しでも動きます（ローカルD1）。
+  `npm run cf:dev` で本番と同じ経路を手元で確認できます
+
+**なぜD1なのか（データを外に出さないため）**
+
+D1には**公開エンドポイントがありません**。ホスト名もポートも接続文字列も存在せず、
+バインドされたWorkerからしか到達できません。つまり「溜まったデータを外から抜けない」が
+**プラットフォームの性質**として成立します。マネージドPostgresなら
+接続情報という漏れうる秘密を守り続ける話になりますが、D1にはその秘密自体がありません。
+
+バックアップは `npm run cf:db:export`（アカウント認証が要ります）。
+
+### B. 単一プロセス（Node + SQLiteファイル）
+
+```bash
+npm ci && npm run build
 NODE_ENV=production DB_PATH=/var/lib/kns/poc.sqlite HOST=0.0.0.0 PORT=8787 node src/server/main.ts
 ```
 
@@ -331,9 +365,13 @@ NODE_ENV=production DB_PATH=/var/lib/kns/poc.sqlite HOST=0.0.0.0 PORT=8787 node 
   立てていないうちは `false` のままにします（ヘッダを偽装されるため）
 - `METRICS_TOKEN` を設定してから公開してください
 - SQLiteファイルをバックアップ対象に含めてください
-- 別RDBに移す場合は `Repository` の実装を1つ足し、`main.ts` で分岐します
 
----
+### レートリミットについて（両方に共通）
+
+プロセス内メモリの固定窓です。Workersでは**アイソレートごと**に持つので、
+これは保険であって主たる防御ではありません。無償公開の実際の制御点は
+**Cloudflare側のWAFレートリミットルール**（無償枠に1ルール）です。
+全リクエストを見る層で先に落とすのが正解で、Worker内の制限はその後ろの二重化です。
 
 ## テスト
 

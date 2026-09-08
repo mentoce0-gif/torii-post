@@ -24,7 +24,7 @@ if (config.dbDriver !== 'sqlite') {
 mkdirSync(path.dirname(config.dbPath), { recursive: true });
 
 const repo = new SqliteRepository(config.dbPath);
-const seed = seedDatabase(repo.handle, config.seedProfile);
+const seed = await seedDatabase(repo.driver, config.seedProfile);
 
 const analytics: AnalyticsProvider =
   config.analyticsProvider === 'console'

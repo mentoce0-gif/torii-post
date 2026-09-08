@@ -99,8 +99,12 @@ export function createApp(deps: Deps): Server {
 
         const body = method === 'GET' || method === 'DELETE' ? undefined : await readBody(req);
         const ctx: RequestContext = {
-          req,
-          res,
+          header: (name) => {
+            const value = req.headers[name.toLowerCase()];
+            const first = Array.isArray(value) ? value[0] : value;
+            return first ?? null;
+          },
+          peerAddress: req.socket.remoteAddress ?? '',
           params: match.params,
           query: url.searchParams,
           body,
