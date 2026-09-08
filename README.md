@@ -333,11 +333,27 @@ Adapterに渡るのは常にピン3本だけです。
 **前提**: Cloudflareアカウント（無料・クレジットカード不要）と Node 22.18以上。
 **この作業は開発マシンのターミナルで行います**（CIやコンテナからではなく）。
 
+**Mac / Linux:**
+
 ```bash
 git clone https://github.com/mentoce0-gif/torii-post.git
 cd torii-post/app
-bash scripts/deploy-cloudflare.sh    # ログイン〜デプロイ〜疎通確認まで
+git checkout claude/parenting-outing-curation-i477fm
+bash scripts/deploy-cloudflare.sh
 ```
+
+**Windows（PowerShell）:** `bash` は既定では入っていないので、同じ内容の
+PowerShell版を使ってください。
+
+```powershell
+git clone https://github.com/mentoce0-gif/torii-post.git
+cd torii-post\app
+git checkout claude/parenting-outing-curation-i477fm
+powershell -ExecutionPolicy Bypass -File scripts\deploy-cloudflare.ps1
+```
+
+`git clone` を飛ばすと `cd` の時点で「パスが存在しないため検出できません」になります。
+必ず1行目から実行してください。
 
 スクリプトは何度実行しても壊れません（済んだ工程は飛ばします）。
 `database_id` の貼り替えも自動で行うので、手でコピペする必要はありません。
