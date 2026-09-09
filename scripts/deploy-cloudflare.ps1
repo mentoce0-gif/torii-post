@@ -1,6 +1,6 @@
 ﻿# 「今日どうする？」を Cloudflare Workers + D1 に配置する（Windows / PowerShell 版）。
 #
-#   cd torii-post\app
+#   cd kyou-dousuru
 #   powershell -ExecutionPolicy Bypass -File scripts\deploy-cloudflare.ps1
 #
 # 何度実行しても壊れません（済んだ工程は飛ばします）。
