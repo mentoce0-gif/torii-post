@@ -17,7 +17,6 @@
 前提: Node.js 22.18 以上（`node:sqlite` と TypeScript の型ストリップを使うため）。
 
 ```bash
-cd app
 npm install          # devDependencies は typescript と @types/node だけ
 cp .env.example .env # 任意。既定値のままでも動きます
 npm run dev          # http://127.0.0.1:8787  デモデータ付き
@@ -339,10 +338,8 @@ Adapterに渡るのは常にピン3本だけです。
 **Mac / Linux:**
 
 ```bash
-git clone https://github.com/mentoce0-gif/torii-post.git
-cd torii-post
-git checkout claude/parenting-outing-curation-i477fm   # ← app/ はこの中にしかない
-cd app
+git clone https://github.com/mentoce0-gif/kyou-dousuru.git
+cd kyou-dousuru
 bash scripts/deploy-cloudflare.sh
 ```
 
@@ -350,25 +347,18 @@ bash scripts/deploy-cloudflare.sh
 PowerShell版を使ってください。
 
 ```powershell
-git clone https://github.com/mentoce0-gif/torii-post.git
-cd torii-post
-git checkout claude/parenting-outing-curation-i477fm   # ← app/ はこの中にしかない
-cd app
+git clone https://github.com/mentoce0-gif/kyou-dousuru.git
+cd kyou-dousuru
 powershell -ExecutionPolicy Bypass -File scripts\deploy-cloudflare.ps1
 ```
-
-**`checkout` を `cd app` より先に。** 既定ブランチ `main` はEleventyのブログだけで、
-`app/` が入っていません。順番を逆にすると
-「パス `...\torii-post\app` が存在しないため検出できません」で止まります。
-（クローン済みで作り直したい場合は `cd torii-post` から checkout を実行すれば足ります。）
 
 スクリプトは何度実行しても壊れません（済んだ工程は飛ばします）。
 `database_id` の貼り替えも自動で行うので、手でコピペする必要はありません。
 中で何が起きているかを知りたい場合は、以下が同じ手順を手で追ったものです。
 
 ```bash
-git clone https://github.com/mentoce0-gif/torii-post.git
-cd torii-post/app
+git clone https://github.com/mentoce0-gif/kyou-dousuru.git
+cd kyou-dousuru
 npm ci
 
 npx wrangler login          # ブラウザが開く。Cloudflareにログインして許可

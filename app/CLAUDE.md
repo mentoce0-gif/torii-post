@@ -1,9 +1,11 @@
 # 今日どうする？ PoC — 作業メモ
 
-このディレクトリは、リポジトリ本体（`torii-post` = Japan買い物ガイドのEleventyブログ）とは
-無関係な独立プロジェクトです。`app/` の外には触らないでください。
+独立したリポジトリです。以前は `torii-post`（Japan買い物ガイドのEleventyブログ）の
+`app/` に同居していましたが、無関係なプロジェクトが1つのリポジトリに入っていて
+読みにくかったため、`git subtree split` で履歴ごと切り出しました。
+そちらに残っている `app/` は、この分離より前の状態です。
 
-作業ブランチ: `claude/parenting-outing-decision-pwa-4z553f`
+公開URL: https://kyou-dousuru.mentoce0.workers.dev
 
 ## これは何か
 

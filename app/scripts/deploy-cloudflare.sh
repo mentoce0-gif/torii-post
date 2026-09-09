@@ -5,7 +5,7 @@
 # 手順書どおりに打つ代わりのもの。何度実行しても壊れないように書いてあります
 # （2回目以降は既にできているものを飛ばします）。
 #
-#   bash scripts/deploy-cloudflare.sh
+#   cd kyou-dousuru && bash scripts/deploy-cloudflare.sh
 #
 # 途中でブラウザが開いたら Cloudflare にログインして許可してください。
 set -euo pipefail
